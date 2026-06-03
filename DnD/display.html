@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD记录 ~ 幻岛缘游图书馆</title>
+</head>
+<style id="insfan-style">
+    :root {
+        --dm: "卡德罗斯";
+
+        --chara1: "安特纳尔";
+        --chara1-color: rgb(240, 93, 93);
+        --chara1-bg: transparent;
+        --chara1-box: brown;
+        --chara1-pl: "pincherryus";
+        --chara1-ico: var(--fighter);
+        --chara1-pic:  url(avatar/antnar/0.png);
+        --chara1-pic1: url(avatar/antnar/1.png);
+        --chara1-pic2: url(avatar/antnar/2.png);
+        --chara1-pic3: url(avatar/antnar/3.png);
+        --chara1-pic4: url(avatar/antnar/4.png);
+        --chara1-pic5: url(avatar/antnar/5.png);
+        --chara1-pic6: url(avatar/antnar/6.png);
+        --chara1-pic7: url(avatar/antnar/7.png);
+        --chara1-pic8: url(avatar/antnar/8.png);
+        --chara1-pic9: url(avatar/antnar/9.png);
+        --chara1-pic10: url(avatar/antnar/10.png);
+        --chara1-pic11: url(avatar/antnar/11.png);
+        --chara1-pic12: url(avatar/antnar/12.png);
+        --chara1-pic13: url(avatar/antnar/13.png);
+        --chara1-pic14: url(avatar/antnar/14.png);
+        --chara1-pic15: url(avatar/antnar/15.png);
+        --chara1-pic16: url(avatar/antnar/16.png);
+        --chara1-pic17: url(avatar/antnar/17.png);
+        --chara1-pic18: url(avatar/antnar/18.png);
+        --chara1-pic19: url(avatar/antnar/19.png);
+        --chara1-pic20: url(avatar/antnar/20.png);
+
+        --chara2: "罗·卡文迪许";
+        --chara2-color: #a790f3;
+        --chara2-bg: transparent;
+        --chara2-box: #44299e;
+        --chara2-pl: "NineFrogst";
+        --chara2-ico: var(--sorcerer);
+        --chara2-pic:  url(avatar/robe/0.png);
+        --chara2-pic1: url(avatar/robe/1.png);
+        --chara2-pic2: url(avatar/robe/2.png);
+        --chara2-pic3: url(avatar/robe/3.png);
+        --chara2-pic4: url(avatar/robe/4.png);
+        --chara2-pic5: url(avatar/robe/5.png);
+        --chara2-pic6: url(avatar/robe/6.png);
+        --chara2-pic7: url(avatar/robe/7.png);
+        --chara2-pic8: url(avatar/robe/8.png);
+        --chara2-pic9: url(avatar/robe/9.png);
+        --chara2-pic10: url(avatar/robe/10.png);
+        --chara2-pic11: url(avatar/robe/11.png);
+        --chara2-pic12: url(avatar/robe/12.png);
+        --chara2-pic13: url(avatar/robe/13.png);
+        --chara2-pic14: url(avatar/robe/14.png);
+        --chara2-pic15: url(avatar/robe/15.png);
+        --chara2-pic16: url(avatar/robe/16.png);
+        --chara2-pic17: url(avatar/robe/17.png);
+        --chara2-pic18: url(avatar/robe/18.png);
+        --chara2-pic19: url(avatar/robe/19.png);
+        --chara2-pic20: url(avatar/robe/20.png);
+
+        --chara3: "柏里斯";
+        --chara3-color: burlywood;
+        --chara3-bg: transparent;
+        --chara3-box: peru;
+        --chara3-pl: "咸咸i";
+        --chara3-ico: var(--bard);
+        --chara3-pic:  url(avatar/baileys/0.png);
+        --chara3-pic1: url(avatar/baileys/1.png);
+        --chara3-pic2: url(avatar/baileys/2.png);
+        --chara3-pic3: url(avatar/baileys/3.png);
+        --chara3-pic4: url(avatar/baileys/4.png);
+        --chara3-pic5: url(avatar/baileys/5.png);
+        --chara3-pic6: url(avatar/baileys/6.png);
+        --chara3-pic7: url(avatar/baileys/7.png);
+        --chara3-pic8: url(avatar/baileys/8.png);
+        --chara3-pic9: url(avatar/baileys/9.png);
+        --chara3-pic10: url(avatar/baileys/10.png);
+        --chara3-pic11: url(avatar/baileys/11.png);
+        --chara3-pic12: url(avatar/baileys/12.png);
+        --chara3-pic13: url(avatar/baileys/13.png);
+        --chara3-pic14: url(avatar/baileys/14.png);
+        --chara3-pic15: url(avatar/baileys/15.png);
+        --chara3-pic16: url(avatar/baileys/16.png);
+        --chara3-pic17: url(avatar/baileys/17.png);
+        --chara3-pic18: url(avatar/baileys/18.png);
+        --chara3-pic19: url(avatar/baileys/19.png);
+        --chara3-pic20: url(avatar/baileys/20.png);
+
+        --chara4: "“豺狼”";
+        --chara4-color: limegreen;
+        --chara4-bg: transparent;
+        --chara4-box: darkgreen;
+        --chara4-pl: "Daybreak";
+        --chara4-ico: var(--monk);
+        --chara4-pic:  url(avatar/placeholder/0.png);
+        --chara4-pic1: url(avatar/placeholder/1.png);
+        --chara4-pic2: url(avatar/placeholder/2.png);
+        --chara4-pic3: url(avatar/placeholder/3.png);
+        --chara4-pic4: url(avatar/placeholder/4.png);
+        --chara4-pic5: url(avatar/placeholder/5.png);
+        --chara4-pic6: url(avatar/placeholder/6.png);
+        --chara4-pic7: url(avatar/placeholder/7.png);
+        --chara4-pic8: url(avatar/placeholder/8.png);
+        --chara4-pic9: url(avatar/placeholder/9.png);
+        --chara4-pic10: url(avatar/placeholder/10.png);
+        --chara4-pic11: url(avatar/placeholder/11.png);
+        --chara4-pic12: url(avatar/placeholder/12.png);
+        --chara4-pic13: url(avatar/placeholder/13.png);
+        --chara4-pic14: url(avatar/placeholder/14.png);
+        --chara4-pic15: url(avatar/placeholder/15.png);
+        --chara4-pic16: url(avatar/placeholder/16.png);
+        --chara4-pic17: url(avatar/placeholder/17.png);
+        --chara4-pic18: url(avatar/placeholder/18.png);
+        --chara4-pic19: url(avatar/placeholder/19.png);
+        --chara4-pic20: url(avatar/placeholder/20.png);
+
+        --barbarian: url(classes/barbarian.png);
+        --bard: url(classes/bard.png);
+        --cleric: url(classes/cleric.png);
+        --druid: url(classes/druid.png);
+        --fighter: url(classes/fighter.png);
+        --monk: url(classes/monk.png);
+        --paladin: url(classes/paladin.png);
+        --ranger: url(classes/ranger.png);
+        --rogue: url(classes/rogue.png);
+        --sorcerer: url(classes/sorcerer.png);
+        --warlock: url(classes/warlock.png);
+        --wizard: url(classes/wizard.png);
+        --dm-dice: url(classes/dm_dice.png);
+
+        --avatar-size: 80px;
+
+        --palette-a: brown;
+        --palette-b: rgb(242, 204, 167);
+        --palette-bg: rgba(242, 204, 167, 0.8);
+        --palette-da: rgba(165, 42, 42, 0.5);
+        --palette-db: rgba(242, 204, 167, 0.5);
+        --palette-dm: black;
+
+        --palette-1-a: hsl(248, 90%, 90%);
+        --palette-1-aa: hsla(248, 90%, 90%, 0.7);
+        --palette-1-b: rgb(71, 61, 139);
+        --palette-1-bg: rgba(71, 61, 139, 0.8);
+        --palette-1-da: hsla(248, 90%, 90%, 0.5);
+        --palette-1-db: rgba(71, 61, 139, 0.5);
+        --palette-1-dm: white;
+
+        --fg: var(--palette-1-a);
+        --fga: var(--palette-1-aa);
+        --bg: var(--palette-1-b);
+        --bga: var(--palette-1-bg);
+        --fgd: var(--palette-1-da);
+        --bgd: var(--palette-1-db);
+        --fgdm: var(--palette-1-dm);
+    }
+    body {
+        background-image: url(underdark.jpg);
+        background-repeat: repeat-y;
+        background-size: 200%;
+        background-position: top;
+    }
+    footer {
+        color: var(--bg);
+        background-color: var(--fg);
+        width: fit-content;
+        margin: auto;
+        padding: 1px 5px 1px;
+        border: 2px solid var(--bg);
+        border-radius: 8px;
+        font-size: smaller;
+        font-weight: bold;
+        font-family: 'Consolas', '微软雅黑', monospace;
+        text-align: center;
+    }
+    footer > u.switcher {
+        cursor: pointer;
+        display: inline;
+    }
+    div.container {
+        background-color: var(--bga);
+        background-blend-mode: multiply;
+        border: 1px solid black;
+        padding: 0px 10px 20px;
+        margin-bottom: 20px;
+        color: var(--fg);
+        font-family: 'Bookman Old Style', '方正标雅宋_GBK', serif;
+        font-size: 16px;
+    }
+
+    div.pc {
+        padding-left: 2em;
+        margin-bottom: 5px;
+        white-space: pre-line;
+        font-style: normal;
+    }
+    div.pc.action {
+        font-style: italic;
+    }
+    div.pc::before {
+        --bgcolor: transparent;
+        margin-left: -2em;
+        padding-left: 20px;
+        border-left: 5px solid var(--bgcolor);
+        content: "旁白: ";
+        display: block;
+        font-weight: bold;
+        font-style: normal;
+        background-image: var(--dm-dice);
+        background-position: left center;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-color: var(--bgcolor);
+        width: fit-content;
+    }
+    div.pc.dice::before {
+        content: "掷骰: ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.dm::before {
+        content: "DM（" var(--dm) "）: ";
+        color: var(--fgdm);
+        background-image: var(--dm-dice);
+    }
+    div.pc.npc::before {
+        content: attr(name)": ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.blank::before {
+        content: attr(name)": ";
+        background-image: var(--dm-dice);
+    }
+    div.pc.chara1::before {
+        content: var(--chara1-pl) "（" var(--chara1) "）: ";
+        color: var(--chara1-color);
+        background-color: var(--chara1-bg);
+        background-image: var(--chara1-ico);
+    }
+    div.pc.chara2::before {
+        content: var(--chara2-pl) "（" var(--chara2) "）: ";
+        color: var(--chara2-color);
+        background-color: var(--chara2-bg);
+        background-image: var(--chara2-ico);
+    }
+    div.pc.chara3::before {
+        content: var(--chara3-pl) "（" var(--chara3) "）: ";
+        color: var(--chara3-color);
+        background-color: var(--chara3-bg);
+        background-image: var(--chara3-ico);
+    }
+    div.pc.chara4::before {
+        content: var(--chara4-pl) "（" var(--chara4) "）: ";
+        color: var(--chara4-color);
+        background-color: var(--chara4-bg);
+        background-image: var(--chara4-ico);
+    }
+
+    q {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+        white-space: pre-line;
+    }
+
+    div.profile {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+
+    div.profile > div.avatar {
+        float: left;
+        width: 140px;
+        margin: 5px;
+        margin-bottom: 0;
+        padding: 5px;
+        text-align: center;
+    }
+    div.profile::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.avatar > img {
+        margin: auto;
+        width: var(--avatar-size);
+        border: 3px solid var(--fg);
+    }
+    div.profile > div.avatar > img {
+        width: 120px;
+        border: 3px solid var(--bg);
+        background-color: white;
+    }
+    div.avatar > p {
+        margin: 5px;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+    div.avatar > p > span.pl {
+        display: block;
+        font-size: smaller;
+    }
+    div.profile > div.description > span {
+        white-space: pre-line;
+    }
+
+    hr {
+        border: 1px solid var(--fg);
+        box-shadow: 0px 0px 5px var(--fg);
+    }
+    hr.battle {
+        text-align: center;
+        display: block;
+        line-height: 0px;
+        height: 0;
+        overflow: visible;
+    }
+    hr.battle::after {
+        content: "　战斗开始 ！";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+    hr.battle.over::after {
+        content: "　战斗结束 ！";
+    }
+    hr#hr-cursor {
+        text-align: center;
+        display: block;
+        line-height: 0px;
+        height: 0;
+        overflow: visible;
+    }
+    /* hr#hr-cursor::before {
+        content: "↑上移 ";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+    hr#hr-cursor::after {
+        content: " 下移↓";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    } */
+    hr#hr-cursor > span {
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+
+    div.initiative {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: grid;
+        place-items: center;
+        width: fit-content;
+        min-width: 40%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+    div.initiative::before {
+        display: block;
+        width: 100%;
+        content: "先攻表";
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--bg);
+        margin-bottom: 5px;
+    }
+    div.initiative > div.pc {
+        min-width: 300px;
+    }
+    div.initiative > div.pc::before {
+        display: inline-block;
+        width: fit-content;
+        min-width: 110px;
+        margin-left: 0px;
+        /* text-shadow: 0px 0px 3px var(--bg); */
+    }div.initiative > div.pc.chara1::before {
+        content: var(--chara1) "：";
+        color: var(--chara1-box);
+        background-color: var(--chara1-bg);
+        background-image: var(--chara1-ico);
+    }
+    div.initiative > div.pc.chara2::before {
+        content: var(--chara2) "：";
+        color: var(--chara2-box);
+        background-color: var(--chara2-bg);
+        background-image: var(--chara2-ico);
+    }
+    div.initiative > div.pc.chara3::before {
+        content: var(--chara3) "：";
+        color: var(--chara3-box);
+        background-color: var(--chara3-bg);
+        background-image: var(--chara3-ico);
+    }
+    div.initiative > div.pc.chara4::before {
+        content: var(--chara4) "：";
+        color: var(--chara4-box);
+        background-color: var(--chara4-bg);
+        background-image: var(--chara4-ico);
+    }
+
+    span.dice {
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    span.dice::before {
+        content: attr(name);
+        font-size: smaller;
+        display: inline-block;
+        overflow: visible;
+        color: var(--fgd);
+    }
+    div.initiative span.dice::before {
+        color: var(--bgd);
+    }
+    span.bonus, span.result {
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+    span.bonus.up::before {
+        content: '+ ';
+    }
+    span.bonus.down::before {
+        content: '- ';
+    }
+    span.result::before {
+        content: '= ';
+    }
+    span.ranking {
+        font-weight: bold;
+    }
+
+    div.with-avatar {
+        margin-bottom: 7px;
+        padding: 5px;
+        background-color: var(--fga);
+        color: var(--bg);
+        border-radius: 5px;
+    }
+    div.with-avatar > div.pc {
+        margin-left: 100px;
+        padding-top: 16px;
+        padding-left: 25px;
+    }
+    div.with-avatar > div.pc::before {
+        border-radius: 5px;
+        padding-right: 5px;
+        margin-bottom: 5px;
+        margin-left: -25px;
+    }
+    div.with-avatar::before {
+        display: block;
+        float: left;
+        background-color: white;
+        background-size: var(--avatar-size);
+        background-repeat: no-repeat;
+        content: "";
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border: 3px solid var(--fg);
+        margin-left: 3px;
+    }
+    div.with-avatar::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.pc > span.play {
+        cursor: pointer;
+    }
+    div.pc > span.play::after {
+        content: "🔊";
+        display: inline-block;
+        cursor: pointer;
+    }
+    div.with-avatar.t::before {
+        background-color: transparent;
+        background-size: 86px;
+        width: 86px;
+        height: 86px;
+        border: 0px;
+    }
+
+    div.with-avatar.chara1::before {
+        background-image: var(--chara1-pic);
+    }
+    div.with-avatar.chara1 > div.pc::before {
+        content: var(--chara1);
+        color: white;
+        background-color: var(--chara1-box);
+    }
+    div.with-avatar.chara1.var1::before {
+        background-image: var(--chara1-pic1);
+    }
+    div.with-avatar.chara1.var2::before {
+        background-image: var(--chara1-pic2);
+    }
+    div.with-avatar.chara1.var3::before {
+        background-image: var(--chara1-pic3);
+    }
+    div.with-avatar.chara1.var4::before {
+        background-image: var(--chara1-pic4);
+    }
+    div.with-avatar.chara1.var5::before {
+        background-image: var(--chara1-pic5);
+    }
+    div.with-avatar.chara1.var6::before {
+        background-image: var(--chara1-pic6);
+    }
+    div.with-avatar.chara1.var7::before {
+        background-image: var(--chara1-pic7);
+    }
+    div.with-avatar.chara1.var8::before {
+        background-image: var(--chara1-pic8);
+    }
+    div.with-avatar.chara1.var9::before {
+        background-image: var(--chara1-pic9);
+    }
+    div.with-avatar.chara1.var10::before {
+        background-image: var(--chara1-pic10);
+    }
+    div.with-avatar.chara1.var11::before {
+        background-image: var(--chara1-pic11);
+    }
+    div.with-avatar.chara1.var12::before {
+        background-image: var(--chara1-pic12);
+    }
+    div.with-avatar.chara1.var13::before {
+        background-image: var(--chara1-pic13);
+    }
+    div.with-avatar.chara1.var14::before {
+        background-image: var(--chara1-pic14);
+    }
+    div.with-avatar.chara1.var15::before {
+        background-image: var(--chara1-pic15);
+    }
+    div.with-avatar.chara1.var16::before {
+        background-image: var(--chara1-pic16);
+    }
+    div.with-avatar.chara1.var17::before {
+        background-image: var(--chara1-pic17);
+    }
+    div.with-avatar.chara1.var18::before {
+        background-image: var(--chara1-pic18);
+    }
+    div.with-avatar.chara1.var19::before {
+        background-image: var(--chara1-pic19);
+    }
+    div.with-avatar.chara1.var20::before {
+        background-image: var(--chara1-pic20);
+    }
+
+    div.with-avatar.chara2::before {
+        background-image: var(--chara2-pic);
+    }
+    div.with-avatar.chara2 > div.pc::before {
+        content: var(--chara2);
+        color: white;
+        background-color: var(--chara2-box);
+    }
+    div.with-avatar.chara2.var1::before {
+        background-image: var(--chara2-pic1);
+    }
+    div.with-avatar.chara2.var2::before {
+        background-image: var(--chara2-pic2);
+    }
+    div.with-avatar.chara2.var3::before {
+        background-image: var(--chara2-pic3);
+    }
+    div.with-avatar.chara2.var4::before {
+        background-image: var(--chara2-pic4);
+    }
+    div.with-avatar.chara2.var5::before {
+        background-image: var(--chara2-pic5);
+    }
+    div.with-avatar.chara2.var6::before {
+        background-image: var(--chara2-pic6);
+    }
+    div.with-avatar.chara2.var7::before {
+        background-image: var(--chara2-pic7);
+    }
+    div.with-avatar.chara2.var8::before {
+        background-image: var(--chara2-pic8);
+    }
+    div.with-avatar.chara2.var9::before {
+        background-image: var(--chara2-pic9);
+    }
+    div.with-avatar.chara2.var10::before {
+        background-image: var(--chara2-pic10);
+    }
+    div.with-avatar.chara2.var11::before {
+        background-image: var(--chara2-pic11);
+    }
+    div.with-avatar.chara2.var12::before {
+        background-image: var(--chara2-pic12);
+    }
+    div.with-avatar.chara2.var13::before {
+        background-image: var(--chara2-pic13);
+    }
+    div.with-avatar.chara2.var14::before {
+        background-image: var(--chara2-pic14);
+    }
+    div.with-avatar.chara2.var15::before {
+        background-image: var(--chara2-pic15);
+    }
+    div.with-avatar.chara2.var16::before {
+        background-image: var(--chara2-pic16);
+    }
+    div.with-avatar.chara2.var17::before {
+        background-image: var(--chara2-pic17);
+    }
+    div.with-avatar.chara2.var18::before {
+        background-image: var(--chara2-pic18);
+    }
+    div.with-avatar.chara2.var19::before {
+        background-image: var(--chara2-pic19);
+    }
+    div.with-avatar.chara2.var20::before {
+        background-image: var(--chara2-pic20);
+    }
+
+    div.with-avatar.chara3::before {
+        background-image: var(--chara3-pic);
+    }
+    div.with-avatar.chara3 > div.pc::before {
+        content: var(--chara3);
+        color: white;
+        background-color: var(--chara3-box);
+    }
+    div.with-avatar.chara3.var1::before {
+        background-image: var(--chara3-pic1);
+    }
+    div.with-avatar.chara3.var2::before {
+        background-image: var(--chara3-pic2);
+    }
+    div.with-avatar.chara3.var3::before {
+        background-image: var(--chara3-pic3);
+    }
+    div.with-avatar.chara3.var4::before {
+        background-image: var(--chara3-pic4);
+    }
+    div.with-avatar.chara3.var5::before {
+        background-image: var(--chara3-pic5);
+    }
+    div.with-avatar.chara3.var6::before {
+        background-image: var(--chara3-pic6);
+    }
+    div.with-avatar.chara3.var7::before {
+        background-image: var(--chara3-pic7);
+    }
+    div.with-avatar.chara3.var8::before {
+        background-image: var(--chara3-pic8);
+    }
+    div.with-avatar.chara3.var9::before {
+        background-image: var(--chara3-pic9);
+    }
+    div.with-avatar.chara3.var10::before {
+        background-image: var(--chara3-pic10);
+    }
+    div.with-avatar.chara3.var11::before {
+        background-image: var(--chara3-pic11);
+    }
+    div.with-avatar.chara3.var12::before {
+        background-image: var(--chara3-pic12);
+    }
+    div.with-avatar.chara3.var13::before {
+        background-image: var(--chara3-pic13);
+    }
+    div.with-avatar.chara3.var14::before {
+        background-image: var(--chara3-pic14);
+    }
+    div.with-avatar.chara3.var15::before {
+        background-image: var(--chara3-pic15);
+    }
+    div.with-avatar.chara3.var16::before {
+        background-image: var(--chara3-pic16);
+    }
+    div.with-avatar.chara3.var17::before {
+        background-image: var(--chara3-pic17);
+    }
+    div.with-avatar.chara3.var18::before {
+        background-image: var(--chara3-pic18);
+    }
+    div.with-avatar.chara3.var19::before {
+        background-image: var(--chara3-pic19);
+    }
+    div.with-avatar.chara3.var20::before {
+        background-image: var(--chara3-pic20);
+    }
+
+    div.with-avatar.chara4::before {
+        background-image: var(--chara4-pic);
+    }
+    div.with-avatar.chara4 > div.pc::before {
+        content: var(--chara4);
+        color: white;
+        background-color: var(--chara4-box);
+    }
+    div.with-avatar.chara4.var1::before {
+        background-image: var(--chara4-pic1);
+    }
+    div.with-avatar.chara4.var2::before {
+        background-image: var(--chara4-pic2);
+    }
+    div.with-avatar.chara4.var3::before {
+        background-image: var(--chara4-pic3);
+    }
+    div.with-avatar.chara4.var4::before {
+        background-image: var(--chara4-pic4);
+    }
+    div.with-avatar.chara4.var5::before {
+        background-image: var(--chara4-pic5);
+    }
+    div.with-avatar.chara4.var6::before {
+        background-image: var(--chara4-pic6);
+    }
+    div.with-avatar.chara4.var7::before {
+        background-image: var(--chara4-pic7);
+    }
+    div.with-avatar.chara4.var8::before {
+        background-image: var(--chara4-pic8);
+    }
+    div.with-avatar.chara4.var9::before {
+        background-image: var(--chara4-pic9);
+    }
+    div.with-avatar.chara4.var10::before {
+        background-image: var(--chara4-pic10);
+    }
+    div.with-avatar.chara4.var11::before {
+        background-image: var(--chara4-pic11);
+    }
+    div.with-avatar.chara4.var12::before {
+        background-image: var(--chara4-pic12);
+    }
+    div.with-avatar.chara4.var13::before {
+        background-image: var(--chara4-pic13);
+    }
+    div.with-avatar.chara4.var14::before {
+        background-image: var(--chara4-pic14);
+    }
+    div.with-avatar.chara4.var15::before {
+        background-image: var(--chara4-pic15);
+    }
+    div.with-avatar.chara4.var16::before {
+        background-image: var(--chara4-pic16);
+    }
+    div.with-avatar.chara4.var17::before {
+        background-image: var(--chara4-pic17);
+    }
+    div.with-avatar.chara4.var18::before {
+        background-image: var(--chara4-pic18);
+    }
+    div.with-avatar.chara4.var19::before {
+        background-image: var(--chara4-pic19);
+    }
+    div.with-avatar.chara4.var20::before {
+        background-image: var(--chara4-pic20);
+    }
+
+    div.pc.aya::before {
+        content: "阿雅";
+        color: white;
+        background: linear-gradient(45deg, deeppink, limegreen);
+        border: 0;
+        padding-left: 5px;
+    }
+    div.with-avatar.aya::before {
+        background-image: url(haru_aya.png);
+    }
+    div.with-avatar.t.aya::before {
+        background-image: url(avatar/aya/0.png);
+    }
+    div.with-avatar.t.aya.var1::before {
+        background-image: url(avatar/aya/1.png);
+    }
+    div.with-avatar.t.aya.var2::before {
+        background-image: url(avatar/aya/2.png);
+    }
+    div.with-avatar.t.aya.var3::before {
+        background-image: url(avatar/aya/3.png);
+    }
+
+    div#is-avatar-t-box, 
+    input#others, 
+    div#vocal-box, 
+    div#dice-box, 
+    input#dice-custom, 
+    div#quote-zone-box,
+    div#contents-edit-box,
+    input#others-initiative,
+    div#initiative-box,
+    div#curr-initiative-box,
+    input#dice-custom-initiative,
+    input#editor {
+        display: none;
+    }
+    textarea#dialogue, textarea#quote-zone {
+        width: 90%;
+    }
+    td {
+        width: 50%;
+    }
+    div#contents li {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    table#credits {
+        width: 200px;
+    }
+    table#credits td {
+        vertical-align: top;
+    }
+    div.container#credits-box {
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 20px;
+        background-image: url(avatar/aya_bust.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-blend-mode: normal;
+    }
+</style>
+<body>
+    <div class="container" style="text-align: center;">
+        <img src="insfan.png" alt="Insula Fantasia" width="80px" style="float: left; margin: 5px;">
+        <img src="dnd.png" alt="Dungeon & Dragon" width="78px" style="float: right; margin: 5px;">
+        <p>
+            <span style="font-size: 28px; font-weight: bolder;">
+                <!-- 逃离深渊 -->
+                <img src="out-of-the-abyss.png" alt="" width="300px">
+            </span><br>(LOG) (DND5E)<br>DM: 卡德罗斯
+        </p>
+        <div style="clear: both;"></div>
+        <!-- <q>很久以前，一条名为沙鲁斯（Sharruth）的喷火红龙在剑湾四处肆虐。三条金属龙参与了讨伐沙鲁斯的战斗并将她囚禁在海床之下。他们相信海水会熄灭她的火焰并永远禁锢她。在传闻中，沙鲁斯的怒火导致海底火山爆发，并最终形成了风骸岛。
+            你们是来到此岛上的冒险者，或是为了从繁文缛节中脱离出来，或是为了财富而来，又或是被莫名的力量指引召唤着。船帆正猎猎作响，风骸岛已经出现于天边，不论你们前方有什么，它都即将到来。</q> -->
+    </div>
+    <div id="contents">
+        <div class="container">
+            <h2>目录</h2>
+            <ul>
+                <li name="reports/intro.html">引入回</li>
+            </ul>
+        </div>
+    </div>
+    <div id="host"></div>
+    <div class="container" id="credits-box">
+        <br>
+        <!-- <img src="avatar/aya_tachie.png" alt="" style="width: 100px; float: left;"> -->
+        <p style="margin-left: 100px;">
+            <span style="font-style: italic;">“嗨嗨~我来介绍一下这次的伙伴们哦~”</span>
+        </p>
+        <table id="credits" style="margin-left: 100px;">
+            <tbody>
+                <tr>
+                    <td><strong style="background-color: var(--bga); border-radius: 3px;">本期主编</strong></td>
+                    <td id="editor-box">pincherryus</td>
+                </tr>
+                <tr>
+                    <td><strong style="background-color: var(--bga); border-radius: 3px;">技术支持</strong></td>
+                    <td>NineFrogst</td>
+                </tr>
+                <tr>
+                    <td><strong style="background-color: var(--bga); border-radius: 3px;">DM</strong></td>
+                    <td>卡德罗斯</td>
+                </tr>
+                <tr>
+                    <td><strong style="background-color: var(--bga); border-radius: 3px;">PL</strong></td>
+                    <td>pincherryus<br>NineFrogst<br>咸咸i<br>Daybreak</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="clear: both; height: 0;"></div>
+    </div>
+    <footer>
+        <div>Copyright © 2025 幻岛缘游图书馆 All rights reserved.</div>
+        <!-- <u style="display: none;" onclick="quick_edit_display()" class="switcher">点此开启快捷编辑器</u> -->
+    </footer>
+    <script id="i-asked-ai-i-m-sorry">
+        function load_page(file = 'new_report.html', box_id = 'host'){
+            async function loader() {
+                // ① 抓取
+                var html = await fetch(file).then(r => r.text());
+                // ② 解析
+                var frag = new DOMParser().parseFromString(html, 'text/html');
+                var comp = frag.querySelectorAll('div.container');   // 目标组件
+                var host = document.getElementById(box_id);
+                host.replaceChildren();
+                var editor_box = frag.querySelectorAll('#editor-box');
+                if (editor_box.length){
+                    document.getElementById('editor-box').innerText = editor_box[0].innerText;
+                } else {
+                    document.getElementById('editor-box').innerText = 'pincherryus';
+                }
+                for (var i = 0; i < comp.length; i++){
+                    host.appendChild(comp[i]);
+                }
+            }
+            return loader;
+        }
+        (async () => {
+            await load_page('reports/contents.html', 'contents')();   // 等 DOM 就位
+
+            // 现在 #contents 里已经有 <li> 了
+            document.querySelectorAll('div#contents li').forEach(item => {
+                item.addEventListener('click', load_page(item.getAttribute('name')));
+                // item.click(); // 初始化
+            });
+        })();
+    </script>
+    <script id="insfan-script">
+        function simple_audio_play(click_elem){
+            var aud = click_elem.parentElement.getElementsByTagName('audio')[0];
+            aud.load();
+            aud.play();
+        }
+    </script>
+</body>
+</html>
