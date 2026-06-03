@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DnD记录 ~ 幻岛缘游图书馆</title><style id="insfan-style">
+    :root {
+        --dm: "卡德罗斯";
+
+        --chara1: "安特纳尔";
+        --chara1-color: rgb(240, 93, 93);
+        --chara1-bg: transparent;
+        --chara1-box: brown;
+        --chara1-pl: "pincherryus";
+        --chara1-ico: var(--fighter);
+        --chara1-pic:  url(avatar/antnar/0.png);
+        --chara1-pic1: url(avatar/antnar/1.png);
+        --chara1-pic2: url(avatar/antnar/2.png);
+        --chara1-pic3: url(avatar/antnar/3.png);
+        --chara1-pic4: url(avatar/antnar/4.png);
+        --chara1-pic5: url(avatar/antnar/5.png);
+        --chara1-pic6: url(avatar/antnar/6.png);
+        --chara1-pic7: url(avatar/antnar/7.png);
+        --chara1-pic8: url(avatar/antnar/8.png);
+        --chara1-pic9: url(avatar/antnar/9.png);
+
+        --chara2: "罗·卡文迪许";
+        --chara2-color: #a790f3;
+        --chara2-bg: transparent;
+        --chara2-box: #44299e;
+        --chara2-pl: "NineFrogst";
+        --chara2-ico: var(--sorcerer);
+        --chara2-pic:  url(avatar/robe/0.png);
+        --chara2-pic1: url(avatar/robe/1.png);
+        --chara2-pic2: url(avatar/robe/2.png);
+        --chara2-pic3: url(avatar/robe/3.png);
+        --chara2-pic4: url(avatar/robe/4.png);
+        --chara2-pic5: url(avatar/robe/5.png);
+        --chara2-pic6: url(avatar/robe/6.png);
+        --chara2-pic7: url(avatar/robe/7.png);
+        --chara2-pic8: url(avatar/robe/8.png);
+        --chara2-pic9: url(avatar/robe/9.png);
+
+        --chara3: "柏里斯";
+        --chara3-color: burlywood;
+        --chara3-bg: transparent;
+        --chara3-box: peru;
+        --chara3-pl: "咸咸i";
+        --chara3-ico: var(--bard);
+        --chara3-pic:  url(avatar/baileys/0.png);
+        --chara3-pic1: url(avatar/baileys/1.png);
+        --chara3-pic2: url(avatar/baileys/2.png);
+        --chara3-pic3: url(avatar/baileys/3.png);
+        --chara3-pic4: url(avatar/baileys/4.png);
+        --chara3-pic5: url(avatar/baileys/5.png);
+        --chara3-pic6: url(avatar/baileys/6.png);
+        --chara3-pic7: url(avatar/baileys/7.png);
+        --chara3-pic8: url(avatar/baileys/8.png);
+        --chara3-pic9: url(avatar/baileys/9.png);
+
+        --chara4: "“豺狼”";
+        --chara4-color: limegreen;
+        --chara4-bg: transparent;
+        --chara4-box: darkgreen;
+        --chara4-pl: "Daybreak";
+        --chara4-ico: var(--monk);
+        --chara4-pic:  url(avatar/placeholder/0.png);
+        --chara4-pic1: url(avatar/placeholder/1.png);
+        --chara4-pic2: url(avatar/placeholder/2.png);
+        --chara4-pic3: url(avatar/placeholder/3.png);
+        --chara4-pic4: url(avatar/placeholder/4.png);
+        --chara4-pic5: url(avatar/placeholder/5.png);
+        --chara4-pic6: url(avatar/placeholder/6.png);
+        --chara4-pic7: url(avatar/placeholder/7.png);
+        --chara4-pic8: url(avatar/placeholder/8.png);
+        --chara4-pic9: url(avatar/placeholder/9.png);
+
+        --barbarian: url(classes/barbarian.png);
+        --bard: url(classes/bard.png);
+        --cleric: url(classes/cleric.png);
+        --druid: url(classes/druid.png);
+        --fighter: url(classes/fighter.png);
+        --monk: url(classes/monk.png);
+        --paladin: url(classes/paladin.png);
+        --ranger: url(classes/ranger.png);
+        --rogue: url(classes/rogue.png);
+        --sorcerer: url(classes/sorcerer.png);
+        --warlock: url(classes/warlock.png);
+        --wizard: url(classes/wizard.png);
+        --dm-dice: url(classes/dm_dice.png);
+
+        --avatar-size: 80px;
+
+        --palette-a: brown;
+        --palette-b: rgb(242, 204, 167);
+        --palette-bg: rgba(242, 204, 167, 0.8);
+        --palette-da: rgba(165, 42, 42, 0.5);
+        --palette-db: rgba(242, 204, 167, 0.5);
+        --palette-dm: black;
+
+        --palette-1-a: hsl(248, 90%, 90%);
+        --palette-1-aa: hsla(248, 90%, 90%, 0.7);
+        --palette-1-b: rgb(71, 61, 139);
+        --palette-1-bg: rgba(71, 61, 139, 0.8);
+        --palette-1-da: hsla(248, 90%, 90%, 0.5);
+        --palette-1-db: rgba(71, 61, 139, 0.5);
+        --palette-1-dm: white;
+
+        --fg: var(--palette-1-a);
+        --fga: var(--palette-1-aa);
+        --bg: var(--palette-1-b);
+        --bga: var(--palette-1-bg);
+        --fgd: var(--palette-1-da);
+        --bgd: var(--palette-1-db);
+        --fgdm: var(--palette-1-dm);
+    }
+    body {
+        background-image: url(underdark.jpg);
+        background-repeat: repeat-y;
+        background-size: 200%;
+        background-position: top;
+    }
+    footer {
+        color: var(--bg);
+        background-color: var(--fg);
+        width: fit-content;
+        margin: auto;
+        padding: 1px 5px 1px;
+        border: 2px solid var(--bg);
+        border-radius: 8px;
+        font-size: smaller;
+        font-weight: bold;
+        font-family: 'Consolas', '微软雅黑', monospace;
+        text-align: center;
+    }
+    footer > u.switcher {
+        cursor: pointer;
+        display: inline;
+    }
+    div.container {
+        background-color: var(--bga);
+        background-blend-mode: multiply;
+        border: 1px solid black;
+        padding: 0px 10px 20px;
+        margin-bottom: 20px;
+        color: var(--fg);
+        font-family: 'Bookman Old Style', '方正标雅宋_GBK', serif;
+        font-size: 16px;
+    }
+
+    div.pc {
+        padding-left: 2em;
+        margin-bottom: 5px;
+        white-space: pre-line;
+        font-style: normal;
+    }
+    div.pc.action {
+        font-style: italic;
+    }
+    div.pc::before {
+        --bgcolor: transparent;
+        margin-left: -2em;
+        padding-left: 20px;
+        border-left: 5px solid var(--bgcolor);
+        content: "旁白: ";
+        display: block;
+        font-weight: bold;
+        font-style: normal;
+        background-image: var(--dm-dice);
+        background-position: left center;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-color: var(--bgcolor);
+        width: fit-content;
+    }
+    div.pc.dice::before {
+        content: "掷骰: ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.dm::before {
+        content: "DM（" var(--dm) "）: ";
+        color: var(--fgdm);
+        background-image: var(--dm-dice);
+    }
+    div.pc.npc::before {
+        content: attr(id)": ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.blank::before {
+        content: attr(id)": ";
+        background-image: var(--dm-dice);
+    }
+    div.pc.chara1::before {
+        content: var(--chara1-pl) "（" var(--chara1) "）: ";
+        color: var(--chara1-color);
+        background-color: var(--chara1-bg);
+        background-image: var(--chara1-ico);
+    }
+    div.pc.chara2::before {
+        content: var(--chara2-pl) "（" var(--chara2) "）: ";
+        color: var(--chara2-color);
+        background-color: var(--chara2-bg);
+        background-image: var(--chara2-ico);
+    }
+    div.pc.chara3::before {
+        content: var(--chara3-pl) "（" var(--chara3) "）: ";
+        color: var(--chara3-color);
+        background-color: var(--chara3-bg);
+        background-image: var(--chara3-ico);
+    }
+    div.pc.chara4::before {
+        content: var(--chara4-pl) "（" var(--chara4) "）: ";
+        color: var(--chara4-color);
+        background-color: var(--chara4-bg);
+        background-image: var(--chara4-ico);
+    }
+
+    q {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+        white-space: pre-line;
+    }
+
+    div.profile {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+
+    div.profile > div.avatar {
+        float: left;
+        width: 140px;
+        margin: 5px;
+        margin-bottom: 0;
+        padding: 5px;
+        text-align: center;
+    }
+    div.profile::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.avatar > img {
+        margin: auto;
+        width: var(--avatar-size);
+        border: 3px solid var(--fg);
+    }
+    div.profile > div.avatar > img {
+        width: 120px;
+        border: 3px solid var(--bg);
+        background-color: white;
+    }
+    div.avatar > p {
+        margin: 5px;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+    div.avatar > p > span.pl {
+        display: block;
+        font-size: smaller;
+    }
+    div.profile > div.description > span {
+        white-space: pre-line;
+    }
+
+    hr {
+        border: 1px solid var(--fg);
+        box-shadow: 0px 0px 5px var(--fg);
+    }
+    hr.battle {
+        text-align: center;
+        display: block;
+        line-height: 0px;
+        height: 0;
+        overflow: visible;
+    }
+    hr.battle::after {
+        content: "　战斗开始 ！";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+    hr.battle.over::after {
+        content: "　战斗结束 ！";
+    }
+
+    div.initiative {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: grid;
+        place-items: center;
+        width: 40%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+    div.initiative::before {
+        display: block;
+        width: 100%;
+        content: "先攻表";
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--bg);
+        margin-bottom: 5px;
+    }
+    div.initiative > div.pc {
+        width: 240px;
+    }
+    div.initiative > div.pc::before {
+        display: inline-block;
+        width: 110px;
+        text-shadow: 0px 0px 3px var(--bg);
+    }
+    span.dice {
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    span.dice::before {
+        content: attr(name);
+        font-size: smaller;
+        display: inline-block;
+        overflow: visible;
+        color: var(--fgd);
+    }
+    div.initiative span.dice::before {
+        color: var(--bgd);
+    }
+    span.bonus, span.result {
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+    span.bonus.up::before {
+        content: '+ ';
+    }
+    span.bonus.down::before {
+        content: '- ';
+    }
+    span.result::before {
+        content: '= ';
+    }
+    span.ranking {
+        font-weight: bold;
+    }
+
+    div.with-avatar {
+        margin-bottom: 7px;
+        padding: 5px;
+        background-color: var(--fga);
+        color: var(--bg);
+        border-radius: 5px;
+    }
+    div.with-avatar > div.pc {
+        margin-left: 100px;
+        padding-top: 16px;
+        padding-left: 25px;
+    }
+    div.with-avatar > div.pc::before {
+        border-radius: 5px;
+        padding-right: 5px;
+        margin-bottom: 5px;
+        margin-left: -25px;
+    }
+    div.with-avatar::before {
+        display: block;
+        float: left;
+        background-color: white;
+        background-size: var(--avatar-size);
+        background-repeat: no-repeat;
+        content: "";
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border: 3px solid var(--fg);
+        margin-left: 3px;
+    }
+    div.with-avatar::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.pc > span.play {
+        cursor: pointer;
+    }
+    div.pc > span.play::after {
+        content: "🔊";
+        display: inline-block;
+        cursor: pointer;
+    }
+    div.with-avatar.t::before {
+        background-color: transparent;
+        background-size: 86px;
+        width: 86px;
+        height: 86px;
+        border: 0px;
+    }
+
+    div.with-avatar.chara1::before {
+        background-image: var(--chara1-pic);
+    }
+    div.with-avatar.chara1 > div.pc::before {
+        content: var(--chara1);
+        color: white;
+        background-color: var(--chara1-box);
+    }
+    div.with-avatar.chara1.var1::before {
+        background-image: var(--chara1-pic1);
+    }
+    div.with-avatar.chara1.var2::before {
+        background-image: var(--chara1-pic2);
+    }
+    div.with-avatar.chara1.var3::before {
+        background-image: var(--chara1-pic3);
+    }
+    div.with-avatar.chara1.var4::before {
+        background-image: var(--chara1-pic4);
+    }
+    div.with-avatar.chara1.var5::before {
+        background-image: var(--chara1-pic5);
+    }
+    div.with-avatar.chara1.var6::before {
+        background-image: var(--chara1-pic6);
+    }
+    div.with-avatar.chara1.var7::before {
+        background-image: var(--chara1-pic7);
+    }
+    div.with-avatar.chara1.var8::before {
+        background-image: var(--chara1-pic8);
+    }
+    div.with-avatar.chara1.var9::before {
+        background-image: var(--chara1-pic9);
+    }
+
+    div.with-avatar.chara2::before {
+        background-image: var(--chara2-pic);
+    }
+    div.with-avatar.chara2 > div.pc::before {
+        content: var(--chara2);
+        color: white;
+        background-color: var(--chara2-box);
+    }
+    div.with-avatar.chara2.var1::before {
+        background-image: var(--chara2-pic1);
+    }
+    div.with-avatar.chara2.var2::before {
+        background-image: var(--chara2-pic2);
+    }
+    div.with-avatar.chara2.var3::before {
+        background-image: var(--chara2-pic3);
+    }
+    div.with-avatar.chara2.var4::before {
+        background-image: var(--chara2-pic4);
+    }
+    div.with-avatar.chara2.var5::before {
+        background-image: var(--chara2-pic5);
+    }
+    div.with-avatar.chara2.var6::before {
+        background-image: var(--chara2-pic6);
+    }
+    div.with-avatar.chara2.var7::before {
+        background-image: var(--chara2-pic7);
+    }
+    div.with-avatar.chara2.var8::before {
+        background-image: var(--chara2-pic8);
+    }
+    div.with-avatar.chara2.var9::before {
+        background-image: var(--chara2-pic9);
+    }
+
+    div.with-avatar.chara3::before {
+        background-image: var(--chara3-pic);
+    }
+    div.with-avatar.chara3 > div.pc::before {
+        content: var(--chara3);
+        color: white;
+        background-color: var(--chara3-box);
+    }
+    div.with-avatar.chara3.var1::before {
+        background-image: var(--chara3-pic1);
+    }
+    div.with-avatar.chara3.var2::before {
+        background-image: var(--chara3-pic2);
+    }
+    div.with-avatar.chara3.var3::before {
+        background-image: var(--chara3-pic3);
+    }
+    div.with-avatar.chara3.var4::before {
+        background-image: var(--chara3-pic4);
+    }
+    div.with-avatar.chara3.var5::before {
+        background-image: var(--chara3-pic5);
+    }
+    div.with-avatar.chara3.var6::before {
+        background-image: var(--chara3-pic6);
+    }
+    div.with-avatar.chara3.var7::before {
+        background-image: var(--chara3-pic7);
+    }
+    div.with-avatar.chara3.var8::before {
+        background-image: var(--chara3-pic8);
+    }
+    div.with-avatar.chara3.var9::before {
+        background-image: var(--chara3-pic9);
+    }
+
+    div.with-avatar.chara4::before {
+        background-image: var(--chara4-pic);
+    }
+    div.with-avatar.chara4 > div.pc::before {
+        content: var(--chara4);
+        color: white;
+        background-color: var(--chara4-box);
+    }
+    div.with-avatar.chara4.var1::before {
+        background-image: var(--chara4-pic1);
+    }
+    div.with-avatar.chara4.var2::before {
+        background-image: var(--chara4-pic2);
+    }
+    div.with-avatar.chara4.var3::before {
+        background-image: var(--chara4-pic3);
+    }
+    div.with-avatar.chara4.var4::before {
+        background-image: var(--chara4-pic4);
+    }
+    div.with-avatar.chara4.var5::before {
+        background-image: var(--chara4-pic5);
+    }
+    div.with-avatar.chara4.var6::before {
+        background-image: var(--chara4-pic6);
+    }
+    div.with-avatar.chara4.var7::before {
+        background-image: var(--chara4-pic7);
+    }
+    div.with-avatar.chara4.var8::before {
+        background-image: var(--chara4-pic8);
+    }
+    div.with-avatar.chara4.var9::before {
+        background-image: var(--chara4-pic9);
+    }
+
+    div.pc.aya::before {
+        content: "阿雅";
+        color: white;
+        background: linear-gradient(45deg, deeppink, limegreen);
+        border: 0;
+        padding-left: 5px;
+    }
+    div.with-avatar.aya::before {
+        background-image: url(haru_aya.png);
+    }
+    div.with-avatar.t.aya::before {
+        background-image: url(avatar/aya/0.png);
+    }
+    div.with-avatar.t.aya.var1::before {
+        background-image: url(avatar/aya/1.png);
+    }
+    div.with-avatar.t.aya.var2::before {
+        background-image: url(avatar/aya/2.png);
+    }
+    div.with-avatar.t.aya.var3::before {
+        background-image: url(avatar/aya/3.png);
+    }
+
+    div#is-avatar-t-box, input#others, div#vocal-box, div#dice-box, input#dice-custom, div#quote-zone-box {
+        display: none;
+    }
+    textarea#dialogue, textarea#quote-zone {
+        width: 90%;
+    }
+    td {
+        width: 50%;
+    }
+    div#contents li {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+</style></head><body><div class="container">
+        <br>
+        <div class="with-avatar aya">
+            <div class="pc aya">AYAYA!</div>
+        </div>
+        <div class="with-avatar aya">
+            <div class="pc aya">……</div>
+        </div>
+        <div class="with-avatar aya">
+            <div class="pc aya">欢迎大家来到幽暗地域！</div>
+        </div>
+        <div class="with-avatar aya">
+            <div class="pc aya">什么？问我为什么会出现在这里？</div>
+        </div>
+        <div class="with-avatar aya">
+            <div class="pc aya">这，这种细节就不要在意……谁说我是幻〇〇游的阿雅了！</div>
+        </div>
+        <div class="with-avatar aya">
+            <div class="pc aya">我换身衣服！</div>
+        </div>
+        <div class="with-avatar t aya var3">
+            <div class="pc aya">……</div>
+        </div>
+        <div class="with-avatar t aya var1">
+            <div class="pc aya">咳咳！欢迎大家来到幽暗地域！</div>
+        </div>
+        <div class="with-avatar t aya">
+            <div class="pc aya">嘛，说“欢迎”也不太对……</div>
+        </div>
+        <div class="with-avatar t aya var2">
+            <div class="pc aya">总之，阿雅会一直默默支持你们！</div>
+        </div>
+        <div class="with-avatar t aya var3">
+            <div class="pc aya">不过……先活到能再见面的那天吧~</div>
+        </div>
+        <div class="with-avatar t aya var1">
+            <div class="pc aya">拜拜~</div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>序章</h2>
+        <q>夕阳的最后一抹余晖将天边染成紫红色，蕨墙村中央广场上的篝火堆噼啪作响，冒出的火星如同升腾的微小星辰，空气中弥漫着烤蘑菇的香味。村民们脸上洋溢着笑容，孩子们在腿间追逐嬉戏。
+
+柏里斯正坐在广场中央的一根原木上，一首悠扬古老的林地小曲从你的长笛流淌而出，几个脸颊红扑扑的小精灵孩子睁大眼睛崇拜地看着你，村民们围着你交杯欢饮，青春靓丽的男男女女们成对起舞。你是今夜欢乐气氛的中心。</q>
+        <q>而豺狼，你站在广场的边缘一棵橡树下，与周围的欢闹保持着一步之遥。一位好心的老妇人刚刚在你手中塞了一杯蜜酒和一块粗粮面包。你刚刚结束一段漫长的跋涉，这里村民们的热情让你紧绷的神经稍稍放松。</q>
+        <div class="with-avatar t chara4">
+            <div class="pc chara4 action">（默默啃面包）</div>
+        </div>
+        <div class="pc chara3">这次是面包尊了吗</div>
+        <div class="pc chara4">错误的，有机会还是会啃西瓜（</div>
+        <div class="pc">夜色渐深，庆典的气氛愈发高涨。就在村长站起身，准备向大家祝酒时——</div>
+        <div class="pc chara1">等等，不会是我杀出来了吧( ﾟ∀。)</div>
+        <div class="pc">几声微不可察的声响过后，广场上所有的光源都熄灭了。欢声笑语随之消失，人们在黑暗中仅能依靠黑暗视觉看到彼此疑惑的脸。“豺狼”从中嗅到一丝熟悉的气息，这种事情在很多年以前也曾在自己的身上发生过，今日又要重演吗？</div>
+        <div class="pc">死一般的寂静持续了心跳两下的时间，随即被一个女人惊恐的尖叫声划破。冰冷的弩箭从村庄周围的黑暗森林中如同毒蛇般射出，一柄柄弯刀挥砍进平民的血肉。柏里斯看见先前一位红着脸向自己递上蜜酒的年轻人，现在被一支弩箭射穿了脖子，软绵绵地倒在地上。
+
+从每一个阴影中，每一个屋檐下，每一个你们来时的路径上，穿着漆黑甲胄的身影无声地显形。</div>
+        <div class="pc dm">现在你们二位，有什么行动吗？</div>
+        <div class="pc chara3">不是，这( ﾟ∀。)等我一下我想想</div>
+        <div class="pc chara1">啊，那应该和我没关系
+            嘻嘻，成为罗丝祭品了喔
+        </div>
+        <div class="pc chara4">（我短剑现在是随身带着吗）
+            <div class="pc dm">带着的</div></div>
+        <div class="with-avatar t chara4 var2">
+            <div class="pc chara4 action">深呼吸几口以试图压制自己的PTSD，然后就地放低身姿观察周围事态，查看可能的脱险路线。</div>
+        </div>
+        <div class="with-avatar t chara3">
+            <div class="pc chara3 action">在短暂的震惊之后，我迅速回过神来，简单判断了当前的场面后，决定先确保自身的安全。虽然感觉很对不起大家，但是对面看起来人有点多，对于战斗能力并不强的我来说，事已至此只能走为上策了！
+我从原木上跳下来，对尚处于惊愕中的平民们大声喊出“快跑”的警告，随即试图以灵活的姿态穿出敌群。
+            <div class="pc dm">这些卓尔一定是为此谋划许久了，你环顾四周，所能看到的每一条出路都有卓尔在有条不紊地展开杀戮，也许只有会变鸟的德鲁伊在这里才能跳出生天。</div></div>
+        </div>
+        <div class="pc dm">对此你有什么行为？时间紧迫，你只能做出简单的行动了。</div>
+        <div class="pc chara4">那就试着找一条卓尔最少的路，然后往那冲过去。</div>
+        <div class="pc dm">好，你两都分别过一次体操检定。</div>
+        <div class="pc chara3">
+            <div class="pc dice">体操检定：<span class="dice" name="D20">17</span><span class="bonus up">3</span><span class="bonus up">2</span><span class="result">22</span><span class="ranking">成功</span></div></div>
+        <div class="pc chara4">
+            <div class="pc dice">体操检定：<span class="dice" name="D20">5</span>+ 4 = 9 <strong>成功</strong></div></div>
+        <div class="pc">“豺狼”一个灵巧的侧滚翻，躲进了广场边缘一处高草丛中。柏里斯则迅速脱逃，瞬间与最近的黑影拉开了十尺的距离。有那么一刹那，突围的路径似乎就在眼前。但卓尔们甚至没有追击你们。
+            两个身穿蛛纹祭袍的女性牧师分别站在广场两侧，短暂而微弱的红光闪过之后，一股无形的、完全无法抗拒的力量瞬间攫住了你们，你们的肌肉被锁死，意志被压制，保持着那一刻的姿态。
+        </div>
+        <div class="pc dm">二位进行一次感知豁免。</div>
+        <div class="pc chara1">原来是被捉去做奴了啊</div>
+        <div class="pc chara3">
+            <div class="pc dice">感知豁免：<span class="dice" name="D20">1</span><strong>大失败</strong></div><div class="pc chara2">･ﾟ( ﾟ∀。) ﾟ。</div><div class="pc dm">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc chara1">不知西东了</div><div class="pc chara4">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div></div>
+        <div class="pc chara4">
+            <div class="pc dice">感知豁免：<span class="dice" name="D20">6</span><strong>失败</strong></div></div>
+        <div class="pc chara3">得，一个也没跑掉</div>
+        <div class="pc">你们维持着不动的姿态，眼中还燃烧着震惊与不甘的火焰，直到沉重的刀柄砸向你们的后脑，那魔法的力量才被纯粹的黑暗所取代。</div>
+        <div class="pc dm">到安特纳尔与罗少了，前情提要，先前二位已经遭遇过并打了一架，结果是罗少被安特纳尔俘虏为奴隶。</div>
+        <div class="pc chara2">⊂彡☆))∀`)快进的太多了</div>
+        <div class="pc chara3">还真是这种开头啊</div>
+        <div class="with-avatar t chara1 var6">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">可、可恶，到底哪边是西，哪边是东啊……</span>
+            <audio src="vocals/antnar/くそっ、どっちが西で、どっちが東なんだ？.wav"></audio></div>
+        </div>
+        <div class="pc chara3">⊂彡☆))∀`)</div>
+        <div class="with-avatar t chara2 var5">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">大爷，大爷您往这走……</span>
+            <audio src="vocals/robe/旦那様、こちらへどうぞ…….wav"></audio></div>
+        </div>
+        <div class="pc">地底隧道对于没有经历过的人来说是无比压抑的。除脚步声外，只有水滴从钟乳石上落下的声音在回荡。几支弩箭突然从四面八方的暗处射来，它们非常精准地命中了你们的肩膀和大腿等非要害。你们感到一股冰冷的麻痹感顺着伤口迅速蔓延至全身，四肢开始变得沉重不听使唤。就在你们因毒素而踉跄跪倒时，一群卓尔武士显形在你们眼前，他们骑着巨大的蜥蜴坐骑，为首的是一位女性。
+        她身穿着精美而暴露的蜘蛛纹饰裙甲，手持一根蛇首鞭，脸上带着一种混合了傲慢与残忍的冷笑，居高临下地看着你们：“看看这是谁？这不是芬阿尼家族的叛徒，你们亲爱的教官吗？”
+        后半句是对着周边的卓尔武士们说的。“放弃了家族，放弃了格斗武塔的职责，你以为你是谁？”</div>
+        <div class="with-avatar t chara2 var9">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">啊！我，我是无罪的，都是被他逼的！卓尔大哥大姐们，别杀我，别杀我……</span>
+            <audio src="vocals/robe/あっ！！俺は無実ですよ！全部アイツに脅されたんです！ドロウの兄貴姉貴たち、どうか殺さないで…….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara1">
+            <div class="pc chara1 action">即便想要为自己申辩，面对女卓尔的第一反应当然是低头，这是刻在我身上的本能。已经没时间呵斥那个无礼的奴隶，我立刻将头低了下去。我没有看见对方的脸，我听着她的声音，思考这是否是我认识的某人。<div class="pc dm">不，你对这声音没有任何印象。</div></div>
+        </div>
+        <div class="with-avatar t chara1 var6">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">女主人啊，恕我冒犯，但这里一定有什么误会，因为，我并没有叛逃啊！</span>
+            <audio src="vocals/antnar/女主人様、失礼ですが、ここには何か誤解があるはずです。だって、僕は逃亡していません！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var8">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哎，各位爷，你们有矛盾就自己解决，那个，我还有点忙……</span>
+            <audio src="vocals/robe/おいおい、旦那様方、ご不和はお互いで解決してくださいよ、ええと、私はちょっと用が….wav"></audio></div>
+        </div>
+        <div class="pc dm">就说这一句吗</div>
+        <div class="pc chara1">言多必失( `д´)实际上说这一句都经过了很痛苦的心理斗争了</div>
+        <div class="pc chara2">我想准备一个云雾术（</div>
+        <div class="pc">“下贱的东西，有什么回去再交代吧，我很期待你的结局，叛徒。把叛徒和他的‘财产’都带上。”
+        她甚至懒得亲自出手，只是轻轻一挥手，卓尔武士们便准备走上前来动手。</div>
+        <div class="pc dm">有行动吗？你们陷入中毒状态，攻击检定与属性检定具有劣势，且额外获得速度减半的效果</div>
+        <div class="with-avatar t chara2 var6">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">他xx的！老虎不发威，真当我是博德之门来的啊！大爷，咱们跑啊！</span>
+            <audio src="vocals/robe/この野郎！本気を見せないと、俺がボルダーズ・ゲートから来たのを舐めてるのか！旦那、逃げるぞ！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var2">
+            <div class="pc chara2 action">我准备以女卓尔为中心丢云雾术。</div>
+        </div>
+        <div class="with-avatar t chara1 var6">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">该死的，那就只能逃了啊……？</span>
+            <audio src="vocals/antnar/ちくしょう、なら逃げるしかないのか……？！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara1 var6">
+            <div class="pc chara1 action">尽管不抱希望，我仍向女卓尔相反方向向外冲去。</div>
+        </div>
+        <div class="with-avatar t chara2 var6">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">好，我丢你老母！（指主母）</span>
+            <audio src="vocals/robe/くそったれ！(丢你老母那一句).wav"></audio></div>
+        </div>
+        <div class="pc chara2">
+            <div class="pc dice">狂野魔法浪涌：<span class="dice" name="D20">11</span><strong>失败</strong></div>狂野浪涌没有发动……
+        </div>
+        <div class="pc">你试图联通魔网，构造出一团云雾，但出乎你的意料，魔网没有丝毫动静，你只能看到那女性卓尔嘴角露出一抹冷笑。中毒的你们不是行动敏捷的卓尔武士的对手，很快你们便被追上敲晕。</div>
+        <div class="pc chara1">我死亡……</div>
+        <div class="pc chara2">痛失……</div>
+        <hr>
+        <div class="pc">你们四人在一阵剧烈的摇晃和难以忍受的肌肉酸痛中相继醒来，首先感受到的是手腕和脚踝被粗糙绳索紧紧捆绑的刺痛感，随后发现自己正像个货物一样，两人一组被丢在洛斯兽的背上，位于这支卓尔队伍的中央。几名武士伴随在洛斯兽两侧，偶尔投来冷漠而警惕的一瞥。你们能看到彼此裸露部分的皮肤在黑暗视觉中露出炽热的白光。</div>
+        <div class="pc chara1">而罗少什么都没看见<div class="pc chara2">(╬ﾟдﾟ)</div><div class="pc chara3">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc chara4">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc chara1">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc dm">啊对，对于罗少来说，身遭只是漆黑一片，仅能听到身边人紧张急促的呼吸声。</div></div>
+        <div class="pc chara2">我可以每次出现人类笑话的时候进行一次狂野浪涌检定吗</div>
+        <div class="pc chara1">(´∀((☆ミつ想屁吃啊！</div>
+        <div class="pc chara3">怎么你也开始了
+            反正我非常支持</div>
+        <div class="pc dm">你也可以每次骰个d20，骰到1就内战</div>
+        <div class="pc chara1">･ﾟ( ﾉヮ´ )</div>
+        <div class="pc chara2">(´∀((☆ミつ</div>
+        <div class="pc dm">现在你们可以随意交流</div>
+        <div class="with-avatar t chara2 var7">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">我xxx……这是什么地方……我火把呢……</span>
+            <audio src="vocals/robe/くそ…ここはどこだ…たいまつはどこへ行った….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara4 var3">
+            <div class="pc chara2 action">（不抱希望的检查自己身上带的装备）</div>
+        </div>
+        <div class="pc chara3">不是被捆了吗<div class="pc chara4">虽然概率很低，但是万一他们没来得及搜身呢</div></div>
+        <div class="pc dm">是的你们手脚都被捆住了，但也能感知到，身上的背包、挂袋、武器之类的物品都不见了。</div>
+        <div class="with-avatar t chara1">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">还有两个……darthiir？</span>
+            <audio src="vocals/antnar/まだ二人……ダーシール？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var1">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">（往声音方向蛄蛹一脚）大爷，你没死啊？</span>
+            <audio src="vocals/robe/ほっ…旦那、無事だったんですか！？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var2">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">诶？是不是还有俩人？你们谁啊！报上名来！</span>
+            <audio src="vocals/robe/はっ？！まだ二人いるのか？！お前たち、何者だ！名を名乗れ！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3">
+            <div class="pc chara3 action">试图回忆昏迷前的事并认清当下的状况，几秒钟后悲惨地认识到自己被拐了的事实。思考如何逃脱的时候被安特纳尔和罗的声音打断了思绪。</div>
+        </div>
+        <div class="with-avatar t chara1 var6">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">该死的，就这么回城里去的话……绝对是死路一条……</span>
+            <audio src="vocals/antnar/ちくしょう！このまま街に戻ったら……絶対に命はないだろうな….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3 var2">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">什么叫回城里去？你知道这里是哪？</span>
+            <audio src="vocals/balieys/都会に戻るって何だよ？ここがどこか分かってるのか？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var1">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">喂！那个听着像个女的，你谁啊！（指白蕾丝）</span>
+            <audio src="vocals/robe/おい！女みてえな声すりゃあ、てめえはいったい誰だ！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3 var2">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">说谁？没有必要告诉你吧？</span>
+            <audio src="vocals/balieys/誰のことを言ってるんだ？あんたに教える必要なんてないだろ？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara4">
+            <div class="pc chara4 action">（不说话，默默听着）</div>
+        </div>
+        <div class="with-avatar t chara3 var3">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">唉，我就吃着火锅唱着歌，怎么突然就遇上这种事……</span>
+            <audio src="vocals/balieys/私が火鍋を食べながら歌を歌っていたら、急にこんな目に遭うなんて….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var6">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哈！这辈子还是第一次听人敢如此这么对我说话！你不知道我是谁吗！</span>
+            <audio src="vocals/robe/はっ！生まれて初めて、よくもまあそんな口の利き方ができたものだ！私が何者か分かっているのか！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara1 var2">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">地表精灵没资格和……啧，现在也管不了这么多了。魔索布莱城，这就是我们将要去的地方。</span>
+            <audio src="vocals/antnar/地表エルフ如きが…ちっ、今はそんなこと言ってる場合じゃない。.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3 var5">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">（完全无视吵闹的没有黑暗视觉的人类）“魔索布莱城？是我想的那个吗，难道说……</span>
+            <audio src="vocals/balieys/メンツォバランツァン？まさかあのメンツォバランツァンのこと？もしかして….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var3">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">啊？大爷，咱真的要去魔索布莱啊……</span>
+            <audio src="vocals/robe/えっ？旦那様、マジでメンゾベランザンまで行くんですか……？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara1 var3">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">你们地表人应该很清楚下场吧？死，或者比死更凄惨的结局，只要我们还被捆着，就只会有这两个结局。</span>
+            <audio src="vocals/antnar/地表人の貴様らには、結末が分かっているだろう？死、あるいは死より悲惨な末路だ。この縄が解かれぬ限り、我々に待つのはこの二つだけだ。.wav"></audio></div>
+        </div>
+        <div class="pc chara3">除了我们还有其他人吗
+            还是就四个
+            <div class="pc dm">只有你们四个</div></div>
+        <div class="pc">你们身边的一个卓尔武士笑出了声：“哈，这么想去魔索布莱城吗？你们还有几天可活，我们要先去瓦维肯吾前哨站，享受你们生命的最后几天吧”</div>
+        <div class="with-avatar t chara3 var3">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">完蛋了没想到我这辈子就这样了😭我才二百岁我还不想死啊呜呜呜😭亲爱的对不起我不能再去找你了😭神明保佑我们来世再见😭</span>
+            <audio src="vocals/balieys/もう終わりだ…私の人生がこんな形で終わるなんて思いもよらなかった.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var2">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">闭嘴啊……嘴这么碎呢！（踹）名字都没有，哪来的野人……</span>
+            <audio src="vocals/robe/黙れ！……よくしゃべるな！名も無いくせに……この野蛮人めが！.wav"></audio></div>
+        </div>
+        <div class="pc chara3">你看得见我吗你就踹</div>
+        <div class="pc chara2">听得见(`ヮ´ )</div>
+        <div class="with-avatar t chara3 var7">
+            <div class="pc chara3 action">（充满攻击性的未知精灵方言）</div>
+        </div>
+        <div class="pc">“小点动静！”旁边的卓尔拿刀柄在你的膝盖处狠狠敲了一下“到了瓦维肯吾有你动的”</div>
+        <div class="with-avatar t chara2 var2">
+            <div class="pc chara2">啧……</div>
+        </div>
+        <div class="with-avatar t chara3 var6">
+            <div class="pc chara3 action">（露出幸灾乐祸的笑容，不过没有笑出声）</div>
+        </div>
+        <div class="with-avatar t chara2 var4">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">喂！那小姑娘！你又是咋被抓来的？</span>
+            <audio src="vocals/robe/おい！そこの小娘！お前はどうやって捕まったんだ？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara1 var6">
+            <div class="pc chara1 action">我忽然意识到一个更严重的问题，我的戒指。如果被搜身，是不是意味着那枚戒指也被拿下来了？一直隐形的话，也许他们没发现。可如果……我必须立刻检查戒指是否还在我手上。<div class="pc dm">戒指仍然在你的手上，你能感觉到。</div>这个事实让我稍加安心了下来，可惜，被当做叛徒的问题依然没能得到解决。</div>
+        </div>
+        <div class="with-avatar t chara3">
+            <div class="pc chara3 action">（旁边正好有个话痨吸引注意，趁他们注意力不在我这，得想办法把绳子解开才行……）</div>
+        </div>
+        <div class="pc chara3">我能不能用魔法伎俩变个小刀出来</div>
+        <div class="pc dm">首先你没办法满足动作成分，其次也变不出来小刀</div>
+        <div class="with-avatar t chara2 var6">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">别蹭绳子了，我说话你没听见吗！</span>
+            <audio src="vocals/robe/縄をこするな！聞こえないのか！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara1 var2">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">安静点，人类奴隶！你吵到我思考了！</span>
+            <audio src="vocals/antnar/黙れ！人間の奴隷め！お前の声で思考が乱れるじゃないか！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var6">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哈，你不也被关起来了！告诉你，叫你大爷是给你面子！真把自己当回事了……
+                告诉你们，我在深水城，那可是只手遮天的存在！
+                深水城！你这个乡巴佬……不会没听过吧？(`ヮ´ )σ</span>
+                <audio src="vocals/robe/お前も閉じ込められたのか！言っておくが、旦那様と呼ぶのは面子をやっているんだぞ！調子に乗るなよ….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara1 var6">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">Ulu z'hin maglust dal QUellaT lueth Valsharess zhah ulu z'hin wund lit phalar……可是我怎么就背叛了？迷路怎么算是一种背叛？一定是有人从中作梗！</span>
+            <audio src="vocals/antnar/ウル・ジンマグルスト・ダル・クエラト・ルース・ヴァルシャレス・ザー・ウル・ジンウンド・リット・ファラー…….wav"></audio></div>
+        </div>
+        <div class="pc dm">鸟语看不懂啦(*´д`)</div>
+        <div class="pc chara1">Ulu z"hin maglust dal QUellaT lueth Valsharess zhah ulu z"hin wund lit phalar.
+离开家族和神后就是走向墓地(To walk apart from House and Queen is to walk into the grave.)
+嘻嘻，我可是找了一堆卓尔谚语哇</div>
+        <div class="with-avatar t chara2 var2">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呃，又在嘀咕了……（指小安）</span>
+            <audio src="vocals/robe/ちっ、またぼやきやがって….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara4 var5">
+            <div class="pc chara4 action">（继续不说话，问就是烧伤导致的声带受损复发了）</div>
+        </div>
+        <div class="with-avatar t chara3 var9">
+            <div class="pc chara3 action">我现在深刻地认识到身边这两位可能有点不太正常，所以稍微蹭了蹭身子挪远了一些。</div>
+        </div>
+        <div class="pc chara3">（我的发带和腰上挂的香包还在吗）</div>
+        <div class="pc dm">这都还在</div>
+        <div class="with-avatar t chara3">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">嘛，至少重要的东西没丢就好……</span>
+            <audio src="vocals/balieys/まあ、少なくとも大事なものは無事だったようだね…….wav"></audio></div>
+        </div>
+        <div class="pc chara3">（我笛子是不是没了）</div>
+        <div class="pc dm">是的</div>
+        <div class="with-avatar t chara2 var8">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">（往白蕾丝声音的方向蛄蛹，压低声音和他讲）
+                刚才我是演给那卓尔看的……</span>
+            <audio src="vocals/robe/さっきはあのドロウに見せかけだけの演技をしていたんだ….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3 var2">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">呜哇，变脸真是快呢。</span>
+            <audio src="vocals/balieys/うわっ、手のひら返しが本当に早いですね。.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var8">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">不过……我确实在深水城……有巨款……！您可一定帮帮我啊……这卓尔打了我一路了……</span>
+            <audio src="vocals/robe/ただし……ウォーターディープに本当に……大金が隠してあるんです……！どうか助けてください……このドロウにずっと殴られ続けているんです…….wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3 var2">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">那你的巨款可以帮我们解开绳子吗？</span>
+            <audio src="vocals/balieys/では、あなたの大金でこの縄を解いてくれる？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2 var5">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">您，您也懂我们现在啥情况……您记着我的名字，到了深水城，只管报卡文迪许的名字！</span>
+            <audio src="vocals/robe/あ、あんたも俺たちの状況は分かってるだろう……俺の名前をよく覚えておけよ！ウォーターディープに着いたら、キャベンディッシュの名を言えば通じるからな！.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3">
+            <div class="pc chara3 action">被绑着好难受呢……果然靠别人还是不靠谱，我开始环顾四周寻找是否有能切断绳子的东西。</div>
+        </div>
+        <div class="with-avatar t chara1 var2">
+            <div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">还真是有够吵的。卡文迪许这卡文迪许那的，听起来和卷心菜一样。</span>
+            <audio src="vocals/antnar/まったくうるさいな。キャベンディッシュがこうだのああだの、キャベツみたいな名前で煩わしいよ。.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">卡文迪许……呃，没听说过，不过我记住了。（心不在焉地回应他的话）</span>
+            <audio src="vocals/balieys/キャベンディッシュ……えっと、聞いたことないな。でも覚えておくよ。.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara2">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哎，你……是咋被抓来的？不会也被卓尔射了一箭吧？</span>
+            <audio src="vocals/robe/おい、お前……どうやって捕まったんだ？まさかドロウに矢を射られたりなんてしてないだろうな？.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">我应该是没有中箭……只是坐在那里吹笛子，就被突然闯出来的一群卓尔打晕了，真倒霉。</span>
+            <audio src="vocals/balieys/矢は当たってないはず……ただ座って笛を吹いていたら、いきなり現れたドロウの集団に気絶させられただけだ。まったくついてないね。.wav"></audio></div>
+        </div>
+        <div class="with-avatar t chara3 var1">
+            <div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">我叫柏里斯，是一名吟游诗人，请多关照。。</span>
+            <audio src="vocals/balieys/はい、バイリスと申します。吟遊詩人です。よろしくお願いいたします。.wav"></audio></div>
+        </div>
+        <div class="pc chara3">（目前周围有多少个守卫？）
+            所以能想办法跑吗
+            <div class="pc dm">与你们平行的只有六名武士，但整个队伍则有更多</div></div>
+        <div class="with-avatar t chara2 var1">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呦！好名字好名字，我有个亲戚和你名字特像！叫什么白，白武男……？想不起来了……</span>
+            <audio src="vocals/robe/おっ！いい名前だなあ、俺の親戚でお前とそっくりな名前の奴がいたぜ！確か…ベヒーモスとか言ったか…？思い出せねえや….wav"></audio></div>
+        </div>
+        <div class="pc chara3">(´∀((☆ミつ</div>
+        <div class="pc dm">(´∀((☆ミつ</div>
+        <div class="pc dm">唯一的利器是旁边卓尔武士的刀。</div>
+        <div class="pc chara3">早知道设计角色的时候给鞋底里藏把刀</div>
+        <div class="pc chara2">还有暗杀武器( ﾟ∀。)</div>
+        <div class="pc chara4">还有暗杀武器( ﾟ∀。)</div>
+        <div class="pc chara1">还有暗杀武器( ﾟ∀。)</div>
+        <div class="pc chara4">身边有任何带点锐角的东西能把绳子磨开吗？比如石头什么的</div>
+        <div class="pc dm">洛斯兽的背上怎么会有石头</div>
+        <div class="pc chara3">精灵耳朵（即答）
+            太锐角了
+        </div>
+        <div class="with-avatar t chara2 var7">
+            <div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哎，这啥也看不见……</span>
+            <audio src="vocals/robe/ったく…ここじゃ何も見えねえぞ….wav"></audio></div>
+        </div>
+        <hr>
+        <div class="pc">不知过了多久，队伍停了下来。你们眼前的景象令人窒息：巨大的石窟穹顶之下，一座由粗糙木材和绳索搭建的前哨站，依附在洞壁之上。摇摇晃晃的绳桥连接着不同的平台，下方是深不见底的黑暗深渊。
+这里就是你们的终点站——瓦肯维吾。守卫粗暴地将你们从洛斯兽背上拽下来，解开脚上系着的绳子，推搡你们走上那令人心惊胆战的绳桥，脚下的木板吱呀作响。</div>
+        <div class="pc chara3">是普通的一圈圈还是■甲缚</div>
+        <div class="pc chara2">(´∀((☆ミつ</div>
+        <div class="pc dm">是要怎么绑才能在脚上绑出■甲缚</div>
+        <div class="pc chara3">我说上半身啊</div>
+        <div class="pc dm">喔上半身啊
+            上半身只是把两只手反手捆在身后
+        </div>
+        <div class="pc chara2">万一有对脚底板情有独钟的某个卓尔武士……</div>
+        <div class="pc chara3">粥吧来的⊂彡☆))∀`)</div>
+        <div class="pc">穿过一道绳桥，卓尔们将你们推进一个牢房，为你们四人分别戴上颈环与手铐，锁上牢门便离开了。颈环与手铐有一段铁链相连，这不会影响你们的移动，但会使你们动作受限。
+你们从未想象过被卓尔俘虏这种事情，尤其是队伍中的另一名卓尔，但现在这却降临到你们身上。你们被锁在一个黑暗的洞穴中。冰凉而沉重的铁铐把你的喉咙和手腕紧紧扣着。但你们并不孤独。在这远离阳光的地下前哨站，还有其他囚徒和你们关在一起</div>
+        <div class="pc dm">导入回到此结束( ´∀`)
+            后面就是正片内容了
+        </div>
+    </div><footer>Copyright © 2025 幻岛缘游图书馆 All rights reserved.</footer><span id="editor-box">NineFrogst</span><script id="insfan-script">
+        // var aud_list = []
+        function simple_audio_play(click_elem){
+            var aud = click_elem.parentElement.getElementsByTagName('audio')[0];
+            aud.load();
+            aud.play();
+            // var src = click_elem.getAttribute('src');
+            // for (var i=0; i<aud_list.length; i++){
+            //     var aud = aud_list[i]
+            //     if (aud.src.split("/").pop() == src){
+            //         return function(){
+            //             aud.load();
+            //             aud.play();
+            //         }
+            //         console.log("return?")
+            //     } else {
+            //         console.log(aud.src.split("/").pop())
+            //     }
+            // }
+            // var aud = new Audio();
+            // aud.src = src;
+            // aud_list.push(aud);
+            // return function(){
+            //     aud.load();
+            //     aud.play();
+            // }
+        }
+        function quick_edit_display(){
+            var divEditor = document.getElementById("quick-edit")
+            if (divEditor.style.display === "none") {
+                divEditor.style.display = "block";
+            } else {
+                divEditor.style.display = "none";
+            }
+        }
+        document.getElementsByName("is-vocal").forEach(function(radio){radio.addEventListener("input", function(){
+            var pc_box = document.getElementById('edit').getElementsByClassName('pc')[0];
+            if(this.value === "true" && this.checked){
+                document.getElementById("vocal-box").style.display = "block";
+                pc_box.innerHTML = '<span class="play" onclick="simple_audio_play(this)">' + pc_box.innerHTML + '</span>';
+                pc_box.appendChild(document.createElement('audio'))
+            } else {
+                pc_box.innerHTML = pc_box.getElementsByTagName('span')[0].innerHTML // also removes <audio>
+                document.getElementById("vocal-box").style.display = "none";
+            }
+        })});
+        document.getElementById('vocal').addEventListener('input', function(){
+            var pc_box = document.getElementById('edit').getElementsByClassName('pc')[0];
+            var vocal_dir = document.getElementById('vocal-path').value
+            if (!pc_box.querySelectorAll('span.play').length){return}
+            if (!vocal_dir){vocal_dir = 'vocals/'}
+            if (vocal_dir.lastIndexOf('/') !== (vocal_dir.length - 1)){vocal_dir += '/'}
+            var vocal_file = this.value.split('\\').pop()
+            pc_box.getElementsByTagName('audio')[0].src = vocal_dir + vocal_file
+        })
+        document.getElementsByName("is-avatar").forEach(function(radio){radio.addEventListener("input", function(){
+            if(this.value === "true" && this.checked){
+                document.getElementById("is-avatar-t-box").style.display = "block";
+
+                var edit_zone = document.getElementById('edit');
+                var pc_box = document.getElementById('edit').getElementsByClassName('pc')[0];
+                var avatar_box = document.createElement('div');
+                if (document.getElementsByName("is-avatar-t")[0].checked){
+                    avatar_box.classList.add('with-avatar');
+                    avatar_box.classList.add('t');
+                } else {
+                    avatar_box.classList.add('with-avatar');
+                }
+                try {avatar_box.classList.add(document.getElementById('chara').value);} catch {}
+                try {avatar_box.classList.add(document.getElementById('chara-var').value);} catch {}
+
+                document.getElementsByName("is-avatar-t").forEach(function(radio){radio.addEventListener("input", function(){
+                    if (this.value === "true" && this.checked){
+                        avatar_box.classList.add('t');
+                    } else {
+                        avatar_box.classList.remove('t');
+                    }
+                    if (document.getElementById('chara').value) {
+                        avatar_box.classList.add(document.getElementById('chara').value);
+                    }
+                    if (document.getElementById('chara-var').value) {
+                        avatar_box.classList.add(document.getElementById('chara-var').value);
+                    }
+                    avatar_box.innerHTML = document.getElementById('edit').getElementsByClassName('pc')[0].outerHTML;
+                    edit_zone.innerHTML = avatar_box.outerHTML;
+                })})
+                avatar_box.appendChild(pc_box)
+                edit_zone.innerHTML = avatar_box.outerHTML
+            } else {
+                document.getElementById("is-avatar-t-box").style.display = "none";
+                document.getElementById('edit').innerHTML = document.getElementById('edit').getElementsByClassName('pc')[0].outerHTML;
+            }
+        })});
+        document.querySelectorAll('input[type="submit"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var to_save = document.getElementById('edit').cloneNode(true).getElementsByTagName('div')[0];
+            var box = document.getElementById('preview')
+            if (document.getElementsByName("is-reply")[0].checked) {
+                var pc_preview = Array.from(document.getElementById('preview').getElementsByClassName('pc')).reverse();
+                for (var i = 0; i<pc_preview.length; i++){
+                    if (!Array.from(pc_preview[i].parentNode.classList).includes('pc')){
+                        box = pc_preview[i]
+                        break
+                    }
+                }
+            }
+            box.appendChild(to_save)
+        });
+        document.querySelectorAll('button[value="delete"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var box = document.getElementById('preview');
+            var all_children = Array.from(box.children).reverse();
+            if (all_children[0].tagName === 'HR'){
+                all_children[0].parentNode.removeChild(all_children[0])
+                return
+            }
+            var pc_preview = Array.from(document.getElementById('preview').getElementsByClassName('pc')).reverse();
+            if (!pc_preview.length){return}
+            if (Array.from(pc_preview[0].parentNode.classList).includes('with-avatar')){
+                var to_delete = pc_preview[0].parentNode;
+            } else {
+                var to_delete = pc_preview[0];
+            }
+            to_delete.parentNode.removeChild(to_delete);
+        })
+        document.querySelectorAll('button[value="hr"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var div_line = document.createElement('hr')
+            document.getElementById('preview').appendChild(div_line)
+        })
+        document.querySelectorAll('button[value="battle-start"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var div_line = document.createElement('hr')
+            div_line.classList.add('battle')
+            document.getElementById('preview').appendChild(div_line)
+        })
+        document.querySelectorAll('button[value="battle-over"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var div_line = document.createElement('hr')
+            div_line.classList.add('battle')
+            div_line.classList.add('over')
+            document.getElementById('preview').appendChild(div_line)
+        })
+        document.querySelectorAll('button[value="chap-title"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var preview_box = document.getElementById('preview');
+            if (preview_box.firstChild.tagName !== 'H2' && preview_box.firstChild.nextSibling.tagName !== 'H2'){
+                if (document.getElementById('chap-title').value === ""){return}
+                var chap_title = document.createElement('h2');
+                chap_title.innerText = document.getElementById('chap-title').value;
+                document.getElementById('preview').prepend(chap_title);
+            } else if (document.getElementById('chap-title').value === "") {
+                preview_box.removeChild(preview_box.getElementsByTagName('h2')[0]);
+            } else {
+                preview_box.getElementsByTagName('h2')[0].innerText = document.getElementById('chap-title').value;
+            }
+        })
+        document.querySelectorAll('input[type="reset"]')[0].addEventListener('click', function(event){
+            var to_hide = [
+                document.getElementById('others'),
+                document.getElementById('is-avatar-t-box'),
+                document.getElementById('vocal-box'),
+                document.getElementById('dice-box'),
+            ];
+            var to_show = [
+                document.getElementById('chara-box'),
+                document.getElementById('dialogue-box'),
+                document.getElementById('is-avatar-box'),
+                document.getElementById('is-action-box'),
+                document.getElementById('is-vocal-box')
+            ];
+            to_hide.forEach(function(elem){
+                elem.style.display = 'none';
+            });
+            to_show.forEach(function(elem){
+                elem.style.display = 'block';
+            });
+            document.getElementById('edit').innerHTML = '<div class="pc"></div>'
+            document.getElementById('vocal-path').defaultValue = document.getElementById('vocal-path').value
+        });
+        document.getElementById('dialogue').addEventListener('input', function(){
+            var pc_box = document.getElementById('edit').getElementsByClassName('pc')[0]
+            var play_span = pc_box.querySelector('span.play');
+            if (play_span){
+                play_span.innerText = this.value;
+            } else {
+                pc_box.innerText = this.value;
+            }
+        });
+        document.getElementById('chara').addEventListener('change', function(){
+            if (this.value === 'npc'){
+                var npc_name = this.parentElement.getElementsByTagName('input')[0];
+                npc_name.style.display = 'inline';
+                npc_name.addEventListener('input', function(){
+                    document.getElementById('edit').getElementsByClassName('pc')[0].id = this.value;
+                });
+            } else {
+                this.parentElement.getElementsByTagName('input')[0].style.display = 'none';
+            }
+            var pc_box = document.getElementById('edit').getElementsByClassName('pc')[0]
+            var option_arr = []
+            for (var i = 0; i<this.length; i++){
+                option_arr.push(this[i].value)
+            }
+            for (var j = 0; j < pc_box.classList.length; j++){
+                if(option_arr.includes(pc_box.classList[j])){
+                    pc_box.classList.remove(pc_box.classList[j]);
+                    break
+                } 
+            }
+            if (this.value) {
+                pc_box.classList.add(this.value);
+            }
+            var is_with_avatar = document.getElementById('edit').getElementsByClassName('with-avatar');
+            if (!is_with_avatar.length){
+                return
+            }
+            avatar_box = is_with_avatar[0]
+            for (var j = 0; j < avatar_box.classList.length; j++){
+                if(option_arr.includes(avatar_box.classList[j])){
+                    avatar_box.classList.remove(avatar_box.classList[j]);
+                    break
+                }
+            }
+            if (this.value) {
+                avatar_box.classList.add(this.value);
+            }
+        });
+        document.getElementById('chara-var').addEventListener('change', function(){
+            var is_with_avatar = document.getElementById('edit').getElementsByClassName('with-avatar');
+            if (!is_with_avatar.length){
+                return
+            }
+            avatar_box = is_with_avatar[0]
+            var option_arr = []
+            for (var i = 0; i<this.length; i++){
+                option_arr.push(this[i].value)
+            }
+            for (var j = 0; j < avatar_box.classList.length; j++){
+                if (option_arr.includes(avatar_box.classList[j])){
+                    avatar_box.classList.remove(avatar_box.classList[j]);
+                    break
+                }
+            }
+            if (this.value) {
+                avatar_box.classList.add(this.value);
+            }
+        });
+        document.getElementsByName('is-action').forEach(function(radio){radio.addEventListener("input", function(){
+            if (this.value === "true" && this.checked){
+                document.getElementById('edit').getElementsByClassName('pc')[0].classList.add('action');
+            } else {
+                document.getElementById('edit').getElementsByClassName('pc')[0].classList.remove('action');
+            }
+        })})
+        document.getElementsByName("is-dice").forEach(function(radio){radio.addEventListener("input", function(){
+            var to_hide = [
+                document.getElementById('others'),
+                document.getElementById('is-avatar-t-box'),
+                document.getElementById('vocal-box')
+            ];
+            var to_show = [
+                document.getElementById('chara-box'),
+                document.getElementById('dialogue-box'),
+                document.getElementById('is-avatar-box'),
+                document.getElementById('is-action-box'),
+                document.getElementById('is-vocal-box')
+            ];
+            if(this.value === "true" && this.checked){
+                to_hide.forEach(function(elem){
+                    elem.style.display = 'none';
+                });
+                to_show.forEach(function(elem){
+                    elem.style.display = 'none';
+                });
+                document.getElementById('dice-box').style.display = 'block';
+                document.getElementById('edit').innerHTML = '<div class="pc dice"><span class="check-type">：</span><span class="result">0</span><span class="ranking"></span></div>';
+                document.getElementById('check-type').addEventListener('input', function(){
+                    document.getElementById('edit').getElementsByClassName('check-type')[0].innerText = this.value + '：';
+                });
+            } else {
+                to_show.forEach(function(elem){
+                    elem.style.display = 'block';
+                });
+                document.getElementById('dice-box').style.display = 'none';
+                document.getElementById('edit').innerHTML = '<div class="pc"></div>';
+            }
+        })});
+        document.getElementById('dice-type').addEventListener('change', function(){
+            if (this.value === 'custom') {
+                document.querySelectorAll('input#dice-custom')[0].style.display = 'inline';
+            } else {
+                document.querySelectorAll('input#dice-custom')[0].style.display = 'none';
+            }
+        });
+        document.getElementById('dice-ranking').addEventListener('change', function(){
+            var ranking = this.querySelectorAll('option[value="'+this.value+'"]')[0].label;
+            if (!this.value){ranking = this.value}
+            document.querySelectorAll('div#edit>div.pc.dice>span.ranking')[0].innerText = ranking;
+        });
+        document.querySelectorAll('button[value="add-dice"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var new_roll = document.createElement('span');
+            new_roll.classList.add('dice');
+            var dice_count = document.getElementById('dice-count').value;
+            if (document.getElementById('dice-type').value === 'custom'){
+                var dice_type = 'D' + document.querySelectorAll('input#dice-custom')[0].value;
+            } else {
+                var dice_type = document.getElementById('dice-type').value;
+            }
+            var dice_result = document.getElementById('dice-result').value;
+            dice_result = dice_result ? dice_result : 1;
+            new_roll.setAttribute("name", dice_count + dice_type);
+            new_roll.innerText += dice_result;
+            var pc_box = document.getElementById('edit').getElementsByClassName('pc dice')[0]
+            if (document.querySelectorAll('div#edit>div.pc.dice>span.dice').length){
+                pc_box.insertBefore(document.createTextNode('+ '), document.querySelectorAll('div#edit>div.pc.dice>span.result')[0]);
+            }
+            pc_box.insertBefore(new_roll, document.querySelectorAll('div#edit>div.pc.dice>span.result')[0]);
+            dice_update();
+        });
+         document.querySelectorAll('button[value="del-dice"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var all_roll = document.querySelectorAll('div#edit>div.pc.dice>span.dice');
+            var dice_to_del = all_roll[all_roll.length - 1];
+            var pc_box = document.querySelectorAll('div#edit>div.pc.dice')[0];
+            if (!all_roll.length){return}
+            if (all_roll.length-1){
+                pc_box.removeChild(dice_to_del.previousSibling);
+            }
+            pc_box.removeChild(dice_to_del);
+            dice_update();
+        });
+        document.querySelectorAll('button[value="add-bonus"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var new_bonus = document.createElement('span');
+            new_bonus.classList.add('bonus');
+            var bonus_count = document.getElementById('dice-bonus').value;
+            bonus_count = bonus_count ? bonus_count : 0;
+            if (bonus_count < 0){
+                new_bonus.classList.add('down');
+                bonus_count = - bonus_count;
+            } else {
+                new_bonus.classList.add('up');
+            }
+            new_bonus.innerText += bonus_count;
+            var pc_box = document.getElementById('edit').getElementsByClassName('pc dice')[0]
+            pc_box.insertBefore(new_bonus, document.querySelectorAll('div#edit>div.pc.dice>span.result')[0]);
+            dice_update();
+        });
+         document.querySelectorAll('button[value="del-bonus"]')[0].addEventListener('click', function(event){
+            event.preventDefault();
+            var all_bonus = document.querySelectorAll('div#edit>div.pc.dice>span.bonus');
+            var bonus_to_del = all_bonus[all_bonus.length - 1];
+            var pc_box = document.querySelectorAll('div#edit>div.pc.dice')[0];
+            if (!all_bonus.length){return}
+            pc_box.removeChild(bonus_to_del);
+            dice_update();
+        });
+        function dice_update(){
+            var all_roll = document.querySelectorAll('div#edit>div.pc.dice>span.dice');
+            var all_bonus= document.querySelectorAll('div#edit>div.pc.dice>span.bonus');
+            var result_num = 0;
+            for (var i = 0; i<all_roll.length; i++){
+                result_num += parseInt(all_roll[i].innerText);
+            }
+            for (var i = 0; i<all_bonus.length; i++){
+                if (Array.from(all_bonus[i].classList).includes('down')){
+                    result_num -= parseInt(all_bonus[i].innerText);
+                } else {
+                    result_num += parseInt(all_bonus[i].innerText);
+                }
+            }
+            var total_result = document.querySelectorAll('div#edit>div.pc.dice>span.result')[0];
+            total_result.innerText = String(result_num)
+        }
+
+        document.querySelectorAll('button[value="save"]')[0].addEventListener('click',function(event){
+            event.preventDefault();
+            var new_html = document.createElement('html');
+            new_html.lang = 'en';
+            var new_head = document.createElement('head');
+            var new_style = document.getElementById('insfan-style').cloneNode(true);
+            var new_body = document.createElement('body');
+            var new_script = document.getElementById('insfan-script').cloneNode(true);
+
+            
+            var new_meta1 = document.createElement('meta');
+            var new_meta2 = document.createElement('meta');
+            var new_title = document.createElement('title');
+            new_meta1.setAttribute('charset', 'UTF-8');
+            new_meta2.setAttribute('name', "viewport");
+            new_meta2.setAttribute('content', "width=device-width, initial-scale=1.0");
+            new_title.innerText = 'DnD记录 ~ 幻岛缘游图书馆';
+            new_head.appendChild(new_meta1);
+            new_head.appendChild(new_meta2);
+            new_head.appendChild(new_title);
+            new_head.appendChild(new_style);
+            var to_export = document.getElementById('preview').cloneNode(true);
+            to_export.removeAttribute("id");
+            to_export.classList.add('container');
+            if (to_export.firstChild.nextSibling.tagName !== 'H2'){
+                to_export.prepend(document.createElement('br'));
+            }
+            var new_footer = document.getElementsByTagName('footer')[0].cloneNode(true);
+            new_footer.removeChild(new_footer.getElementsByTagName('u')[0]);
+            new_footer.removeChild(new_footer.getElementsByTagName('br')[0]);
+            new_body.appendChild(to_export);
+            new_body.appendChild(new_footer);
+            new_body.appendChild(new_script);
+
+            new_html.appendChild(new_head);
+            new_html.appendChild(new_body);
+
+            var new_file_data = '<!DOCTYPE html>\n' + new_html.outerHTML;
+            var blob = new Blob([new_file_data], {type: 'text/html'});
+            var url = URL.createObjectURL(blob)
+            var new_file = document.createElement('a');
+            new_file.href = url;
+            new_file.download = 'new_report.html'
+            document.body.appendChild(new_file)
+            new_file.click()
+            document.body.removeChild(new_file)
+            URL.revokeObjectURL(url);
+        })
+    </script></body></html>

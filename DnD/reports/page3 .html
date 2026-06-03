@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DnD记录 ~ 幻岛缘游图书馆</title><style id="insfan-style">
+    :root {
+        --dm: "卡德罗斯";
+
+        --chara1: "安特纳尔";
+        --chara1-color: rgb(240, 93, 93);
+        --chara1-bg: transparent;
+        --chara1-box: brown;
+        --chara1-pl: "pincherryus";
+        --chara1-ico: var(--fighter);
+        --chara1-pic:  url(avatar/antnar/0.png);
+        --chara1-pic1: url(avatar/antnar/1.png);
+        --chara1-pic2: url(avatar/antnar/2.png);
+        --chara1-pic3: url(avatar/antnar/3.png);
+        --chara1-pic4: url(avatar/antnar/4.png);
+        --chara1-pic5: url(avatar/antnar/5.png);
+        --chara1-pic6: url(avatar/antnar/6.png);
+        --chara1-pic7: url(avatar/antnar/7.png);
+        --chara1-pic8: url(avatar/antnar/8.png);
+        --chara1-pic9: url(avatar/antnar/9.png);
+        --chara1-pic10: url(avatar/antnar/10.png);
+        --chara1-pic11: url(avatar/antnar/11.png);
+        --chara1-pic12: url(avatar/antnar/12.png);
+        --chara1-pic13: url(avatar/antnar/13.png);
+        --chara1-pic14: url(avatar/antnar/14.png);
+        --chara1-pic15: url(avatar/antnar/15.png);
+        --chara1-pic16: url(avatar/antnar/16.png);
+        --chara1-pic17: url(avatar/antnar/17.png);
+        --chara1-pic18: url(avatar/antnar/18.png);
+        --chara1-pic19: url(avatar/antnar/19.png);
+        --chara1-pic20: url(avatar/antnar/20.png);
+
+        --chara2: "罗·卡文迪许";
+        --chara2-color: #a790f3;
+        --chara2-bg: transparent;
+        --chara2-box: #44299e;
+        --chara2-pl: "NineFrogst";
+        --chara2-ico: var(--sorcerer);
+        --chara2-pic:  url(avatar/robe/0.png);
+        --chara2-pic1: url(avatar/robe/1.png);
+        --chara2-pic2: url(avatar/robe/2.png);
+        --chara2-pic3: url(avatar/robe/3.png);
+        --chara2-pic4: url(avatar/robe/4.png);
+        --chara2-pic5: url(avatar/robe/5.png);
+        --chara2-pic6: url(avatar/robe/6.png);
+        --chara2-pic7: url(avatar/robe/7.png);
+        --chara2-pic8: url(avatar/robe/8.png);
+        --chara2-pic9: url(avatar/robe/9.png);
+        --chara2-pic10: url(avatar/robe/10.png);
+        --chara2-pic11: url(avatar/robe/11.png);
+        --chara2-pic12: url(avatar/robe/12.png);
+        --chara2-pic13: url(avatar/robe/13.png);
+        --chara2-pic14: url(avatar/robe/14.png);
+        --chara2-pic15: url(avatar/robe/15.png);
+        --chara2-pic16: url(avatar/robe/16.png);
+        --chara2-pic17: url(avatar/robe/17.png);
+        --chara2-pic18: url(avatar/robe/18.png);
+        --chara2-pic19: url(avatar/robe/19.png);
+        --chara2-pic20: url(avatar/robe/20.png);
+
+        --chara3: "柏里斯";
+        --chara3-color: burlywood;
+        --chara3-bg: transparent;
+        --chara3-box: peru;
+        --chara3-pl: "咸咸i";
+        --chara3-ico: var(--bard);
+        --chara3-pic:  url(avatar/baileys/0.png);
+        --chara3-pic1: url(avatar/baileys/1.png);
+        --chara3-pic2: url(avatar/baileys/2.png);
+        --chara3-pic3: url(avatar/baileys/3.png);
+        --chara3-pic4: url(avatar/baileys/4.png);
+        --chara3-pic5: url(avatar/baileys/5.png);
+        --chara3-pic6: url(avatar/baileys/6.png);
+        --chara3-pic7: url(avatar/baileys/7.png);
+        --chara3-pic8: url(avatar/baileys/8.png);
+        --chara3-pic9: url(avatar/baileys/9.png);
+        --chara3-pic10: url(avatar/baileys/10.png);
+        --chara3-pic11: url(avatar/baileys/11.png);
+        --chara3-pic12: url(avatar/baileys/12.png);
+        --chara3-pic13: url(avatar/baileys/13.png);
+        --chara3-pic14: url(avatar/baileys/14.png);
+        --chara3-pic15: url(avatar/baileys/15.png);
+        --chara3-pic16: url(avatar/baileys/16.png);
+        --chara3-pic17: url(avatar/baileys/17.png);
+        --chara3-pic18: url(avatar/baileys/18.png);
+        --chara3-pic19: url(avatar/baileys/19.png);
+        --chara3-pic20: url(avatar/baileys/20.png);
+
+        --chara4: "“豺狼”";
+        --chara4-color: limegreen;
+        --chara4-bg: transparent;
+        --chara4-box: darkgreen;
+        --chara4-pl: "Daybreak";
+        --chara4-ico: var(--monk);
+        --chara4-pic:  url(avatar/placeholder/0.png);
+        --chara4-pic1: url(avatar/placeholder/1.png);
+        --chara4-pic2: url(avatar/placeholder/2.png);
+        --chara4-pic3: url(avatar/placeholder/3.png);
+        --chara4-pic4: url(avatar/placeholder/4.png);
+        --chara4-pic5: url(avatar/placeholder/5.png);
+        --chara4-pic6: url(avatar/placeholder/6.png);
+        --chara4-pic7: url(avatar/placeholder/7.png);
+        --chara4-pic8: url(avatar/placeholder/8.png);
+        --chara4-pic9: url(avatar/placeholder/9.png);
+        --chara4-pic10: url(avatar/placeholder/10.png);
+        --chara4-pic11: url(avatar/placeholder/11.png);
+        --chara4-pic12: url(avatar/placeholder/12.png);
+        --chara4-pic13: url(avatar/placeholder/13.png);
+        --chara4-pic14: url(avatar/placeholder/14.png);
+        --chara4-pic15: url(avatar/placeholder/15.png);
+        --chara4-pic16: url(avatar/placeholder/16.png);
+        --chara4-pic17: url(avatar/placeholder/17.png);
+        --chara4-pic18: url(avatar/placeholder/18.png);
+        --chara4-pic19: url(avatar/placeholder/19.png);
+        --chara4-pic20: url(avatar/placeholder/20.png);
+
+        --barbarian: url(classes/barbarian.png);
+        --bard: url(classes/bard.png);
+        --cleric: url(classes/cleric.png);
+        --druid: url(classes/druid.png);
+        --fighter: url(classes/fighter.png);
+        --monk: url(classes/monk.png);
+        --paladin: url(classes/paladin.png);
+        --ranger: url(classes/ranger.png);
+        --rogue: url(classes/rogue.png);
+        --sorcerer: url(classes/sorcerer.png);
+        --warlock: url(classes/warlock.png);
+        --wizard: url(classes/wizard.png);
+        --dm-dice: url(classes/dm_dice.png);
+
+        --avatar-size: 80px;
+
+        --palette-a: brown;
+        --palette-b: rgb(242, 204, 167);
+        --palette-bg: rgba(242, 204, 167, 0.8);
+        --palette-da: rgba(165, 42, 42, 0.5);
+        --palette-db: rgba(242, 204, 167, 0.5);
+        --palette-dm: black;
+
+        --palette-1-a: hsl(248, 90%, 90%);
+        --palette-1-aa: hsla(248, 90%, 90%, 0.7);
+        --palette-1-b: rgb(71, 61, 139);
+        --palette-1-bg: rgba(71, 61, 139, 0.8);
+        --palette-1-da: hsla(248, 90%, 90%, 0.5);
+        --palette-1-db: rgba(71, 61, 139, 0.5);
+        --palette-1-dm: white;
+
+        --fg: var(--palette-1-a);
+        --fga: var(--palette-1-aa);
+        --bg: var(--palette-1-b);
+        --bga: var(--palette-1-bg);
+        --fgd: var(--palette-1-da);
+        --bgd: var(--palette-1-db);
+        --fgdm: var(--palette-1-dm);
+    }
+    body {
+        background-image: url(underdark.jpg);
+        background-repeat: repeat-y;
+        background-size: 200%;
+        background-position: top;
+    }
+    footer {
+        color: var(--bg);
+        background-color: var(--fg);
+        width: fit-content;
+        margin: auto;
+        padding: 1px 5px 1px;
+        border: 2px solid var(--bg);
+        border-radius: 8px;
+        font-size: smaller;
+        font-weight: bold;
+        font-family: 'Consolas', '微软雅黑', monospace;
+        text-align: center;
+    }
+    footer > u.switcher {
+        cursor: pointer;
+        display: inline;
+    }
+    div.container {
+        background-color: var(--bga);
+        background-blend-mode: multiply;
+        border: 1px solid black;
+        padding: 0px 10px 20px;
+        margin-bottom: 20px;
+        color: var(--fg);
+        font-family: 'Bookman Old Style', '方正标雅宋_GBK', serif;
+        font-size: 16px;
+    }
+
+    div.pc {
+        padding-left: 2em;
+        margin-bottom: 5px;
+        white-space: pre-line;
+        font-style: normal;
+    }
+    div.pc.action {
+        font-style: italic;
+    }
+    div.pc::before {
+        --bgcolor: transparent;
+        margin-left: -2em;
+        padding-left: 20px;
+        border-left: 5px solid var(--bgcolor);
+        content: "旁白: ";
+        display: block;
+        font-weight: bold;
+        font-style: normal;
+        background-image: var(--dm-dice);
+        background-position: left center;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-color: var(--bgcolor);
+        width: fit-content;
+    }
+    div.pc.dice::before {
+        content: "掷骰: ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.dm::before {
+        content: "DM（" var(--dm) "）: ";
+        color: var(--fgdm);
+        background-image: var(--dm-dice);
+    }
+    div.pc.npc::before {
+        content: attr(name)": ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.blank::before {
+        content: attr(name)": ";
+        background-image: var(--dm-dice);
+    }
+    div.pc.chara1::before {
+        content: var(--chara1-pl) "（" var(--chara1) "）: ";
+        color: var(--chara1-color);
+        background-color: var(--chara1-bg);
+        background-image: var(--chara1-ico);
+    }
+    div.pc.chara2::before {
+        content: var(--chara2-pl) "（" var(--chara2) "）: ";
+        color: var(--chara2-color);
+        background-color: var(--chara2-bg);
+        background-image: var(--chara2-ico);
+    }
+    div.pc.chara3::before {
+        content: var(--chara3-pl) "（" var(--chara3) "）: ";
+        color: var(--chara3-color);
+        background-color: var(--chara3-bg);
+        background-image: var(--chara3-ico);
+    }
+    div.pc.chara4::before {
+        content: var(--chara4-pl) "（" var(--chara4) "）: ";
+        color: var(--chara4-color);
+        background-color: var(--chara4-bg);
+        background-image: var(--chara4-ico);
+    }
+
+    q {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+        white-space: pre-line;
+    }
+
+    div.profile {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+
+    div.profile > div.avatar {
+        float: left;
+        width: 140px;
+        margin: 5px;
+        margin-bottom: 0;
+        padding: 5px;
+        text-align: center;
+    }
+    div.profile::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.avatar > img {
+        margin: auto;
+        width: var(--avatar-size);
+        border: 3px solid var(--fg);
+    }
+    div.profile > div.avatar > img {
+        width: 120px;
+        border: 3px solid var(--bg);
+        background-color: white;
+    }
+    div.avatar > p {
+        margin: 5px;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+    div.avatar > p > span.pl {
+        display: block;
+        font-size: smaller;
+    }
+    div.profile > div.description > span {
+        white-space: pre-line;
+    }
+
+    hr {
+        border: 1px solid var(--fg);
+        box-shadow: 0px 0px 5px var(--fg);
+    }
+    hr.battle {
+        text-align: center;
+        display: block;
+        line-height: 0px;
+        height: 0;
+        overflow: visible;
+    }
+    hr.battle::after {
+        content: "　战斗开始 ！";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+    hr.battle.over::after {
+        content: "　战斗结束 ！";
+    }
+    hr#hr-cursor {
+        text-align: center;
+        display: block;
+        line-height: 0px;
+        height: 0;
+        overflow: visible;
+    }
+    /* hr#hr-cursor::before {
+        content: "↑上移 ";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+    hr#hr-cursor::after {
+        content: " 下移↓";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    } */
+    hr#hr-cursor > span {
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+
+    div.initiative {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: grid;
+        place-items: center;
+        width: fit-content;
+        min-width: 40%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+    div.initiative::before {
+        display: block;
+        width: 100%;
+        content: "先攻表";
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--bg);
+        margin-bottom: 5px;
+    }
+    div.initiative > div.pc {
+        min-width: 300px;
+    }
+    div.initiative > div.pc::before {
+        display: inline-block;
+        width: fit-content;
+        min-width: 110px;
+        margin-left: 0px;
+        /* text-shadow: 0px 0px 3px var(--bg); */
+    }div.initiative > div.pc.chara1::before {
+        content: var(--chara1) "：";
+        color: var(--chara1-box);
+        background-color: var(--chara1-bg);
+        background-image: var(--chara1-ico);
+    }
+    div.initiative > div.pc.chara2::before {
+        content: var(--chara2) "：";
+        color: var(--chara2-box);
+        background-color: var(--chara2-bg);
+        background-image: var(--chara2-ico);
+    }
+    div.initiative > div.pc.chara3::before {
+        content: var(--chara3) "：";
+        color: var(--chara3-box);
+        background-color: var(--chara3-bg);
+        background-image: var(--chara3-ico);
+    }
+    div.initiative > div.pc.chara4::before {
+        content: var(--chara4) "：";
+        color: var(--chara4-box);
+        background-color: var(--chara4-bg);
+        background-image: var(--chara4-ico);
+    }
+
+    span.dice {
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    span.dice::before {
+        content: attr(name);
+        font-size: smaller;
+        display: inline-block;
+        overflow: visible;
+        color: var(--fgd);
+    }
+    div.initiative span.dice::before {
+        color: var(--bgd);
+    }
+    span.bonus, span.result {
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+    span.bonus.up::before {
+        content: '+ ';
+    }
+    span.bonus.down::before {
+        content: '- ';
+    }
+    span.result::before {
+        content: '= ';
+    }
+    span.ranking {
+        font-weight: bold;
+    }
+
+    div.with-avatar {
+        margin-bottom: 7px;
+        padding: 5px;
+        background-color: var(--fga);
+        color: var(--bg);
+        border-radius: 5px;
+    }
+    div.with-avatar > div.pc {
+        margin-left: 100px;
+        padding-top: 16px;
+        padding-left: 25px;
+    }
+    div.with-avatar > div.pc::before {
+        border-radius: 5px;
+        padding-right: 5px;
+        margin-bottom: 5px;
+        margin-left: -25px;
+    }
+    div.with-avatar::before {
+        display: block;
+        float: left;
+        background-color: white;
+        background-size: var(--avatar-size);
+        background-repeat: no-repeat;
+        content: "";
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border: 3px solid var(--fg);
+        margin-left: 3px;
+    }
+    div.with-avatar::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.pc > span.play {
+        cursor: pointer;
+    }
+    div.pc > span.play::after {
+        content: "🔊";
+        display: inline-block;
+        cursor: pointer;
+    }
+    div.with-avatar.t::before {
+        background-color: transparent;
+        background-size: 86px;
+        width: 86px;
+        height: 86px;
+        border: 0px;
+    }
+
+    div.with-avatar.chara1::before {
+        background-image: var(--chara1-pic);
+    }
+    div.with-avatar.chara1 > div.pc::before {
+        content: var(--chara1);
+        color: white;
+        background-color: var(--chara1-box);
+    }
+    div.with-avatar.chara1.var1::before {
+        background-image: var(--chara1-pic1);
+    }
+    div.with-avatar.chara1.var2::before {
+        background-image: var(--chara1-pic2);
+    }
+    div.with-avatar.chara1.var3::before {
+        background-image: var(--chara1-pic3);
+    }
+    div.with-avatar.chara1.var4::before {
+        background-image: var(--chara1-pic4);
+    }
+    div.with-avatar.chara1.var5::before {
+        background-image: var(--chara1-pic5);
+    }
+    div.with-avatar.chara1.var6::before {
+        background-image: var(--chara1-pic6);
+    }
+    div.with-avatar.chara1.var7::before {
+        background-image: var(--chara1-pic7);
+    }
+    div.with-avatar.chara1.var8::before {
+        background-image: var(--chara1-pic8);
+    }
+    div.with-avatar.chara1.var9::before {
+        background-image: var(--chara1-pic9);
+    }
+    div.with-avatar.chara1.var10::before {
+        background-image: var(--chara1-pic10);
+    }
+    div.with-avatar.chara1.var11::before {
+        background-image: var(--chara1-pic11);
+    }
+    div.with-avatar.chara1.var12::before {
+        background-image: var(--chara1-pic12);
+    }
+    div.with-avatar.chara1.var13::before {
+        background-image: var(--chara1-pic13);
+    }
+    div.with-avatar.chara1.var14::before {
+        background-image: var(--chara1-pic14);
+    }
+    div.with-avatar.chara1.var15::before {
+        background-image: var(--chara1-pic15);
+    }
+    div.with-avatar.chara1.var16::before {
+        background-image: var(--chara1-pic16);
+    }
+    div.with-avatar.chara1.var17::before {
+        background-image: var(--chara1-pic17);
+    }
+    div.with-avatar.chara1.var18::before {
+        background-image: var(--chara1-pic18);
+    }
+    div.with-avatar.chara1.var19::before {
+        background-image: var(--chara1-pic19);
+    }
+    div.with-avatar.chara1.var20::before {
+        background-image: var(--chara1-pic20);
+    }
+
+    div.with-avatar.chara2::before {
+        background-image: var(--chara2-pic);
+    }
+    div.with-avatar.chara2 > div.pc::before {
+        content: var(--chara2);
+        color: white;
+        background-color: var(--chara2-box);
+    }
+    div.with-avatar.chara2.var1::before {
+        background-image: var(--chara2-pic1);
+    }
+    div.with-avatar.chara2.var2::before {
+        background-image: var(--chara2-pic2);
+    }
+    div.with-avatar.chara2.var3::before {
+        background-image: var(--chara2-pic3);
+    }
+    div.with-avatar.chara2.var4::before {
+        background-image: var(--chara2-pic4);
+    }
+    div.with-avatar.chara2.var5::before {
+        background-image: var(--chara2-pic5);
+    }
+    div.with-avatar.chara2.var6::before {
+        background-image: var(--chara2-pic6);
+    }
+    div.with-avatar.chara2.var7::before {
+        background-image: var(--chara2-pic7);
+    }
+    div.with-avatar.chara2.var8::before {
+        background-image: var(--chara2-pic8);
+    }
+    div.with-avatar.chara2.var9::before {
+        background-image: var(--chara2-pic9);
+    }
+    div.with-avatar.chara2.var10::before {
+        background-image: var(--chara2-pic10);
+    }
+    div.with-avatar.chara2.var11::before {
+        background-image: var(--chara2-pic11);
+    }
+    div.with-avatar.chara2.var12::before {
+        background-image: var(--chara2-pic12);
+    }
+    div.with-avatar.chara2.var13::before {
+        background-image: var(--chara2-pic13);
+    }
+    div.with-avatar.chara2.var14::before {
+        background-image: var(--chara2-pic14);
+    }
+    div.with-avatar.chara2.var15::before {
+        background-image: var(--chara2-pic15);
+    }
+    div.with-avatar.chara2.var16::before {
+        background-image: var(--chara2-pic16);
+    }
+    div.with-avatar.chara2.var17::before {
+        background-image: var(--chara2-pic17);
+    }
+    div.with-avatar.chara2.var18::before {
+        background-image: var(--chara2-pic18);
+    }
+    div.with-avatar.chara2.var19::before {
+        background-image: var(--chara2-pic19);
+    }
+    div.with-avatar.chara2.var20::before {
+        background-image: var(--chara2-pic20);
+    }
+
+    div.with-avatar.chara3::before {
+        background-image: var(--chara3-pic);
+    }
+    div.with-avatar.chara3 > div.pc::before {
+        content: var(--chara3);
+        color: white;
+        background-color: var(--chara3-box);
+    }
+    div.with-avatar.chara3.var1::before {
+        background-image: var(--chara3-pic1);
+    }
+    div.with-avatar.chara3.var2::before {
+        background-image: var(--chara3-pic2);
+    }
+    div.with-avatar.chara3.var3::before {
+        background-image: var(--chara3-pic3);
+    }
+    div.with-avatar.chara3.var4::before {
+        background-image: var(--chara3-pic4);
+    }
+    div.with-avatar.chara3.var5::before {
+        background-image: var(--chara3-pic5);
+    }
+    div.with-avatar.chara3.var6::before {
+        background-image: var(--chara3-pic6);
+    }
+    div.with-avatar.chara3.var7::before {
+        background-image: var(--chara3-pic7);
+    }
+    div.with-avatar.chara3.var8::before {
+        background-image: var(--chara3-pic8);
+    }
+    div.with-avatar.chara3.var9::before {
+        background-image: var(--chara3-pic9);
+    }
+    div.with-avatar.chara3.var10::before {
+        background-image: var(--chara3-pic10);
+    }
+    div.with-avatar.chara3.var11::before {
+        background-image: var(--chara3-pic11);
+    }
+    div.with-avatar.chara3.var12::before {
+        background-image: var(--chara3-pic12);
+    }
+    div.with-avatar.chara3.var13::before {
+        background-image: var(--chara3-pic13);
+    }
+    div.with-avatar.chara3.var14::before {
+        background-image: var(--chara3-pic14);
+    }
+    div.with-avatar.chara3.var15::before {
+        background-image: var(--chara3-pic15);
+    }
+    div.with-avatar.chara3.var16::before {
+        background-image: var(--chara3-pic16);
+    }
+    div.with-avatar.chara3.var17::before {
+        background-image: var(--chara3-pic17);
+    }
+    div.with-avatar.chara3.var18::before {
+        background-image: var(--chara3-pic18);
+    }
+    div.with-avatar.chara3.var19::before {
+        background-image: var(--chara3-pic19);
+    }
+    div.with-avatar.chara3.var20::before {
+        background-image: var(--chara3-pic20);
+    }
+
+    div.with-avatar.chara4::before {
+        background-image: var(--chara4-pic);
+    }
+    div.with-avatar.chara4 > div.pc::before {
+        content: var(--chara4);
+        color: white;
+        background-color: var(--chara4-box);
+    }
+    div.with-avatar.chara4.var1::before {
+        background-image: var(--chara4-pic1);
+    }
+    div.with-avatar.chara4.var2::before {
+        background-image: var(--chara4-pic2);
+    }
+    div.with-avatar.chara4.var3::before {
+        background-image: var(--chara4-pic3);
+    }
+    div.with-avatar.chara4.var4::before {
+        background-image: var(--chara4-pic4);
+    }
+    div.with-avatar.chara4.var5::before {
+        background-image: var(--chara4-pic5);
+    }
+    div.with-avatar.chara4.var6::before {
+        background-image: var(--chara4-pic6);
+    }
+    div.with-avatar.chara4.var7::before {
+        background-image: var(--chara4-pic7);
+    }
+    div.with-avatar.chara4.var8::before {
+        background-image: var(--chara4-pic8);
+    }
+    div.with-avatar.chara4.var9::before {
+        background-image: var(--chara4-pic9);
+    }
+    div.with-avatar.chara4.var10::before {
+        background-image: var(--chara4-pic10);
+    }
+    div.with-avatar.chara4.var11::before {
+        background-image: var(--chara4-pic11);
+    }
+    div.with-avatar.chara4.var12::before {
+        background-image: var(--chara4-pic12);
+    }
+    div.with-avatar.chara4.var13::before {
+        background-image: var(--chara4-pic13);
+    }
+    div.with-avatar.chara4.var14::before {
+        background-image: var(--chara4-pic14);
+    }
+    div.with-avatar.chara4.var15::before {
+        background-image: var(--chara4-pic15);
+    }
+    div.with-avatar.chara4.var16::before {
+        background-image: var(--chara4-pic16);
+    }
+    div.with-avatar.chara4.var17::before {
+        background-image: var(--chara4-pic17);
+    }
+    div.with-avatar.chara4.var18::before {
+        background-image: var(--chara4-pic18);
+    }
+    div.with-avatar.chara4.var19::before {
+        background-image: var(--chara4-pic19);
+    }
+    div.with-avatar.chara4.var20::before {
+        background-image: var(--chara4-pic20);
+    }
+
+    div.pc.aya::before {
+        content: "阿雅";
+        color: white;
+        background: linear-gradient(45deg, deeppink, limegreen);
+        border: 0;
+        padding-left: 5px;
+    }
+    div.with-avatar.aya::before {
+        background-image: url(haru_aya.png);
+    }
+    div.with-avatar.t.aya::before {
+        background-image: url(avatar/aya/0.png);
+    }
+    div.with-avatar.t.aya.var1::before {
+        background-image: url(avatar/aya/1.png);
+    }
+    div.with-avatar.t.aya.var2::before {
+        background-image: url(avatar/aya/2.png);
+    }
+    div.with-avatar.t.aya.var3::before {
+        background-image: url(avatar/aya/3.png);
+    }
+
+    div#is-avatar-t-box, 
+    input#others, 
+    div#vocal-box, 
+    div#dice-box, 
+    input#dice-custom, 
+    div#quote-zone-box,
+    div#contents-edit-box,
+    input#others-initiative,
+    div#initiative-box,
+    div#curr-initiative-box,
+    input#dice-custom-initiative,
+    div#credits-box {
+        display: none;
+    }
+    textarea#dialogue, textarea#quote-zone {
+        width: 90%;
+    }
+    td {
+        width: 50%;
+    }
+    div#contents li {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    table#credits {
+        width: 200px;
+    }
+    table#credits td {
+        vertical-align: top;
+    }
+    div.container#credits-box {
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+</style></head><body><div class="container"><h2>第三回</h2><div class="pc dm">开始你们的表演</div><div class="pc chara3">我们依然，默默地看着那二位玩一些不太能看懂的play……</div><div class="pc chara1">先处理我们这边还是</div><div class="pc dm">你们再探的话这边就要跑路了<div class="pc chara1">说明肯定藏了很重要的东西</div><div class="pc dm">实际上是npc要把握住跑路的机会不愿意等待这对主仆</div></div><div class="pc chara4">有办法在不惊动泽地熊人的情况下摸过去看看吗<div class="pc dm">这能问我吗？场地就如图所示一个平台两扇门</div></div><div class="pc chara1">探一下，就快速地探一下(； `д´)</div><div class="pc chara3">那我随时注意着那边大混战打得怎么样了看看能不能找个机会跑路</div><div class="with-avatar t"><div class="pc">恶魔还没减员但已经落入下风，卓尔腾出手来收拾你们只是时间问题。</div></div><div class="pc chara1">恶魔，恶魔救一下啊</div><div class="with-avatar t"><div class="pc">下层房间内墙壁铺满用黑丝网装饰成的蛛网，蛛网从房间天花板中央延伸至四周墙壁，并像窗帘一样垂下。丝编的坐垫厚厚地铺满整个地板，其中一个稍低的平台铺满枕头垫子，堆成的一个沙发型床榻。房间一角放着一张桌子和两张椅子，另一边则布置了盖着白丝绸的罗丝女神小圣坛。床榻的角落放着一个染黑的泽克木制重木箱。</div></div><div class="with-avatar t chara1"><div class="pc chara1 action">看看木箱，锁上的吗？<div class="pc dm">锁上的</div></div></div><q style="text-align: center;">在外边……</q><div class="with-avatar t npc"><div class="pc npc" name="地底侏儒吉米佳">（振臂大喊，试图吸引大伙儿注意）哎伙计们，咱们逃跑得有个方向吧！</div></div><div class="with-avatar chara3 t"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">赞成！现在正是鹬蚌相争的好机会，再拖下去的话不好说会发生什么，得抓紧时间才行。</span><audio src="vocals/baileys/3/【1】賛成！今こそ漁夫の利を得る絶好の機会だ。ぐずぐずしているとどうなるか分かったものじゃない、一刻を争う事態だ.wav"></audio></div></div><div class="with-avatar chara3 t var11"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">我们啊……还要等他们吗？</span><audio src="vocals/baileys/3/【2】私たち……まだ彼らを待つのかい？.wav"></audio></div></div><div class="with-avatar t npc var1"><div class="pc npc" name="迪洛矮人普皮多">我说的话，我们应该走南边去格莱克斯图格！或者从西边绕着暗湖去也行。不是我想回老家，是我们能在那里补充到更好的装备。</div></div><div class="with-avatar t chara3 var5"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">嘛什么装备都无所谓啦反正你们决定就好……我只想找个背包如果能找回我原来那个更好，这个绳子再挂脖子上我怕走两步不小心把自己勒死了……</span><audio src="vocals/baileys/3/【3】まあ、装備は何でもいいよ…どうせ皆が決めることだし…ただバッパが欲しいな、もし元のが見つかればなお良い。このロープ首に掛けたままじゃ、二歩も歩かぬ内に首吊り自殺しちゃいそう.wav"></audio></div></div><div class="with-avatar t chara3 var7"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">（用周围人听不到的小声）真要打架的时候你们上就好了嘛，嗯</span><audio src="vocals/baileys/3/【4】戦う時はあなた達に任せるから、うん.wav"></audio></div></div><div class="with-avatar t var7 npc"><div class="pc npc" name="泽地熊人蒂纶朵">格莱克斯图格听上去不错，但它离我们有多远？我认为我们应该先去最近可以补给的地方，之后再看去哪儿更好。</div></div><div class="with-avatar t var7"><div class="pc">那从未发过言的寇涛鱼人终于说话了。</div></div><div class="with-avatar t var7 npc"><div class="pc npc" name="寇涛鱼人???">这样的话，去我的族群的聚居地斯洛布多如何？我保证这是周边最近的聚居地，虽然我的族人们可能并不像我这么……和谐。</div></div><div class="pc chara4">我可以尝试隐匿经过那些泽地熊人到达另一边的那扇门吗<div class="pc dm">试试总是可以的，只是你这样检定难度会很高，相当于从平地上走过去并祈祷后面一群背对着你的人（这些泽地熊人还不一定背对）不要转头</div></div><div class="with-avatar chara3 t var10"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">如果有什么危险的话，真希望那里会是一道下去的楼梯呢。</span><audio src="vocals/baileys/3/【6】もし何か危険があるなら、あそこが下り階段であってほしいな.wav"></audio></div></div><div class="pc chara1">哥们，你居然……这么正常？</div><div class="with-avatar t chara1 var5"><div class="pc chara1">（突然）有巨蜘蛛来了！</div></div><q style="text-align: center;">几分钟前，塔内……</q><div class="pc chara1">我们轮流开一下？@NineFrogst</div><div class="pc chara2">我找下卡）</div><div class="pc chara1">可以开吗@卡德罗斯 </div><div class="pc dm">你在等你的卡文迪许主人开箱子呢</div><div class="pc dm">可以开，但你两谁先来？</div><div class="pc chara1">随便谁先来都行罢(´∀((☆ミつ</div><div class="pc chara2">都行吧( ﾟ∀。)</div><div class="pc dm">来的人过个巧手</div><div class="pc dice"><span class="check-type">巧手（安特纳尔）：</span><span class="dice" name="D20">4</span><span class="bonus up">4</span><span class="result">8</span><span class="ranking">失败</span></div><div class="pc dice"><span class="check-type">巧手（罗）：</span><span class="dice" name="D20">16</span><span class="bonus up">1</span><span class="bonus up">2</span><span class="result">19</span><span class="ranking">成功</span></div><div class="pc chara2">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">呜呃，这什么玩意？根本搞不懂啊？</span><audio src="vocals/antnar/3/【1】うわっ、これ何？まったくわかんない！.wav"></audio></div></div><div class="pc dm">安特纳尔先上手的，安特纳尔过个敏捷豁免</div><div class="pc dice"><span class="check-type">敏捷豁免：</span><span class="dice" name="D20">10</span><span class="bonus up">4</span><span class="result">14</span><span class="ranking">失败</span></div><div class="with-avatar t var6"><div class="pc">你摆弄锁的时候触发了某个机关，锁眼中射出一枚毒针，正中你的胸口。（安特纳尔）</div></div><div class="pc dm">你遭受一点穿刺伤害，并进行一次对抗中毒的体质豁免</div><div class="pc dice"><span class="check-type">体质豁免：</span><span class="dice" name="D20">15</span><span class="bonus up">2</span><span class="bonus up">2</span><span class="result">19</span><span class="ranking">成功</span></div><div class="pc chara1">笨，但是皮糙肉厚</div><div class="pc dm">看来你这卓尔在对抗自己人的毒药这方面确实有点心得</div><div class="pc chara1">(╬ﾟдﾟ)</div><div class="pc chara2">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="with-avatar t var6"><div class="pc">随后卡文迪许来打开了箱子，箱子里装着三件女性卓尔贵族穿的丝质外衣，一个装饰着小颗缟玛瑙的银链头饰。一个装着两瓶治疗药水的拉绳袋。一个皮质的小包里装着24 <br>gp、30 sp 和一枚价值的月长石。还有另一手包，里面装满施法所需的常见材料。</div></div><div class="pc chara1">那还用说？手快全拿( `д´)</div><div class="pc chara2">(`ゥ´ )我全都要</div><div class="pc chara2">月长石价值多少( ﾟ∀。)7</div><div class="pc chara2">实际慢速记卡中……</div><div class="pc dm">你想估价的话可以过个调查</div><div class="pc chara2">看来是「价值」先生的月长石……</div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">卡文迪许大人拿得下吗？需要我帮忙吗？（面无表情地说）</span><audio src="vocals/antnar/3/【2】キャベンディッシュ様、あの相手を倒せるでしょうか？この僕が手伝いましょうか？.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2 action">把卓尔衣服递给安特纳尔。</div></div><div class="with-avatar t chara2 var11"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呐，穿吗？哈哈哈！</span><audio src="vocals/robe/3/【1】ねえ、これを着る？はははははは！.wav"></audio></div></div><div class="pc dm">吼吼吼，转生之后穿的衣服都备好了</div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">……这个话题我们以后再聊。</span><audio src="vocals/antnar/3/【3】……その話は後でしよう。.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1 action">我收下衣服塞到行李里，然后爬上去( `一´)</div></div><div class="with-avatar t"><div class="pc">你两爬上绳梯到了上层房间，准备离开这里时，房间后面的垫子堆猛地四散飞起，从中显露出一只真正的巨蜘蛛！它一出现便对你两发起了进攻</div></div><div class="pc chara2">还没行动呢( ﾟ∀。)</div><div class="pc chara2">怎么自动上去了</div><div class="pc dm">不是爬上去了吗</div><div class="pc chara2">我没上去</div><div class="pc dm">喔那就安特纳尔自己挨打</div><div class="pc chara1">不是</div><div class="pc chara2">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="with-avatar t chara1 var5"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">诶，蜘蛛？我、我吗？</span><audio src="vocals/antnar/3/【4】えっ、蜘蛛？僕が？この僕が？.wav"></audio></div></div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">攻击蜘蛛可是大罪……！</span><audio src="vocals/antnar/3/【5】蜘蛛を攻撃するなんて大罪です…！.wav"></audio></div></div><div class="pc chara3">没关系的这不是蜘蛛，这是陆地螃蟹</div><div class="pc chara1">🤓幸好我是矮人，战！</div><div class="pc dm">骰先攻</div><hr class="battle"><div class="initiative"><div class="pc chara1"><span class="dice" name="D20">18</span><span class="bonus up">4</span><span class="result">22</span><span class="ranking"></span></div></div><div class="pc dm">下面的卡文迪许以及其它人此时想要做什么动作的话也要跟着回合制来</div><div class="pc dm">安特纳尔先动</div><div class="pc chara1">我走到这里<br>我能推开挡在门口的柏里斯之类然后进去吗</div><div class="pc dm">桥豆麻袋，走得吃个借机</div><div class="pc chara1">咕</div><div class="pc dm">要走吗</div><div class="pc chara1">走</div><div class="pc chara1">等下，我能开撤离吗</div><div class="pc dm">能</div><div class="pc chara1">好，我开撤离(；`ε´ )</div><q style="text-align: center;">回到现在……</q><div class="with-avatar chara1 t var5"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">这下是真的有巨蜘蛛来了！</span><audio src="vocals/antnar/3/【6】今度こそ本当に巨大蜘蛛が来た！！.wav"></audio></div></div><div class="with-avatar t npc var5"><div class="pc npc" name="兽人伦特">（吹个口哨）小卓尔还在犯病，你那小主人呢？</div></div><div class="with-avatar t chara3 var12"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">哈？你们俩……在塔里做了些什么啊……（奇怪的眼神）</span><audio src="vocals/baileys/3/【5】えっ…あなた達二人……塔で何をやったの…….wav"></audio></div></div><div class="pc chara1">(´∀((☆ミつ狼来了是吧</div><div class="pc chara1">我肯定是不理这两个人的</div><div class="with-avatar t var10"><div class="pc action">安特纳尔从塔里冲了出来，一路小跑到了绳桥正中的位置。</div></div><div class="with-avatar t var10"><div class="pc">巨蜘蛛从塔中冲出来，朝着安特纳尔喷出一团蛛丝，将安特纳尔全身牢牢裹住并使其摔在绳桥上。</div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">现在看见了吧！</span><audio src="vocals/antnar/3/【7】ほら！見えたでしょう！.wav"></audio></div></div><div class="pc chara1">还有捆绑</div><div class="pc chara3">（默默远离）</div><div class="pc dm">绳桥对面一堆人有什么行动吗</div><div class="pc chara3">可以把绳桥切断吗</div><div class="pc chara2">团魂这一块</div><div class="pc chara2">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc chara2">一定范围内不会自动入战吗</div><div class="pc dm">现在其实已经算入战了，所以我是在回合末问的</div><div class="pc chara4">我在想，能不能让蒂纶朵和那些泽地熊人聊聊( ﾟ∀。)</div><div class="pc chara1">用精灵语和他们说话吗</div><div class="pc dm">你可以跟蒂纶朵说，但也许现在不是个好时候，因为巨蜘蛛下一回合就要创到你们脸上来了</div><div class="pc chara3">那个我问一下，这个蜘蛛听得懂话吗</div><div class="pc chara2">动物交谈(´∀((☆ミつ</div><div class="pc chara1">你是想劝蜘蛛只咬我一个吗，哥们，你是地表精灵啊</div><div class="pc chara3">其实是想命令术控一下</div><div class="pc dm">你可以试试</div><div class="pc chara3">那要是听不懂还浪费我一个高贵的法术位</div><div class="pc chara3">还不如直接哈气呢</div><div class="pc dm">是的</div><div class="pc chara3">在我六级之前……我只能到处哈气……</div><div class="pc chara1">没事罗少只能酸液飞溅</div><div class="pc chara3">我要骰先攻吗 可是我想跑路</div><div class="pc chara1">这玩意红名怪吧，你想跑也没处去啊<br>撒，认命吧</div><div class="pc dm">不论你要做何行动，都接在先攻轮次的末尾</div><div class="pc chara3">可以把绳桥切断吗</div><div class="pc chara2">我还在呢(╬ﾟдﾟ)</div><div class="pc chara2">我怎么办！</div><div class="pc dm">可以试试，但这就要恩断义绝了吗</div><div class="pc chara1">那很有团魂了</div><div class="pc chara2">(╬ﾟдﾟ)</div><div class="pc chara3">(；ﾟ 3ﾟ)</div><div class="pc chara3">要不我们把那些熊人放出来吧</div><div class="pc dm">熊人那边没门，就是个洞</div><div class="pc chara1">熊人帮谁不好说呢</div><div class="pc chara3">那就</div><div class="pc dm">那就？</div><div class="with-avatar t chara3 var12"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">蒂纶朵先生！快用你那个什么亲王的经验想想办法啊！</span><audio src="vocals/baileys/3/【7】デレンドル様！あなたの何とか貴族の経験を早く使ってどうにかしてくださいよ！.wav"></audio></div></div><div class="pc chara3">遇事不决蒂纶朵</div><div class="pc chara1">无敌的承太郎先生･ﾟ( ﾉヮ´ )</div><div class="with-avatar t npc var12"><div class="pc npc" name="泽地熊人蒂纶朵">事已至此，随我冲锋！干掉这个邪恶的巨蜘蛛！</div></div><div class="with-avatar t var16 chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">哦哦哦！蒂纶朵阁下！</span><audio src="vocals/antnar/3/【8】おおお！デレンドル閣下！.wav"></audio></div></div><div class="with-avatar t chara3 var2"><div class="pc chara3">呜诶诶诶诶诶诶？！</div></div><div class="with-avatar t var1 chara4"><div class="pc action chara4">（拔剑）</div></div><div class="with-avatar t var1"><div class="pc">蒂纶朵冲到安特纳尔面前，刷刷两下劈开了束缚住他的蛛丝！</div></div><div class="pc chara1">哇我简直要掉眼泪了</div><div class="with-avatar t var1"><div class="pc">吉米佳和沙里士在塔内掏出手弩，都射中了巨蜘蛛</div></div><div class="with-avatar t var1"><div class="pc">两个地底侏儒小孩、寇涛鱼人和小蕈人缩在角落，尽力不挡住你们。盾矮人、伦特与普皮多见战场宽度不够，便只是守在门边。</div></div><div class="with-avatar t chara3"><div class="pc chara3 action">蒂纶朵先生都那样说了，那我还能说什么呢……虽然很想攻击那个把蜘蛛放出来的白痴但是当务之急还是先对付蜘蛛，所以我决定……</div></div><div class="with-avatar t var2 chara3"><div class="pc chara3">■■■！*奇妙的精灵俗语*</div></div><div class="pc chara1">柏里斯 对 巨蜘蛛 使用了 【恶言相加】 ！<br>效果拔群！<br>造成了【1D4=1】的伤害！</div><div class="with-avatar t chara2 var8"><div class="pc action chara2">我听到蜘蛛从我头顶走远的声音，悄悄钻出来……</div></div><div class="pc dm">你爬上来算10尺</div><div class="with-avatar t chara2 var8"><div class="pc chara2 action">那就暂时躲在房门背后……</div></div><div class="pc chara3">武僧快补一刀</div><div class="with-avatar t chara4 var1"><div class="pc action chara4">（拿短剑A上去）</div></div><div class="pc dm">中间有人的部分算困难地形</div><div class="pc chara1">那打不到咯</div><div class="pc chara2">考验飞刀技巧的时候到了！加油啊武僧！</div><div class="pc chara1">这也不是投掷武器啊(´∀((☆ミつ</div><div class="pc chara4">或者换一个攻击方式，拿自己带的一个冷冻射线打</div><div class="pc">“豺狼” 对 巨蜘蛛 使用了 【冷冻射线】！<br>但是什么也没有发生！</div><div class="with-avatar t chara1 var2"><div class="pc action chara1">我后退几步，掏出手弩射巨蜘蛛！</div></div><div class="pc dm">将蒂纶朵护至身前</div><div class="pc">安特纳尔 对 巨蜘蛛 使用了 【弩箭攻击】！<br>命中了！<br>造成了【1D6+4=7】点伤害！</div><div class="pc chara1">ok了，对不住了，蒂纶朵san</div><div class="pc dm">卧槽大成功</div><div class="pc">巨蜘蛛 对 泽地熊人蒂纶朵 使用了 【啃咬】！<br>命中了要害！</div><div class="pc chara1">啊？蒂纶朵——！</div><div class="pc dm">卧槽又是大成功<div class="pc chara1">啊？</div><div class="pc chara3">？</div><div class="pc chara2">？</div><div class="pc chara1">？</div><div class="pc chara4">¿</div></div><div class="with-avatar t var2"><div class="pc">巨蜘蛛咬中了蒂纶朵，其毒素一并注入到了蒂纶朵身体中，但是！千锤百炼的肉体怎能屈服于此等邪恶生物的毒素！蒂纶朵全身肌肉一发力，硬是将毒素逼回了巨蜘蛛的毒腺内！</div></div><div class="pc chara3">？</div><div class="pc dm">顺带一提，蒂纶朵本轮遭受了28点伤害</div><div class="pc chara2">･ﾟ( ﾉヮ´ )</div><div class="pc chara2">半圆文学</div><div class="pc chara3">我不行了</div><div class="pc chara1">不是</div><div class="pc chara2">･ﾟ( ﾉヮ´ )･ﾟ( ﾉヮ´ )･ﾟ( ﾉヮ´ )</div><div class="pc dm">差点被这傻逼连死，还好我技高一筹.jpg</div><div class="pc chara1">我说泽地熊人的肉体太好用了桀桀桀</div><div class="pc chara1">要是是白幼瘦精灵就挺不过去了</div><div class="pc chara3">我要笑死了</div><div class="pc chara2">(´∀((☆ミつ</div><div class="pc dm">你怎敢假定人家精灵亲王是白幼瘦精灵</div><div class="pc chara1">原来是筋肉壮汉……！</div><div class="pc dm">对着肌肉运动如此熟练，可以推断以前也是筋肉精灵</div><div class="pc chara1">蒂纶朵阁下，此刻，我心中对你充满了敬佩之情！</div><div class="with-avatar t var2"><div class="pc">将毒液逼回去之后，蒂纶朵反手一圈锤爆了巨蜘蛛的蛛脑！</div></div><hr class="battle over"><div class="pc chara1">卧槽，蒂伦朵大人！</div><div class="pc chara3">从此看向蒂纶朵的眼神……充满了崇敬！</div><div class="with-avatar t npc var2"><div class="pc npc" name="泽地熊人蒂纶朵">快！我们得抓紧时间了！那边卓尔随时都有可能腾出手来收拾我们！</div></div><div class="with-avatar t chara1 var8"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">呀！好、好的，蒂伦朵阁下！</span><audio src="vocals/antnar/3/【9】は、はい、デレンドル閣下！.wav"></audio></div></div><div class="with-avatar t chara3 var6"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">遵命！老大！</span><audio src="vocals/baileys/3/【8】承知！親分！.wav"></audio></div></div><div class="with-avatar t var6 npc"><div class="pc npc" name="迪洛矮人普皮多">我证明那寇涛鱼人说的是真的！我对整个幽暗地域都熟！它们的镇子确实离这里最近，比其它地方都近一大截。<br></div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">但是我们要往哪边去呢？从卓尔那边走吗？</span><audio src="vocals/antnar/3/【10】ですが、我々はどちらへ向かえば？ドロウの方から進みますか？.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">还是从这边跳进水里？</span><audio src="vocals/antnar/3/【11】それとも、こちらから水に飛び込む？.wav"></audio></div></div><div class="with-avatar t var8 npc"><div class="pc npc" name="迪洛矮人普皮多">要去那个镇子的话，我们得先下到最下面的地面，然后从西北方向的洞穴出口离开。</div></div><div class="pc chara3">下面不是蜘蛛网吗</div><div class="pc chara1">也有没有蛛网的地方( ；`д´)σ</div><div class="with-avatar t chara2 var12"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">蒂伦朵大人……！</span><audio src="vocals/robe/3/【2】デレンドル様…！.wav"></audio></div></div><div class="with-avatar t chara2 var8"><div class="pc chara2 action">假装无事发生，跟在蒂伦朵后面。</div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">喂！卷心菜！刚刚搜到了治疗药水了吧？还不快给蒂伦朵阁下用用！（走到罗少边上）</span><audio src="vocals/antnar/3/【12】おい！キャベツ！さっき治療ポーションを手に入れただろう？早くデレンドル閣下にお使いしろよ！.wav"></audio></div></div><div class="with-avatar t var2 chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呃，行吧，啧……</span><audio src="vocals/robe/3/【3】仕方ない、ちっ….wav"></audio></div></div><div class="with-avatar t var2 chara2"><div class="pc chara2 action">拿出其中一瓶</div></div><div class="with-avatar t var2 npc"><div class="pc npc" name="泽地熊人蒂纶朵">（一挥手）无碍！我感觉还好，这药水应该留到更需要的时候用。</div></div><div class="pc chara1">感、感觉还好吗？</div><div class="with-avatar t chara2 var5"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">好的好的，有事您说话……</span><audio src="vocals/robe/3/【4】はいはい、何かございましたらお申し付けください….wav"></audio></div></div><div class="with-avatar t chara2 var13"><div class="pc chara2 action">收回</div></div><div class="with-avatar t var2 npc"><div class="pc npc" name="地底侏儒吉米佳">也许我们可以从这塔的窗口翻出去，避开蛛网，降到水里再游到岸上。</div></div><div class="pc chara1">窗口有多大？伦特能钻吗</div><div class="pc dm">能钻，这里所有人都能走这个窗口下去</div><div class="pc chara1">那就听吉米佳的( `一´)</div><div class="with-avatar t chara4"><div class="pc chara4 action">（跟着大部队走）</div></div><div class="with-avatar t npc"><div class="pc npc" name="地底侏儒吉米佳">那你们拿了绳子的，快绑上绳子让我们下去！</div></div><div class="pc chara3">多高啊</div><div class="pc dm">100尺</div><div class="pc chara3">不够长</div><div class="pc chara1">有两卷呢</div><div class="pc chara1">接一起应该就够了( ﾟ∀。)7"</div><div class="pc chara3">罗少罗少</div><div class="with-avatar t chara2 var1"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哈哈！我可是会羽落术呢！</span><audio src="vocals/robe/3/【5】はは！俺にはフェザーフォールってやつが使えるんだぜ！.wav"></audio></div></div><div class="pc chara2">差点忘了我还有法术位</div><div class="with-avatar t chara3 var11"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">谁管你什么羽落术啊，把绳子拿来……</span><audio src="vocals/baileys/3/【9】もう、フェザーフォールなんて知るかよ、ロープをよこせ….wav"></audio></div></div><div class="pc chara2">( ﾟ∀。)7不是，在说什么呢</div><div class="pc chara3">因为信任度……嗯，是的……(つд⊂)</div><div class="pc chara2">⊂彡☆))∀`)</div><div class="with-avatar t npc var11"><div class="pc npc" name="泽地熊人蒂纶朵">但你的羽落术只能对五个生物使用，何况你也没有施法用的材料或者法器吧</div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">材料的话，刚刚他在下面找到了。</span><audio src="vocals/antnar/3/【13】材料については、さっき彼が下の方で見つけたよ。.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">说到这个，我们这除了他还有别的施法者吗？</span><audio src="vocals/antnar/3/【14】そういえば、この中に彼以外に術者はいる？.wav"></audio></div></div><div class="with-avatar t"><div class="pc">众人纷纷表示否认，沙里士表示自己会一些血脉法术，蒂纶朵表示自己以前会，但变成这副样子之后就不会了。</div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">先放十个人下去！剩下的人爬绳子！免得这破绳子出什么问题……</span><audio src="vocals/robe/3/【6】最初の10人は降りて！残りの者はロープを伝って登れ！このくたびれた綱がまたトラブルを起こす前に….wav"></audio></div></div><div class="with-avatar t var11 chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">吓，你这么一说，那不是还要争谁先后了？</span><audio src="vocals/antnar/3/【15】ええっと…それじゃ順番争いになっちゃうじゃない？.wav"></audio></div></div><div class="with-avatar t var11 chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">再拖下去的话要被一锅端了哦。</span><audio src="vocals/baileys/3/【10】ぐずぐずしてると全滅しちゃうよ.wav"></audio></div></div><div class="with-avatar t chara2 var4"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">绳子给你（丢给柏里斯），我、柏里斯、这两个小侏儒爬绳子，你们这几个大只佬就给我飞下去，怎么样？</span><audio src="vocals/robe/3/【7】ロープはそちらにやる。俺とベイリーズ、それにこの二人のスヴィルフネブリンはロープを登る。でかい奴らは飛び降りてくれ。どうだ？.wav"></audio></div></div><div class="with-avatar t var4"><div class="pc">所有人都同意了罗的方案。</div></div><div class="with-avatar t chara1 var11"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">那希望你爬的利索点……“卡文迪许大人”。</span><audio src="vocals/antnar/3/【16】では、お手柔らかに…キャベンディッシュ様。.wav"></audio></div></div><div class="with-avatar t chara2 var1"><div class="pc chara2">好！</div></div><div class="pc chara2">要过浪潮吗(〃∀〃)<br></div><div class="pc dm">必须过，我都忘了这茬</div><div class="pc">罗·卡文迪许 使用 了 【羽落术】！<br>并没有发生什么特别的事……</div><div class="pc chara1">无事发生</div><div class="pc chara2">可惜……( TдT)</div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">好啦，磨磨蹭蹭的！</span><audio src="vocals/antnar/3/【17】さあさあ、のろのろしてないで！.wav"></audio></div></div><div class="pc dm">每个试图在绳子上下降的人，进行一次敏捷检定</div><div class="pc dice"><span class="check-type">敏捷（柏里斯）：</span><span class="dice" name="D20">12</span><span class="bonus up">3</span><span class="result">15</span><span class="ranking">成功</span></div><div class="pc dice"><span class="check-type">敏捷（罗）：</span><span class="dice" name="D20">8</span><span class="bonus up">1</span><span class="result">9</span><span class="ranking">失败</span></div><div class="pc chara2">开始不安了</div><div class="pc chara1">哎，罗少摔死了</div><div class="pc chara3">没关系，有落地水</div><div class="pc chara1">要是姐弟摔死了一个……</div><div class="pc chara1">咯咯♥</div><div class="pc chara1">一定能看到非常有趣的表情！</div><div class="with-avatar t var2"><div class="pc">地底侏儒中的姐姐与柏里斯顺利降下去并游到了岸边，但地底侏儒小孩中的弟弟和罗都在爬到半途时失手摔进了水中……</div></div><div class="with-avatar t chara1 var17"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">会游泳吗！卡文迪许大人！（站在岸边问）</span><audio src="vocals/antnar/3/【18】泳げますかあああ――！キャベンディッシュ様――？！.wav"></audio></div></div><div class="with-avatar t chara2 var7"><div class="pc chara2">哇吧哈呀呀呀哇啊啊啊！（我回答道。）</div></div><div class="pc chara3">･ﾟ( ﾉヮ´ )</div><div class="pc chara1">唉不是<br>那我跳下去救他</div><div class="with-avatar t var7"><div class="pc">在你们浮上水面的过程中，你们自心灵中猛地听到一声巨吼：“把肉献给无冕之王！”。<br>自池底，一片不定形的灰泥随你们一同浮起，并向你们发起攻击！</div></div><hr class="battle"><div class="pc chara1">我怎么算</div><div class="pc dm">你算也在水中里</div><div class="pc chara1">唉不是</div><div class="pc dm">真是救主心切啊</div><div class="pc dm">骰先攻吧</div><div class="initiative"><div class="pc chara1"><span class="dice" name="D20">4</span><span class="bonus up">4</span><span class="result">8</span><span class="ranking"></span></div><div class="pc chara2"><span class="dice" name="D20">18</span><span class="bonus up">1</span><span class="result">19</span><span class="ranking"></span></div><div class="pc chara3"><span class="dice" name="D20">6</span><span class="bonus up">3</span><span class="result">9</span><span class="ranking"></span></div></div><div class="pc">罗少你先动<br>由于身处水中，你的攻击检定具有劣势，移动速度减半</div><div class="with-avatar t chara2 var6"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">我把你家的无冕之王拿来糊墙……！</span><audio src="vocals/robe/3/【8】お前の家の無冠の王を頂いて、壁に塗り込めてやる…！.wav"></audio></div></div><div class="pc">罗·卡文迪许 对 灰泥怪 使用了 【毒气喷溅】！<br>效果拔群！<br>造成了【1D12=7】点伤害！</div><div class="pc chara2">( `д´)σ🦠吔我七点伤啦！</div><div class="pc dm">我看看npc怎么动<br>哎控npc打架好麻烦</div><div class="pc chara2">国际象棋，但是每个棋子都有一回合(`ヮ´ )</div><div class="pc">岸上持有手弩的三人对灰泥怪进行了一轮齐射，射中两箭，造成12点伤害！</div><div class="pc dm">其它人不愿意下水行动，到灰泥怪了</div><div class="pc chara2">先不安再不安</div><div class="pc chara1">没事有血瓶</div><div class="pc">灰泥怪 对 罗·卡文迪许 使用了【伪足攻击】！<br>命中了！<br>造成5点钝击伤害与3点强酸伤害！</div><div class="with-avatar t chara2 var7"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">咔咔……我的力量……有人能敌啊……</span><audio src="vocals/robe/3/【9】がく…がく…我が力…誰か…敵う者か….wav"></audio></div></div><div class="pc chara1">先问一下，我从他身上翻出血瓶给他喂下去是一个动作还是两个( ﾟ∀。)7"</div><div class="pc dm">掏出血瓶会消耗一个免费的物品交互，喂食消耗一个动作</div><div class="pc dm">前提是要有一只空的手</div><div class="pc chara1">那OKOK，后面上短剑就行</div><div class="with-avatar t chara4 var2"><div class="pc chara4 action">在岸上提供除了下水以外的一切援助……</div></div><div class="pc chara2">武僧有远程手段吗( ﾟ∀。)<div class="pc chara4">没有，我没带手弩，飞镖则被那些卓尔缴获了</div></div><div class="pc dm">所以说其实是没有援助</div><div class="pc chara3">稍等上个厕所</div><div class="pc dm">那先过安特纳尔</div><div class="pc">安特纳尔 使用了 【回气】！<br>回复了【1D10+1=5】点血量！</div><div class="pc chara1">然后把血瓶掏出来喂给罗少</div><div class="pc dm">喔喔这就喂血瓶了吗</div><div class="pc chara1">他都要似了</div><div class="pc chara3">其实我也可以奶( ﾟ∀。)</div><div class="pc chara1">也行</div><div class="pc chara2">彳亍</div><div class="pc chara1">那我用一个动作抽出短剑狠狠攻击软泥怪</div><div class="pc">安特纳尔 对 灰泥怪 使用了 【短剑攻击】！<br>命中了！<br>造成了【1D6+4=9】点伤害！</div><hr class="battle over"><div class="pc dm">好消息是软泥怪死了</div><div class="pc chara1">BYD尸爆是吧</div><div class="pc dm">坏消息是，你的短剑受到腐蚀，其伤害掷骰永久-1</div><div class="pc chara1">(╬ﾟдﾟ)</div><div class="pc chara1">无所谓，我实际远程！</div><div class="pc chara1">赶紧把卡文迪许大人捞上来</div><div class="pc chara1">现在他多少血<div class="pc chara2">0☆</div></div><div class="pc chara1">啊，至于侏儒弟弟……他会游泳吗？</div><div class="pc chara2">我可以用修复术磨刀吗<div class="pc dm">可以</div></div><div class="pc chara3">那……还要救吗？</div><div class="pc chara2">罗少已经在和天国的先祖打交了<div class="pc dm">？</div><div class="pc chara4">¿</div></div><div class="pc chara2">我刚好上限8点</div><div class="pc chara3">你说的是打架的意思……对吧？</div><div class="pc chara2">（图片）<br>“打交”的意思是指与人交往、接触，强调人与人之间的互动和交流。它可以用来描述日常生活中的交往，也可以指工作或社交场合中的联系。此外，在某些方言中，“打交”也可以指“打架”。</div><div class="pc chara2">( `д´)σ不要乱想</div><div class="pc chara1">白蕾丝还奶吗</div><div class="pc chara1">奶一口吧，不然医药救过来还要我背着</div><div class="pc chara3">奶一下奶一下</div><div class="pc">柏里斯 对 罗·卡文迪许 使用了 【治愈真言？】！<br>罗·卡文迪许 回复了【1D4+2=5】点血量！<br>倒地状态 解除 了！</div><div class="pc chara2">堂堂☆复活</div><div class="pc chara1">所以弟弟呢</div><div class="pc dm">弟弟看上去要夺得憋气大赛第一名了</div><div class="pc chara1">･ﾟ( ﾉヮ´ )</div><div class="pc chara2">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc chara1">他姐姐不救吗</div><div class="pc chara3">还活着吗，耐淹王</div><div class="pc dm">好吧冷血的pl们</div><div class="with-avatar t var2"><div class="pc">地底侏儒姐姐见你们消灭了灰泥怪，飞快地跳进水中救起了她的弟弟。</div></div><div class="pc dm">这么好的刷好感的机会居然不把握住</div><div class="pc chara1">我说他姐姐不救我救一下呢</div><div class="pc chara1">到时候嘲讽一下人家<div class="pc dm">？</div></div><div class="pc chara1">再把弟弟啥了<div class="pc dm">？</div></div><div class="pc chara2">脖子右拧･ﾟ( ﾉヮ´ )</div><div class="pc dm">那我要驾驶蒂纶朵出击了</div><div class="pc chara3">雄大鬼</div><div class="pc chara1">･ﾟ( ﾉヮ´ )出生卓尔是这样</div><div class="pc chara4">我就知道卓尔人没一个好东西.jpg</div><div class="with-avatar t chara1 var8"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">咯咯，堂堂深水城的卡文迪许大人，居然不会游泳吗？</span><audio src="vocals/antnar/3/【19】くく、ウォーター・ディープの誇るキャベンディッシュ様が、泳げないとはね？.wav"></audio></div></div><div class="with-avatar t chara2 var6"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呃呃……是你把我捞上来了？</span><audio src="vocals/robe/3/【10】くそ…貴様が俺を助け上げたのか…？.wav"></audio></div></div><div class="with-avatar t chara1 var1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">你说呢？</span><audio src="vocals/antnar/3/【20】どう思う？.wav"></audio></div></div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">你会这么好心？</span><audio src="vocals/robe/3/【11】よくもそんな恩を着せるような真似ができたな？.wav"></audio></div></div><div class="with-avatar t chara1 var7"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">那当然了！所以不是我干的，而是那个矮人干的！（一脸得意）</span><audio src="vocals/antnar/3/【21】もちろんです！だから僕じゃなくて、あのドワーフがやったんです！.wav"></audio></div></div><div class="pc chara3">哇还有傲娇</div><div class="with-avatar t chara2 var13"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">啊……吁，不管怎么样……</span><audio src="vocals/robe/3/【12】はあ…とにかく….wav"></audio></div></div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">……谢谢你？</span><audio src="vocals/robe/3/【13】……ありがとう？.wav"></audio></div></div><div class="with-avatar t chara1 var3"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">既然他这么说那估计就是我干的了。那我，接受你的……感谢？（伸出手来）</span><audio src="vocals/antnar/3/【22】彼がそう言うなら、おそらく俺がやったんだな。では、お前の…感謝を受け取ろうか？.wav"></audio></div></div><div class="with-avatar t chara2 var2"><div class="pc chara2 action">（拉着他的手站起来）</div></div><div class="with-avatar t chara2 var13"><div class="pc chara2 action">……</div></div><div class="with-avatar t chara1 var16"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">那我们一起赶紧逃走吧，卡文迪许大人！（突然欢快）</span><audio src="vocals/antnar/3/【23】では私と一緒に急いで逃げましょう、キャベンディッシュ様！.wav"></audio></div></div><div class="with-avatar t chara3 var12"><div class="pc chara3 action">（感到一阵恶寒）</div></div><div class="with-avatar t chara3 var12"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">（对吉米佳）那个……我不太了解地底的习俗，他的这种症……我是说行为，是正常的吗？</span><audio src="vocals/baileys/3/【11】あの…地下の習慣には詳しくないんですけど、彼のこういう症…失礼、行動は普通なんですか？.wav"></audio></div></div><div class="with-avatar t chara1 var16"><div class="pc action chara1">（拉着罗少的手使劲摇了摇）</div></div><div class="with-avatar t var16 npc"><div class="pc npc" name="地底侏儒吉米佳">（对柏里斯）我敢说这即使是在变态群集的魔索布莱城也能算得上是变态中的佼佼者，我跟你赌二百gp</div></div><div class="with-avatar t chara2 var3"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呃，果然还是个变态卓尔……</span><audio src="vocals/robe/3/【14】ちっ…やっぱり変態ドロウか….wav"></audio></div></div><div class="with-avatar t chara3 var12"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">天哪，我究竟做了什么要见到这种事……</span><audio src="vocals/baileys/3/【13】ああ神様、いったい私がどんな悪い事をしたからこんな目に遭わなければならないの….wav"></audio></div></div><div class="pc chara1">･ﾟ( ﾉヮ´ )</div><div class="pc chara3">所以弟弟还活着吗</div><div class="pc dm">当然活着<br>这不是一轮干掉了吗<br>实际上就淹了几秒的样子</div><div class="pc chara3">哦那还好，我还以为真咕噜咕噜了呢<br>我都打算进行除了治愈真言以外的一切慰问了</div><div class="with-avatar t chara2 var1"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">喂！吟游诗人！（对着柏里斯）哥们你这太性情了，谢谢昂！🙏</span><audio src="vocals/robe/3/【15】おい！バード！お前さんなかなか豪快だな、サンキューよ！.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">欸？呃……不客气？</span><audio src="vocals/baileys/3/【12】え？あ…どういたしまして？.wav"></audio></div></div><div class="pc chara2">是弗雷尔卓德文案（</div><div class="with-avatar t chara4"><div class="pc chara4"><span class="play" onclick="simple_audio_play(this)">...接下来...往哪里走..</span><audio src="vocals/placeholder/3/【1】次は……どっちへ進めば…….wav"></audio></div></div><div class="with-avatar t npc"><div class="pc npc" name="泽地熊人蒂纶朵">（高呼）不要再玩过家家的游戏了！事不宜迟！出口就在前面了！</div></div><div class="with-avatar t chara3 var6"><div class="pc chara3">好耶！</div></div><div class="pc chara1">冲刺！冲刺！冲刺！</div><div class="with-avatar t chara2 var1"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">走走走……</span><audio src="vocals/robe/3/【16】行くぞ行くぞ….wav"></audio></div></div><div class="with-avatar t chara4 var2"><div class="pc chara4 action">（跟着大部队）</div></div><div class="with-avatar t var2"><div class="pc">你们几乎就要抵达出口了，但上面的混战中甩出来一只弗洛魔，正巧落在你们面前。这只弗洛魔看上去伤势非常严重，它朝你们发出尖叫，这是你们通向自由的最后一道阻碍。</div></div><div class="pc chara1">战！沙沙沙！感觉沙了这只下回就能到2级了！</div><hr class="battle"><div class="initiative"><div class="pc chara1"><span class="dice" name="D20">19</span><span class="bonus up">4</span><span class="result">23</span><span class="ranking"></span></div><div class="pc chara2"><span class="dice" name="D20">9</span><span class="bonus up">1</span><span class="result">10</span><span class="ranking"></span></div><div class="pc chara3"><span class="dice" name="D20">12</span><span class="bonus up">3</span><span class="result">15</span><span class="ranking"></span></div></div><div class="pc dm">那么安特纳尔先动</div><div class="pc chara1">那当然是biubiu射箭</div><div class="pc">安特纳尔 对 弗洛魔 使用了 【弩箭攻击】！<br>命中了！<br>造成了【1D6+4=5】点伤害！</div><div class="pc">到蒂纶朵的回合！</div><div class="pc chara1">噢噢噢哦哦！蒂伦朵阁下冲上去了！</div><div class="pc">蒂纶朵 对 弗洛魔 使用了 【巴掌攻击】！<br>命中了！<br>造成了8点伤害！<br>弗洛魔 倒下了！<br></div><hr class="battle over"><div class="pc chara3">草，怎么直接秒了</div><div class="pc chara1">那结束的很快了</div><div class="pc dm">哎先攻骰低了，不然高低让你们乐乐</div><div class="pc chara1">乐、乐乐吗</div><div class="pc chara2">你这蒂伦朵的姓是不是马东锡</div><div class="pc dm">画面感来了</div><div class="pc chara1">终于！终于逃出去了！</div><div class="with-avatar t chara1 var16"><div class="pc chara1 action">我高兴地把罗少举了起来！</div></div><div class="pc dm">达成成就“逃离深渊？”，每个地表出身的角色获得一个激励</div><div class="pc chara1">噢噢噢哦哦！我能不能拿半个</div><div class="pc chara1">双重国籍</div><div class="pc dm">算你也拿一个好了</div><div class="pc dm">咱们论心不论迹</div><div class="pc chara2">咱们团也是接入LGBT版本了</div><div class="pc chara1">唉不是</div></div><footer><div>Copyright © 2025 幻岛缘游图书馆 All rights reserved.</div></footer><script id="insfan-script">
+        function simple_audio_play(click_elem){
+            var aud = click_elem.parentElement.getElementsByTagName('audio')[0];
+            aud.load();
+            aud.play();
+        }
+    </script></body></html>

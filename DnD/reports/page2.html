@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DnD记录 ~ 幻岛缘游图书馆</title><style id="insfan-style">
+    :root {
+        --dm: "卡德罗斯";
+
+        --chara1: "安特纳尔";
+        --chara1-color: rgb(240, 93, 93);
+        --chara1-bg: transparent;
+        --chara1-box: brown;
+        --chara1-pl: "pincherryus";
+        --chara1-ico: var(--fighter);
+        --chara1-pic:  url(avatar/antnar/0.png);
+        --chara1-pic1: url(avatar/antnar/1.png);
+        --chara1-pic2: url(avatar/antnar/2.png);
+        --chara1-pic3: url(avatar/antnar/3.png);
+        --chara1-pic4: url(avatar/antnar/4.png);
+        --chara1-pic5: url(avatar/antnar/5.png);
+        --chara1-pic6: url(avatar/antnar/6.png);
+        --chara1-pic7: url(avatar/antnar/7.png);
+        --chara1-pic8: url(avatar/antnar/8.png);
+        --chara1-pic9: url(avatar/antnar/9.png);
+
+        --chara2: "罗·卡文迪许";
+        --chara2-color: #a790f3;
+        --chara2-bg: transparent;
+        --chara2-box: #44299e;
+        --chara2-pl: "NineFrogst";
+        --chara2-ico: var(--sorcerer);
+        --chara2-pic:  url(avatar/robe/0.png);
+        --chara2-pic1: url(avatar/robe/1.png);
+        --chara2-pic2: url(avatar/robe/2.png);
+        --chara2-pic3: url(avatar/robe/3.png);
+        --chara2-pic4: url(avatar/robe/4.png);
+        --chara2-pic5: url(avatar/robe/5.png);
+        --chara2-pic6: url(avatar/robe/6.png);
+        --chara2-pic7: url(avatar/robe/7.png);
+        --chara2-pic8: url(avatar/robe/8.png);
+        --chara2-pic9: url(avatar/robe/9.png);
+
+        --chara3: "柏里斯";
+        --chara3-color: burlywood;
+        --chara3-bg: transparent;
+        --chara3-box: peru;
+        --chara3-pl: "咸咸i";
+        --chara3-ico: var(--bard);
+        --chara3-pic:  url(avatar/baileys/0.png);
+        --chara3-pic1: url(avatar/baileys/1.png);
+        --chara3-pic2: url(avatar/baileys/2.png);
+        --chara3-pic3: url(avatar/baileys/3.png);
+        --chara3-pic4: url(avatar/baileys/4.png);
+        --chara3-pic5: url(avatar/baileys/5.png);
+        --chara3-pic6: url(avatar/baileys/6.png);
+        --chara3-pic7: url(avatar/baileys/7.png);
+        --chara3-pic8: url(avatar/baileys/8.png);
+        --chara3-pic9: url(avatar/baileys/9.png);
+
+        --chara4: "“豺狼”";
+        --chara4-color: limegreen;
+        --chara4-bg: transparent;
+        --chara4-box: darkgreen;
+        --chara4-pl: "Daybreak";
+        --chara4-ico: var(--monk);
+        --chara4-pic:  url(avatar/placeholder/0.png);
+        --chara4-pic1: url(avatar/placeholder/1.png);
+        --chara4-pic2: url(avatar/placeholder/2.png);
+        --chara4-pic3: url(avatar/placeholder/3.png);
+        --chara4-pic4: url(avatar/placeholder/4.png);
+        --chara4-pic5: url(avatar/placeholder/5.png);
+        --chara4-pic6: url(avatar/placeholder/6.png);
+        --chara4-pic7: url(avatar/placeholder/7.png);
+        --chara4-pic8: url(avatar/placeholder/8.png);
+        --chara4-pic9: url(avatar/placeholder/9.png);
+
+        --barbarian: url(classes/barbarian.png);
+        --bard: url(classes/bard.png);
+        --cleric: url(classes/cleric.png);
+        --druid: url(classes/druid.png);
+        --fighter: url(classes/fighter.png);
+        --monk: url(classes/monk.png);
+        --paladin: url(classes/paladin.png);
+        --ranger: url(classes/ranger.png);
+        --rogue: url(classes/rogue.png);
+        --sorcerer: url(classes/sorcerer.png);
+        --warlock: url(classes/warlock.png);
+        --wizard: url(classes/wizard.png);
+        --dm-dice: url(classes/dm_dice.png);
+
+        --avatar-size: 80px;
+
+        --palette-a: brown;
+        --palette-b: rgb(242, 204, 167);
+        --palette-bg: rgba(242, 204, 167, 0.8);
+        --palette-da: rgba(165, 42, 42, 0.5);
+        --palette-db: rgba(242, 204, 167, 0.5);
+        --palette-dm: black;
+
+        --palette-1-a: hsl(248, 90%, 90%);
+        --palette-1-aa: hsla(248, 90%, 90%, 0.7);
+        --palette-1-b: rgb(71, 61, 139);
+        --palette-1-bg: rgba(71, 61, 139, 0.8);
+        --palette-1-da: hsla(248, 90%, 90%, 0.5);
+        --palette-1-db: rgba(71, 61, 139, 0.5);
+        --palette-1-dm: white;
+
+        --fg: var(--palette-1-a);
+        --fga: var(--palette-1-aa);
+        --bg: var(--palette-1-b);
+        --bga: var(--palette-1-bg);
+        --fgd: var(--palette-1-da);
+        --bgd: var(--palette-1-db);
+        --fgdm: var(--palette-1-dm);
+    }
+    body {
+        background-image: url(underdark.jpg);
+        background-repeat: repeat-y;
+        background-size: 200%;
+        background-position: top;
+    }
+    footer {
+        color: var(--bg);
+        background-color: var(--fg);
+        width: fit-content;
+        margin: auto;
+        padding: 1px 5px 1px;
+        border: 2px solid var(--bg);
+        border-radius: 8px;
+        font-size: smaller;
+        font-weight: bold;
+        font-family: 'Consolas', '微软雅黑', monospace;
+        text-align: center;
+    }
+    footer > u.switcher {
+        cursor: pointer;
+        display: inline;
+    }
+    div.container {
+        background-color: var(--bga);
+        background-blend-mode: multiply;
+        border: 1px solid black;
+        padding: 0px 10px 20px;
+        margin-bottom: 20px;
+        color: var(--fg);
+        font-family: 'Bookman Old Style', '方正标雅宋_GBK', serif;
+        font-size: 16px;
+    }
+
+    div.pc {
+        padding-left: 2em;
+        margin-bottom: 5px;
+        white-space: pre-line;
+        font-style: normal;
+    }
+    div.pc.action {
+        font-style: italic;
+    }
+    div.pc::before {
+        --bgcolor: transparent;
+        margin-left: -2em;
+        padding-left: 20px;
+        border-left: 5px solid var(--bgcolor);
+        content: "旁白: ";
+        display: block;
+        font-weight: bold;
+        font-style: normal;
+        background-image: var(--dm-dice);
+        background-position: left center;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-color: var(--bgcolor);
+        width: fit-content;
+    }
+    div.pc.dice::before {
+        content: "掷骰: ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.dm::before {
+        content: "DM（" var(--dm) "）: ";
+        color: var(--fgdm);
+        background-image: var(--dm-dice);
+    }
+    div.pc.npc::before {
+        content: attr(id)": ";
+        color: white;
+        background-color: darkgray;
+        background-image: var(--dm-dice);
+    }
+    div.pc.blank::before {
+        content: attr(id)": ";
+        background-image: var(--dm-dice);
+    }
+    div.pc.chara1::before {
+        content: var(--chara1-pl) "（" var(--chara1) "）: ";
+        color: var(--chara1-color);
+        background-color: var(--chara1-bg);
+        background-image: var(--chara1-ico);
+    }
+    div.pc.chara2::before {
+        content: var(--chara2-pl) "（" var(--chara2) "）: ";
+        color: var(--chara2-color);
+        background-color: var(--chara2-bg);
+        background-image: var(--chara2-ico);
+    }
+    div.pc.chara3::before {
+        content: var(--chara3-pl) "（" var(--chara3) "）: ";
+        color: var(--chara3-color);
+        background-color: var(--chara3-bg);
+        background-image: var(--chara3-ico);
+    }
+    div.pc.chara4::before {
+        content: var(--chara4-pl) "（" var(--chara4) "）: ";
+        color: var(--chara4-color);
+        background-color: var(--chara4-bg);
+        background-image: var(--chara4-ico);
+    }
+
+    q {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+        white-space: pre-line;
+    }
+
+    div.profile {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: block;
+        width: 80%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+
+    div.profile > div.avatar {
+        float: left;
+        width: 140px;
+        margin: 5px;
+        margin-bottom: 0;
+        padding: 5px;
+        text-align: center;
+    }
+    div.profile::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.avatar > img {
+        margin: auto;
+        width: var(--avatar-size);
+        border: 3px solid var(--fg);
+    }
+    div.profile > div.avatar > img {
+        width: 120px;
+        border: 3px solid var(--bg);
+        background-color: white;
+    }
+    div.avatar > p {
+        margin: 5px;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+    div.avatar > p > span.pl {
+        display: block;
+        font-size: smaller;
+    }
+    div.profile > div.description > span {
+        white-space: pre-line;
+    }
+
+    hr {
+        border: 1px solid var(--fg);
+        box-shadow: 0px 0px 5px var(--fg);
+    }
+    hr.battle {
+        text-align: center;
+        display: block;
+        line-height: 0px;
+        height: 0;
+        overflow: visible;
+    }
+    hr.battle::after {
+        content: "　战斗开始 ！";
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px var(--fg);
+    }
+    hr.battle.over::after {
+        content: "　战斗结束 ！";
+    }
+
+    div.initiative {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px;
+        text-align: left;
+        color: var(--bg);
+        display: grid;
+        place-items: center;
+        width: 40%;
+        background-color: var(--fg);
+        box-shadow: 0px 0px 20px var(--fg);
+        border-radius: 5px;
+    }
+    div.initiative::before {
+        display: block;
+        width: 100%;
+        content: "先攻表";
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--bg);
+        margin-bottom: 5px;
+    }
+    div.initiative > div.pc {
+        width: 240px;
+    }
+    div.initiative > div.pc::before {
+        display: inline-block;
+        width: 110px;
+        text-shadow: 0px 0px 3px var(--bg);
+    }
+    span.dice {
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    span.dice::before {
+        content: attr(name);
+        font-size: smaller;
+        display: inline-block;
+        overflow: visible;
+        color: var(--fgd);
+    }
+    div.initiative span.dice::before {
+        color: var(--bgd);
+    }
+    span.bonus, span.result {
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+    span.bonus.up::before {
+        content: '+ ';
+    }
+    span.bonus.down::before {
+        content: '- ';
+    }
+    span.result::before {
+        content: '= ';
+    }
+    span.ranking {
+        font-weight: bold;
+    }
+
+    div.with-avatar {
+        margin-bottom: 7px;
+        padding: 5px;
+        background-color: var(--fga);
+        color: var(--bg);
+        border-radius: 5px;
+    }
+    div.with-avatar > div.pc {
+        margin-left: 100px;
+        padding-top: 16px;
+        padding-left: 25px;
+    }
+    div.with-avatar > div.pc::before {
+        border-radius: 5px;
+        padding-right: 5px;
+        margin-bottom: 5px;
+        margin-left: -25px;
+    }
+    div.with-avatar::before {
+        display: block;
+        float: left;
+        background-color: white;
+        background-size: var(--avatar-size);
+        background-repeat: no-repeat;
+        content: "";
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border: 3px solid var(--fg);
+        margin-left: 3px;
+    }
+    div.with-avatar::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    div.pc > span.play {
+        cursor: pointer;
+    }
+    div.pc > span.play::after {
+        content: "🔊";
+        display: inline-block;
+        cursor: pointer;
+    }
+    div.with-avatar.t::before {
+        background-color: transparent;
+        background-size: 86px;
+        width: 86px;
+        height: 86px;
+        border: 0px;
+    }
+
+    div.with-avatar.chara1::before {
+        background-image: var(--chara1-pic);
+    }
+    div.with-avatar.chara1 > div.pc::before {
+        content: var(--chara1);
+        color: white;
+        background-color: var(--chara1-box);
+    }
+    div.with-avatar.chara1.var1::before {
+        background-image: var(--chara1-pic1);
+    }
+    div.with-avatar.chara1.var2::before {
+        background-image: var(--chara1-pic2);
+    }
+    div.with-avatar.chara1.var3::before {
+        background-image: var(--chara1-pic3);
+    }
+    div.with-avatar.chara1.var4::before {
+        background-image: var(--chara1-pic4);
+    }
+    div.with-avatar.chara1.var5::before {
+        background-image: var(--chara1-pic5);
+    }
+    div.with-avatar.chara1.var6::before {
+        background-image: var(--chara1-pic6);
+    }
+    div.with-avatar.chara1.var7::before {
+        background-image: var(--chara1-pic7);
+    }
+    div.with-avatar.chara1.var8::before {
+        background-image: var(--chara1-pic8);
+    }
+    div.with-avatar.chara1.var9::before {
+        background-image: var(--chara1-pic9);
+    }
+
+    div.with-avatar.chara2::before {
+        background-image: var(--chara2-pic);
+    }
+    div.with-avatar.chara2 > div.pc::before {
+        content: var(--chara2);
+        color: white;
+        background-color: var(--chara2-box);
+    }
+    div.with-avatar.chara2.var1::before {
+        background-image: var(--chara2-pic1);
+    }
+    div.with-avatar.chara2.var2::before {
+        background-image: var(--chara2-pic2);
+    }
+    div.with-avatar.chara2.var3::before {
+        background-image: var(--chara2-pic3);
+    }
+    div.with-avatar.chara2.var4::before {
+        background-image: var(--chara2-pic4);
+    }
+    div.with-avatar.chara2.var5::before {
+        background-image: var(--chara2-pic5);
+    }
+    div.with-avatar.chara2.var6::before {
+        background-image: var(--chara2-pic6);
+    }
+    div.with-avatar.chara2.var7::before {
+        background-image: var(--chara2-pic7);
+    }
+    div.with-avatar.chara2.var8::before {
+        background-image: var(--chara2-pic8);
+    }
+    div.with-avatar.chara2.var9::before {
+        background-image: var(--chara2-pic9);
+    }
+
+    div.with-avatar.chara3::before {
+        background-image: var(--chara3-pic);
+    }
+    div.with-avatar.chara3 > div.pc::before {
+        content: var(--chara3);
+        color: white;
+        background-color: var(--chara3-box);
+    }
+    div.with-avatar.chara3.var1::before {
+        background-image: var(--chara3-pic1);
+    }
+    div.with-avatar.chara3.var2::before {
+        background-image: var(--chara3-pic2);
+    }
+    div.with-avatar.chara3.var3::before {
+        background-image: var(--chara3-pic3);
+    }
+    div.with-avatar.chara3.var4::before {
+        background-image: var(--chara3-pic4);
+    }
+    div.with-avatar.chara3.var5::before {
+        background-image: var(--chara3-pic5);
+    }
+    div.with-avatar.chara3.var6::before {
+        background-image: var(--chara3-pic6);
+    }
+    div.with-avatar.chara3.var7::before {
+        background-image: var(--chara3-pic7);
+    }
+    div.with-avatar.chara3.var8::before {
+        background-image: var(--chara3-pic8);
+    }
+    div.with-avatar.chara3.var9::before {
+        background-image: var(--chara3-pic9);
+    }
+
+    div.with-avatar.chara4::before {
+        background-image: var(--chara4-pic);
+    }
+    div.with-avatar.chara4 > div.pc::before {
+        content: var(--chara4);
+        color: white;
+        background-color: var(--chara4-box);
+    }
+    div.with-avatar.chara4.var1::before {
+        background-image: var(--chara4-pic1);
+    }
+    div.with-avatar.chara4.var2::before {
+        background-image: var(--chara4-pic2);
+    }
+    div.with-avatar.chara4.var3::before {
+        background-image: var(--chara4-pic3);
+    }
+    div.with-avatar.chara4.var4::before {
+        background-image: var(--chara4-pic4);
+    }
+    div.with-avatar.chara4.var5::before {
+        background-image: var(--chara4-pic5);
+    }
+    div.with-avatar.chara4.var6::before {
+        background-image: var(--chara4-pic6);
+    }
+    div.with-avatar.chara4.var7::before {
+        background-image: var(--chara4-pic7);
+    }
+    div.with-avatar.chara4.var8::before {
+        background-image: var(--chara4-pic8);
+    }
+    div.with-avatar.chara4.var9::before {
+        background-image: var(--chara4-pic9);
+    }
+
+    div.pc.aya::before {
+        content: "阿雅";
+        color: white;
+        background: linear-gradient(45deg, deeppink, limegreen);
+        border: 0;
+        padding-left: 5px;
+    }
+    div.with-avatar.aya::before {
+        background-image: url(haru_aya.png);
+    }
+    div.with-avatar.t.aya::before {
+        background-image: url(avatar/aya/0.png);
+    }
+    div.with-avatar.t.aya.var1::before {
+        background-image: url(avatar/aya/1.png);
+    }
+    div.with-avatar.t.aya.var2::before {
+        background-image: url(avatar/aya/2.png);
+    }
+    div.with-avatar.t.aya.var3::before {
+        background-image: url(avatar/aya/3.png);
+    }
+
+    div#is-avatar-t-box, 
+    input#others, 
+    div#vocal-box, 
+    div#dice-box, 
+    input#dice-custom, 
+    div#quote-zone-box,
+    div#contents-edit-box {
+        display: none;
+    }
+    textarea#dialogue, textarea#quote-zone {
+        width: 90%;
+    }
+    td {
+        width: 50%;
+    }
+    div#contents li {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+</style></head><body><div class="container"><h2>第二回</h2>
+                <div class="pc dm">还记得上次到哪儿了不</div><div class="pc chara3">我们今天能出牢子吗</div><div class="pc chara1">罗少说要找办法跑出去</div><div class="pc chara2">不记得了（</div><div class="pc chara2">（不是）</div><div class="pc dm">难说，那要看你们</div><div class="pc chara3">努努力</div><div class="pc dm">上回是安特纳尔要找小孩聊天来着</div><div class="pc chara1">啊，dm还记得这回事啊</div><div class="pc chara4">真聊天吗</div><div class="pc chara1">但是现在我有点怕被小孩打死了）</div><div class="pc dm">刚翻到的|∀` )</div><div class="pc chara1">那、那我要上了喔</div><div class="with-avatar chara3 t"><div class="pc action chara3">在到处扒拉的时候我发现我衣服上有两个金属环，我决定把它们拆成铁丝来撬锁</div></div><div class="pc dm">过个敏捷</div><div class="pc dice"><span class="check-type">敏捷：</span><span class="dice" name="D20">12</span><span class="bonus up">3</span><span class="result">15</span><span class="ranking">失败</span></div><div class="pc dm">再进行一次隐匿检定</div><div class="pc dice"><span class="check-type">隐匿：</span><span class="dice" name="D20">10</span><span class="bonus up">2</span><span class="bonus up">3</span><span class="result">15</span><span class="ranking">成功</span></div><div class="pc chara2">不安</div><div class="pc chara2">( ﾟ∀。)</div><div class="with-avatar t"><div class="pc">你没能撬开锁，好在也没发生什么更糟糕的事。（柏里斯）</div></div><div class="with-avatar t chara3"><div class="pc chara3 action">没开……失望……</div></div><div class="with-avatar t chara3"><div class="pc chara3 action">事已至此……坐下来拉着罗少唠会吧顺便看看那边一片混乱在干嘛</div></div><div class="with-avatar t chara1 var8"><div class="pc action chara1">其实前面看到有地底侏儒的时候，我就来劲儿了：要知道，他们逃跑时候的叫声真的很有趣！前前后后耽误了这么长时间，总算是能和他们说上话了。</div></div><div class="with-avatar t chara1 var8"><div class="pc action chara1">我面带微笑，把手背在后边，就这么凑到了那对小孩跟前。</div></div><div class="with-avatar t chara1 var9"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">怎么，小朋友，爹妈不在吗？</span><audio src="vocals/antnar/2/【1】ねえ、坊や、親はいないの？.wav"></audio></div></div><div class="pc dm">(`ゥ´ )</div><div class="pc chara3">唉邪恶大叔</div><div class="pc chara1">我真的真的真的害怕了desuwa</div><div class="pc chara1">要被小登一刀攮死了</div><div class="pc chara1">😭</div><div class="pc chara3">你放心这是牢子</div><div class="pc chara3">大家应该都没刀吧</div><div class="pc chara3">大概</div><div class="pc chara1">小登得了疯牛病</div><div class="pc chara1">（开锁倒是等会可以让我试试，我敏捷高）</div><div class="with-avatar var9 t"><div class="pc">看上去更年长的那个女性地底侏儒将年幼的那个护在身后。</div></div><div class="with-avatar var9 t npc"><div class="pc npc" name="地底侏儒姐姐???">将相对年幼的另一个地底侏儒护在身后，警惕地看着你）<br>有什么话就说，你这蠢东西，不和你栅栏外的同类一起到处逛是因为你不喜欢吗。</div></div><div class="pc chara1" name="地底侏儒姐姐???">让我烧烤一下说什么</div><div class="pc chara1" name="地底侏儒姐姐???">其实只是想犯个贱</div><div class="pc chara1" name="地底侏儒姐姐???">我一卓尔能从那里套啥话出来(；　ﾟ 3ﾟ)</div><div class="pc chara3" name="地底侏儒姐姐???">一想到接下来可能会发生什么，我的嘴角忍不住地上扬(`ヮ´ )σ</div><div class="pc dm" name="地底侏儒姐姐???">不如跟人道个歉然后退回来好了(`ゥ´ )</div><div class="with-avatar t chara1"><div class="pc chara1" name="地底侏儒姐姐???"><span class="play" onclick="simple_audio_play(this)">那个疯侏儒是你们的什么人？同乡吗？</span><audio src="vocals/antnar/2/【2】あの狂ったスヴィルフネブリンは君たちにとって何者なんだ？出身は同じ？.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1 action" name="地底侏儒姐姐???">我指向吉米佳，故意提高了音量，目的自然是为对方也听见。</div></div><div class="pc chara1" name="地底侏儒姐姐???">道歉太ooc了desuwa( `д´)</div><div class="pc chara1" name="地底侏儒姐姐???">坏、就要坏的彻底( `ʷ´)σ</div><div class="pc chara4" name="地底侏儒姐姐???">ooc在生命面前不值一提( `д´)</div><div class="pc dm" name="地底侏儒姐姐???">那跪下嗦一口脚趾以表歉意呢</div><div class="pc chara1" name="地底侏儒姐姐???">･ﾟ( ﾟ∀。) ﾟ。</div><div class="pc chara3" name="地底侏儒姐姐???">怎么还在脚！</div><div class="pc chara1" name="地底侏儒姐姐???">还在舔脚</div><div class="pc dm" name="地底侏儒姐姐???">suck！my！foot！</div><div class="pc chara1" name="地底侏儒姐姐???">我们这个群味道有点大啊</div><div class="pc chara1" name="地底侏儒姐姐???">真菌要长出来了</div><div class="pc chara2" name="地底侏儒姐姐???">大家好啊，这里是明日方舟脚臭吧吧友群吗</div><div class="pc chara3" name="地底侏儒姐姐???">快进到大家都是互相吃脚的好兄弟</div><div class="pc chara4" name="地底侏儒姐姐???">错误的，这里是文爱群（？</div><div class="pc chara2" name="地底侏儒姐姐???">(〃∀〃)</div><div class="pc chara1" name="地底侏儒姐姐???">111真的有文爱吗</div><div class="pc chara3" name="地底侏儒姐姐???">md脸笑抽筋了</div><div class="pc chara1" name="地底侏儒姐姐???">原来武僧是杀生院祈荒……</div><div class="pc chara3" name="地底侏儒姐姐???">🍄人……原来是这样来的吗……</div><div class="pc dm" name="地底侏儒姐姐???">我求你了</div><div class="pc chara2" name="地底侏儒姐姐???">蕈人应该是没人舔的</div><div class="pc chara1" name="地底侏儒姐姐???">(´∀((☆ミつ给我向牢房里的蕈人小孩道歉啊！</div><div class="pc chara2" name="地底侏儒姐姐???">有人舔的叫卓尔，他们喜欢吃蘑菇</div><div class="pc chara3" name="地底侏儒姐姐???">･ﾟ( ﾉヮ´ )</div><div class="pc chara4" name="地底侏儒姐姐???">PL言论不代表PC观点（</div><div class="pc chara1" name="地底侏儒姐姐???">喔哦，妖僧bi○ch</div><div class="pc chara3" name="地底侏儒姐姐???">所以豺狼小姐到现在都还没说过一句话</div><div class="pc chara2" name="地底侏儒姐姐???">哎惜字如金</div><div class="with-avatar t"><div class="pc" name="地底侏儒姐姐???">那另一位地底侏儒毫不意外地听到了你的话。</div></div><div class="with-avatar t npc"><div class="pc npc" name="地底侏儒吉米佳">（笑着走过来）哇喔，看来我们这里来了个好伙子？刚被那傻大个儿踹一脚不够爽，现在还想尝尝看我们侏儒风味？</div></div><div class="pc chara3" name="地底侏儒吉米佳">唉风味</div><div class="pc chara2" name="地底侏儒吉米佳">⊂彡☆))∀`)dm来找灵感了</div><div class="pc chara1" name="地底侏儒吉米佳">同时吸引三人火力</div><div class="with-avatar t chara3 var1"><div class="pc chara3 action" name="地底侏儒吉米佳">在察觉到那边的骚乱后，十分兴奋地试图把罗少和豺狼拉到身边一起看戏。</div></div><div class="pc dm" name="地底侏儒吉米佳">同时嗦三个</div><div class="pc dm" name="地底侏儒吉米佳">汤姆开音乐会.gif</div><div class="pc chara3" name="地底侏儒吉米佳">我不行了</div><div class="pc chara2" name="地底侏儒吉米佳">😨</div><div class="pc chara4" name="地底侏儒吉米佳">究竟是什么把你变成这样子的</div><div class="with-avatar t chara1 var9"><div class="pc chara1" name="地底侏儒吉米佳"><span class="play" onclick="simple_audio_play(this)">哼，我清楚喔？你们不是天天被那兽人打么？不会是全靠那个一样是疯了的泽地熊人帮你们出头吧？</span><audio src="vocals/antnar/2/【3】ふん、僕には分かってるよ？お前たちは毎日オークに殴られてるんじゃないか？まさかあの同じく狂ったクアゴスに頼ってばかりじゃないだろうな？.wav"></audio></div></div><div class="pc chara1" name="地底侏儒吉米佳">dm已经被臭脚熏晕，不知天地为何物了</div><div class="pc chara2" name="地底侏儒吉米佳">钻进牛脚尖了</div><div class="pc chara3" name="地底侏儒吉米佳">先说好，不许发脚图⊂彡☆))∀`)</div><div class="pc chara3" name="地底侏儒吉米佳">白丝除外</div><div class="with-avatar npc var9 t"><div class="pc npc" name="地底侏儒吉米佳">（大笑起来）哈哈哈哈！你在说什么呢？这些天以来你还是第二个挨打的，顺带一提第一个是那鱼人老兄，跟个石头一样打着没反应，打一会儿人伦特就倦了。所以也可以说，你小子还是第一个让我们看过瘾的。</div></div><div class="pc chara3" name="地底侏儒吉米佳">所以他们是全舔脚了吗</div><div class="pc chara1" name="地底侏儒吉米佳">･ﾟ( ﾉヮ´ )</div><div class="pc chara1" name="地底侏儒吉米佳"> 感谢你的思路</div><div class="pc chara1" name="地底侏儒吉米佳">我偷了</div><div class="with-avatar t chara1 var9"><div class="pc chara1" name="地底侏儒吉米佳"><span class="play" onclick="simple_audio_play(this)">啊，没被打，也就是说你们舔他的脚了？</span><audio src="vocals/antnar/2/【4】は？殴られてない？じゃあお前たち奴らの靴舐めでもしてたのか？.wav"></audio></div></div><div class="with-avatar npc var9 t"><div class="pc npc" name="地底侏儒吉米佳">你真这么想尝尝兽人大脚？在你自己蜘蛛巢里吃够了想换换口味了？好满足你。（对兽人伦特）喂！傻大个！过来给这好伙子来两脚！</div></div><div class="pc chara3" name="地底侏儒吉米佳">兽人不是被打晕了吗<br></div><div class="pc chara1" name="地底侏儒吉米佳">唉不是</div><div class="pc chara1" name="地底侏儒吉米佳">你是他的宝可梦啊）</div><div class="pc dm" name="地底侏儒吉米佳">没被打晕啊</div><div class="pc chara1" name="地底侏儒吉米佳">蒂伦朵救我！</div><div class="pc chara1" name="地底侏儒吉米佳">✋😭✋</div><div class="pc chara3" name="地底侏儒吉米佳">哦是打倒了啊</div><div class="pc chara3" name="地底侏儒吉米佳">欸你说，如果我现在把蒂纶朵支走的话……(`ゥ´ )</div><div class="with-avatar npc var9 t"><div class="pc npc" name="兽人伦特">（狞笑着一边做舒展动作一边走上前来）咋的黑皮东西？口味淡的吃腻了？想整点重口味的？</div></div><div class="pc chara2" name="兽人伦特">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc chara3" name="兽人伦特">这团也太重口了吧</div><div class="pc chara3" name="兽人伦特">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="with-avatar t chara3"><div class="pc chara3" name="兽人伦特"><span class="play" onclick="simple_audio_play(this)">（走向蒂纶朵并向他搭话）对了，蒂纶朵先生，我想问一下这里会提供食物吗，具体是什么时间呢？偶尔会有打开门锁的时候吗？</span><audio src="vocals/baileys/2/【1】そういえば、デレンディルさん、ここでは食事が提供されますか？ 具体的な時間はいつですか？ たまにドアの鍵が開けられることはありますか？.wav"></audio></div></div><div class="pc chara3" name="兽人伦特">(`ᝫ´ )</div><div class="with-avatar t npc"><div class="pc npc" name="泽地熊人蒂纶朵">有的，菌汤糊糊，算是能吃，毕竟还是不能把我们饿死。应该是快了，我也不确定时间，不过你应该没机会，就现在这样既没武器又被铐住的情况，你觉得能跑多远？</div></div><div class="with-avatar t chara3"><div class="pc chara3" name="泽地熊人蒂纶朵"><span class="play" onclick="simple_audio_play(this)">好的，谢谢您。（小声）看来先想办法把手铐什么的弄开比较好……</span><audio src="vocals/baileys/2/【2】はい、ありがとうございます。まずは手錠をどうにか外す方法を考えたほうが良さそうですが….wav"></audio></div></div><div class="with-avatar t chara3 var2"><div class="pc chara3" name="泽地熊人蒂纶朵"><span class="play" onclick="simple_audio_play(this)">卡文迪许先生！我们互相撬手铐的锁吧！如果能成功的话……</span><audio src="vocals/baileys/2/【3】「キャベンディッシュさん！お互い手錠の錠をこじ開けましょう！もし成功したら…」.wav"></audio></div></div><div class="pc dm" name="泽地熊人蒂纶朵">等待安特纳尔……</div><div class="pc chara1" name="泽地熊人蒂纶朵">我在想办法求生……</div><div class="with-avatar t chara3"><div class="pc chara3" name="泽地熊人蒂纶朵"><span class="play" onclick="simple_audio_play(this)">虽然门锁的问题亟待解决，但是我觉得先把手铐拆开的话肯定能方便很多这样子。</span><audio src="vocals/baileys/2/【4】確かに扉の錠も緊急ですが、まず手錠を外せれば行動の自由度が格段に上がりますね。.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2" name="泽地熊人蒂纶朵"><span class="play" onclick="simple_audio_play(this)">哈！这活我在深水城干过好多次了！</span><audio src="vocals/robe/2/【1】ハ！この仕事はおれがウォーターディープで何度もやったことがある！.wav"></audio></div></div><div class="with-avatar t chara2 var5"><div class="pc chara2" name="泽地熊人蒂纶朵"><span class="play" onclick="simple_audio_play(this)">……是魔术表演！咳咳！表演！但是技巧是一样的！</span><audio src="vocals/robe/2/【2】……手品の見世物ですね！へへ！でも、コツは同じさ！.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc action chara3" name="泽地熊人蒂纶朵">掏出刚才的铁丝</div></div><div class="pc dm" name="泽地熊人蒂纶朵">骰一个巧手检定</div><div class="pc dice"><span class="check-type">巧手（罗）：</span><span class="dice" name="D20">18</span><span class="bonus up">2</span><span class="bonus up">1</span><span class="result">21</span><span class="ranking">成功</span></div><div class="pc dice"><span class="check-type">巧手（柏里斯）：</span><span class="dice" name="D20">2</span><span class="bonus up">3</span><span class="result">5</span><span class="ranking">失败</span></div><div class="with-avatar t chara2 var1"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哈！我手艺不输当年！</span><audio src="vocals/robe/2/【3】ハ！おれの腕前は昔と少しも衰えてねぇ！.wav"></audio></div></div><div class="with-avatar t chara3 var3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">欸，不好意思啊……好像有点复杂……</span><audio src="vocals/baileys/2/【5】えっと…すみません、ちょっと複雑みたいです….wav"></audio></div></div><div class="with-avatar t chara2 var8"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">这是魔术表演学来的哦！怎么可能是撬人家保险柜呢！</span><audio src="vocals/robe/2/【4】手品のショーで覚えたんだぜ！まさか金庫破りなわけないだろ？.wav"></audio></div></div><div class="with-avatar t var8"><div class="pc">还真给你撬开了！手铐啪嗒一声打开，落到地上，连带着铁链发出一连串响声。（罗）</div></div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呀！小姐，赶快假装扣上……</span><audio src="vocals/robe/2/【5】お嬢様、早く見せかけの錠をかけましょう….wav"></audio></div></div><div class="with-avatar t var2 npc"><div class="pc npc" name="泽地熊人蒂纶朵">（瞪大了眼，低声呼着）快快快，再试试颈环！</div></div><q style="text-align: center;">与此同时另一边……</q><div class="with-avatar chara1 t"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">单是对那泽地熊人点头哈腰还不满足，还要当这群地底侏儒的小跟班吗——怎么可能。你应该是听了那熊人说的话吧。那你应该也听见了，“大家一起逃出去，不丢下任何一个人”。要我去喊他吗？</span><audio src="vocals/antnar/2/【5】あのクアゴスにぺこぺこ頭を下げるだけでは物足りず、このスヴィルフネブリンの子分にまでなるつもりか——ありえないだろ。あのクアゴスの言葉を聞いたんだろ？なら『全員で一緒に脱出する、誰一人置き去りにしない』って言葉も聞いたはずだ。呼んでこようか？.wav"></audio></div></div><div class="pc chara1">申、申请过一个威吓( ›´ω`‹ )</div><div class="pc chara1">大家那边在推进度，我这边要被兽人单杀了</div><div class="pc chara2">大伙：无关心☆</div><div class="pc dice"><span class="check-type">威吓：</span><span class="dice" name="D20">8</span><span class="bonus up">2</span><span class="bonus down">1</span><span class="result">9</span><span class="ranking">失败</span></div><div class="pc chara1">寄</div><div class="pc chara1">😭</div><div class="pc chara1">再见了各位</div><div class="pc chara1">我马上以矮人人格启动<div class="pc chara1">(´∀((☆ミつ</div></div><div class="pc chara1">🤓actually，现在就是矮人人格……</div><div class="pc chara3">明明是你自己先犯贱啊(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="with-avatar t npc"><div class="pc npc" name="兽人伦特">（手指按得啪啦响）不丢下任何一个人，但没说还要带上你个臭卓尔嘛~</div></div><div class="pc chara1" name="兽人伦特">觉悟者恒幸福、！</div><div class="pc chara1" name="兽人伦特">伦特你要记住、觉悟者恒幸福！<div class="pc chara1" name="兽人伦特">(´∀((☆ミつ</div><div class="pc chara2" name="兽人伦特">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div></div><div class="pc dm" name="兽人伦特">那边撬锁的二位现在是个什么情况？</div><div class="with-avatar t chara2"><div class="pc chara2 action" name="兽人伦特">我试着开一下白蕾丝的脖环。</div></div><div class="pc dice"><span class="check-type">巧手：</span><span class="dice" name="D20">11</span><span class="bonus up">3</span><span class="result">14</span><span class="ranking">失败</span></div><div class="with-avatar t"><div class="pc">这次你的铁丝再怎么扭，也没能打开柏里斯的颈环。（罗）</div></div><div class="with-avatar t chara4"><div class="pc chara4 action">（戳戳）（指指自己的手铐）</div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">刚才失败了实在是不好意思，我在这方面完全没有实践经验……如果可以的话，还请您也去帮帮那个和我们一起来的一直没说话的女士吧……</span><audio src="vocals/baileys/2/【6】さっきは失敗して本当に申し訳ありません…私、こういうことには全く経験がなくて…もしよろしければ、一緒に連れてこられたあの無口な女性のもにも、あなたが行って手伝ってあげてくださいませんか….wav"></audio></div></div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">嘁，这个锁真是紧……</span><audio src="vocals/robe/2/【6】ちっ、この錠は本当にキツくて…….wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">让我试试……</span><audio src="vocals/robe/2/【7】おい、ちょっとやらせてみろ…….wav"></audio></div></div><div class="pc dice"><span class="check-type">巧手：</span><span class="dice" name="D20">9</span><span class="bonus up">3</span><span class="result">12</span><span class="ranking">失败</span></div><div class="with-avatar t chara3 var1"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">啊没事了这样就挺好的，真是太感谢您了！我可以冒昧问一下您的名字吗？</span><audio src="vocals/baileys/2/【7】あ、もう大丈夫です。本当にありがとうございます！お名前を伺ってもよろしいでしょうか？.wav"></audio></div></div><div class="with-avatar t var2 chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">可恶……让我再试试脖子……</span><audio src="vocals/robe/2/【8】くそ……もう一度首の感じを試させてくれ…….wav"></audio></div></div><div class="pc dice"><span class="check-type">巧手：</span><span class="dice" name="D20">19</span><span class="bonus up">3</span><span class="result">22</span><span class="ranking">成功</span></div><div class="with-avatar t chara2 var1"><div class="pc"><span class="play" onclick="simple_audio_play(this)">哈哈！看来是这批锁锈了几个嘛！</span><audio src="vocals/robe/2/【9】はは！どうやらこのロットの錠は何個か錆びてるみたいだな！相変わらず言い訳が上手いね！.wav"></audio></div></div><div class="with-avatar t chara2 var4"><div class="pc"><span class="play" onclick="simple_audio_play(this)">呵！我是来自深水城法术贵族世家，从北区到港口区无人不知、无人不晓的罗•弥斯敦•卡文迪许卿！</span><audio src="vocals/robe/2/【10】ふん！おれこそはウォーターディープの魔法貴族ローブ・ミストン・キャベンディッシュ卿、北地区から港地区まで知らぬ者なき者！.wav"></audio></div></div><div class="pc chara1">省略版：卷心菜</div><div class="with-avatar t chara2 var1"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">要是没被那个疯卓尔男袭击……不过！不用担心，我会把大家带出去的！</span><audio src="vocals/robe/2/【11】例の狂ったドロウの男に襲われさえしなければ……だが！ご心配なく、諸君を必ずやお導きしてみせよう！.wav"></audio></div></div><div class="with-avatar t var1 chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">谢谢您，我会永远记得您的恩情！如果有地方什么需要我帮忙的话……至少现在，能打开的锁当然是越多越好吧。</span><audio src="vocals/baileys/2/【8】ありがとうございます、この恩は決して忘れません！お力になれることがあれば…せめて今は、開けられる錠が多ければ多いほど良いですよね.wav"></audio></div></div><q style="text-align: center;">与此同时另一边……</q><div class="with-avatar t chara3"><div class="pc action">（其实一直在注意那边，但是故意装看不见听不见）</div></div><div class="with-avatar t chara1 var5"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">呀！蒂纶朵……不，蒂纶朵阁下！救命啊！</span><audio src="vocals/antnar/2/【6】うっ！デレンディル！いえ、デレンディル様！助けて……！！.wav"></audio></div></div><div class="pc chara1">不、不要杀我！</div><div class="pc chara1">我敏捷很高的！</div><div class="pc chara1">可以帮你们开——</div><div class="pc chara1">（四散爆裂）</div><div class="pc chara3">安特纳尔敏捷很高，遇到兽人大脚会自己跑的</div><div class="with-avatar t var5"><div class="pc">……就在你们闹哄哄的当口，牢外走来一个提着两个大桶的全副武装的卓尔。柏里斯空悬的手铐、“豺狼“松开的颈环，还有罗少手上的铁丝都一览无余，很显然，你们的逃跑计划将要胎死腹中，说不定还有些人要一同陪葬。</div></div><div class="pc chara1">(´ﾟДﾟ`)</div><div class="pc chara1">😋没事，不关我事</div><div class="with-avatar t var5"><div class="pc">没有掺和到你们当中的人，包括伦特，都靠墙埋头坐着一言不发，试图降低自己的存在感。蒂纶朵也低下了头，但其脸部绷紧的肌肉出卖了他的想法。</div></div><div class="with-avatar t chara1 var3"><div class="pc chara1 action">喔哦，现在是对着墙角发呆的时候……</div></div><div class="with-avatar t var3 chara3"><div class="pc chara3">（低声）糟了好像被发现了怎么办卡文迪许先生我们现在怎么办？</div></div><div class="with-avatar t chara2 var2"><div class="pc chara2">（扣上！然后转过去！）</div></div><div class="with-avatar t var2"><div class="pc">那卓尔看上去经历了很多，他面部一塌糊涂不成人样，可能被火烧过，一只手少了两个手指。他将桶在门外放下，伸出一根手指指向罗少。</div></div><div class="with-avatar t var2 npc"><div class="pc npc" name="毁容的卓尔???">你！那个手里拿着铁丝的！过来！</div></div><div class="with-avatar t chara1"><div class="pc chara1 action" name="">我回头看一眼……</div></div><div class="pc chara1" name="">以后遇到卓尔NPC我都要问问看我认不认识( `д´)σ<div class="pc chara1" name="">(´∀((☆ミつ</div><div class="pc dm" name="">不认识( ´∀`)</div><div class="pc chara1" name="">好我转回去</div></div><div class="with-avatar t chara4 var2"><div class="pc action chara4" name="">转过头去，静听后面的动静。</div></div><div class="with-avatar t chara2 var5"><div class="pc chara2" name=""><span class="play" onclick="simple_audio_play(this)">大，大爷，我掏个耳屎……</span><audio src="vocals/robe/2/【12】おいおい、旦那、ちょっと耳かきを……場をわきまえろよ.wav"></audio></div></div><div class="pc dm" name="">你有过去吗？<div class="pc chara2" name="">我过去，是一个深水城的小学徒……</div><div class="pc chara1" name="">(´∀((☆ミつ你在说什么啊！</div><div class="pc chara3" name="">(´∀((☆ミつ</div><div class="pc chara4" name="">(´∀((☆ミつ</div><div class="pc chara2" name="">罗少当然有过去啊(`ゥ´ )</div></div><div class="with-avatar t npc var5"><div class="pc npc" name="毁容的卓尔???">（仅有你和他能听见的声音，勉强通顺的通用语）我说……你速度还挺快的嘛……如果我给你一个从这里逃跑的机会，你能把握住吗？</div></div><div class="with-avatar t chara1 var8"><div class="pc chara1 action" name="毁容的卓尔???">诶，我再回头看看。</div></div><div class="with-avatar t chara2 var5"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">哟……我哪敢跑啊……您看我小细胳膊小细腿……</span><audio src="vocals/robe/2/【13】おい…逃げられるわけないだろ…見てよこの細い腕と足じゃ…そのくせ口先だけは達者なんだから.wav"></audio></div></div><div class="pc chara1" name="毁容的卓尔???">男卓尔诱捕器这是</div><div class="pc chara1" name="毁容的卓尔???">这卓尔哥太温油了，蒂纶朵不说通用语他说</div><div class="pc chara3" name="毁容的卓尔???">･ﾟ( ﾉヮ´ )</div><div class="pc dm" name="毁容的卓尔???">(´∀((☆ミつ</div><div class="with-avatar t chara2 var5"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">您看起来就不一样，雄厚健壮、膀大腰圆的，一定是个威武的英雄……</span><audio src="vocals/robe/2/【14】貴殿はさすがにお見かけ通り、筋骨隆々でがっしりとしたお体格、まことにお見事な英雄でございます…….wav"></audio></div></div><div class="with-avatar t var5 npc"><div class="pc npc" name="毁容的卓尔???">（脸上变形出一个奇怪的表情，仍旧低声）你……哈，我看懂了。<br>（突然变大声）滚开！你这下等的生物！不要挡着门！</div></div><div class="with-avatar t var5 chara2"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">我肯定听您的、听您吩咐……</span><audio src="vocals/robe/2/【15】必ず貴方様のおおせに従います、何なりとお申し付けください….wav"></audio></div></div><div class="with-avatar t var5 chara2"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">是是是……</span><audio src="vocals/robe/2/【16】はいはいはい….wav"></audio></div></div><div class="with-avatar t chara2 var2"><div class="pc chara2 action" name="毁容的卓尔???">三步一回头，装的害怕的样子。<br></div></div><div class="with-avatar t var2"><div class="pc" name="毁容的卓尔???">在你后退之后，他掏出钥匙打开门，将两个大桶提进来，随后退出大门并锁上，接着就在离门两步远的地方看着你们。大桶中一个盛有不知名真菌熬煮的糊糊，另一个装有一些木碗。</div></div><div class="with-avatar t chara1 var9"><div class="pc chara1" name="毁容的卓尔???">喔哦，吃饭了啊！</div></div><div class="with-avatar t chara1 var6"><div class="pc chara1 action" name="毁容的卓尔???">我转过头看别人现在是什么情况。<div class="pc" name="毁容的卓尔???">其它人慢吞吞地起身走过来，轮流拿起碗舀一碗，随后退回到自己的位置上坐着吃。</div></div></div><div class="with-avatar t chara1 var8"><div class="pc chara1 action" name="毁容的卓尔???">嘿，咱也来一碗ᕕ( ᐛ )ᕗ</div></div><div class="with-avatar t chara1 var8"><div class="pc chara1 action" name="毁容的卓尔???">顺便瞅瞅这些卓尔是个嘛人</div></div><div class="with-avatar t chara1"><div class="pc chara1 action" name="毁容的卓尔???">（哗，这脸瞅着真吓人。）</div></div><div class="with-avatar t chara3"><div class="pc action chara3" name="毁容的卓尔???">（把因为失去了金属环所以没法固定在衣服上的不知为何看起来有点像内……看起来只是普通的布条的白色布条系在左边辫子根部当蝴蝶结）</div></div><div class="with-avatar t chara1"><div class="pc chara1" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">你刚刚把那个人类奴隶叫出去，却没有惩罚他吗？（尽可能压低声音）</span><audio src="vocals/antnar/2/【7】あの人間の奴隷を呼び出したのに、罰を与えなかったのか？.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">你和他说了什么？</span><audio src="vocals/antnar/2/【8】何を話したのか？.wav"></audio></div></div><div class="with-avatar t chara4"><div class="pc chara4 action" name="毁容的卓尔???">走过去给自己盛一碗</div></div><div class="with-avatar t npc"><div class="pc npc" name="毁容的卓尔???">（同样低声，用地底通用语）……这不关你事，你大可自己去问他。不过……你很快就会知道的。</div></div><div class="with-avatar t chara1 var6"><div class="pc chara1 action" name="毁容的卓尔???">（好吧，我打饭喔……）</div></div><div class="with-avatar t var6"><div class="pc" name="毁容的卓尔???">待你们享用完这一餐，那卓尔再度进门准备收拾大桶离开。这时，你们听到洞窟响起一阵嗡嗡回声，紧接着是一阵骇人的尖叫，（在有黑暗视觉的人的眼中）外面有几个炽白的生物快速地从空中穿梭过，随后整个前哨站都沸腾起来，在你们看不见的地方，卓尔的喊声此起彼伏：”敌袭！拿起武器！“……。这面部融化的卓尔感知到这一切后，连木桶也没收拾便飞快地跑了出去。你们惊喜地发现，不论是出于有意还是无意，他走之前没有锁上牢门！</div></div><div class="pc chara1" name="毁容的卓尔???">冲刺！冲刺！冲刺！</div><div class="pc chara2" name="毁容的卓尔???">喔哦哦！</div><div class="with-avatar t chara3 var2"><div class="pc chara3" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">好机会！</span><audio src="vocals/baileys/2/【9】チャンスだ！.wav"></audio></div></div><div class="with-avatar t chara2 var1"><div class="pc chara2 action" name="毁容的卓尔???">（挥舞锁住的手）</div></div><div class="with-avatar t chara1 var9"><div class="pc chara1" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">还真是天无绝人之路！</span><audio src="vocals/antnar/2/【9】まさに「窮すれば通ず」だな！.wav"></audio></div></div><div class="with-avatar t chara4 var1"><div class="pc action chara4" name="毁容的卓尔???">（冲到前面把门推开）</div></div><div class="pc chara1" name="毁容的卓尔???">喔！战！</div><div class="pc chara1" name="毁容的卓尔???">但是我是废物……</div><div class="with-avatar t var1"><div class="pc" name="毁容的卓尔???">随着”豺狼“推开牢门，其它囚犯，先前有多么沉默，这会儿动作就有多迅猛，一同冲了出来。</div></div><div class="pc chara1" name="毁容的卓尔???">柏里斯怎么在蒂纶朵头上跳来跳去</div><div class="pc chara3" name="毁容的卓尔???">那是</div><div class="pc chara3" name="毁容的卓尔???">开心的蹦跶</div><div class="pc chara3" name="毁容的卓尔???">并没有在踩头</div><div class="pc chara1" name="毁容的卓尔???">柏里斯怎么在蒂纶朵头上开心的蹦跶<div class="pc chara1" name="毁容的卓尔???">(´∀((☆ミつ</div></div><div class="pc chara3" name="毁容的卓尔???">这次是踩头</div><div class="with-avatar t var1"><div class="pc" name="毁容的卓尔???">前哨站建在洞壁上，在其下半空中有一层蜘蛛网，最下面还有一条静静流淌的河。门外有两段绳桥，一段通向右边的平台，一段通向左边的倒悬石笋。</div></div><div class="pc dm" name="毁容的卓尔???">你们要怎么走？</div><div class="pc chara1" name="毁容的卓尔???">我去这边看看</div><div class="with-avatar t chara3 var2"><div class="pc chara3" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">哇，那家伙好快地冲出去了！</span><audio src="vocals/baileys/2/【10】わあ、あの野郎、信じられない速さで走り去ったな！.wav"></audio></div></div><div class="pc chara1" name="毁容的卓尔???">敏18说是</div><div class="with-avatar t chara2"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">喔，像条脱缰的野……犬。</span><audio src="vocals/robe/2/【17】おや、まるで手綱が外れた野良……犬のようだな.wav"></audio></div></div><div class="with-avatar t"><div class="pc" name="毁容的卓尔???">这座倒悬的石笋塔的大门没有锁上。（安特纳尔）</div></div><div class="pc chara1" name="毁容的卓尔???">进去看看！</div><div class="with-avatar t chara4 var2"><div class="pc action chara4" name="毁容的卓尔???">（往上走）</div></div><div class="with-avatar t var2 chara3"><div class="pc action chara3" name="毁容的卓尔???">（保持距离跟在豺狼的后面）</div></div><div class="with-avatar t chara2 var1"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">这是……活下来了？那我要去找乐子了！(`ヮ´ )</span><audio src="vocals/robe/2/【18】こ、これは……生き延びたのか？そしたら俺、遊びに行くぜ！.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2 action" name="毁容的卓尔???">（跟着“野犬”走）</div></div><div class="with-avatar t"><div class="pc" name="毁容的卓尔???">这房间有一套桌椅、一个通向上层房间的梯子，以及一个用来挂装备的蛛丝制带勾装置，不过目前上面什么装备也没有。</div></div><div class="with-avatar t chara2 var1"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">柏里斯小姐和不认识的家伙，之后再见咯！</span><audio src="vocals/robe/2/【19】ベリスお嬢さんと、そこの知らない奴、また後でな！.wav"></audio></div></div><div class="with-avatar t chara2 var1"><div class="pc chara2" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">啊不，小哥(`ヮ´ )</span><audio src="vocals/robe/2/【20】あっ違う、兄貴だった.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">我……唉算了，没事，之后再见</span><audio src="vocals/baileys/2/【11】はあ……もういいや、また後でな.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3" name="毁容的卓尔???"><span class="play" onclick="simple_audio_play(this)">（自言自语）无论如何……要先把丢掉的东西找回来才行。</span><audio src="vocals/baileys/2/【12】どうあれ……まずは失った物を取り戻さなければ.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1 action" name="毁容的卓尔???">爬上去看看</div></div><div class="pc chara3" name="毁容的卓尔???">这边有啥啊</div><div class="pc chara3" name="毁容的卓尔???">草，捅熊窝了</div><div class="with-avatar t"><div class="pc" name="毁容的卓尔???">这里的栅栏后面住着好些泽地熊人！（“豺狼”）</div></div><div class="pc dm" name="毁容的卓尔???">过一个隐匿</div><div class="pc dice"><span class="check-type">隐匿：</span><span class="dice" name="D20">20</span><span class="result">20</span><span class="ranking">大成功</span></div><div class="pc chara2">(´ﾟДﾟ`)</div><div class="pc chara2">是，</div><div class="pc chara2">( ｣ﾟДﾟ)｣＜自然二十！</div><div class="pc chara3">(　д ) ﾟ ﾟ</div><div class="pc chara3">你团第一个大成功</div><div class="pc chara2">居然不是敌人r出来的</div><div class="pc chara2">太感动了</div><div class="with-avatar t"><div class="pc">二楼存放着相当之多的装备！（安特纳尔）<br><br>这里有如下装备<br>6 件链甲衫<br>6 件嵌钉皮甲<br>6 面盾牌<br>6 把手弩<br>20 匣手弩弩矢，每匣配有20 支弩矢<br>6 把短剑和10 把匕首<br>4 捆100 尺长的丝质绳索<br>2 把建筑锤（无法作为武器使用）<br>2 袋铁钉（每袋含10 枚钉子）</div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">（对着蒂纶朵他们招呼）这里有武器而且没有人看守！咱们能拿一点是一点！</span><audio src="vocals/antnar/2/【10】ここに武器があって、それに見張りもいない！少しでも持てるものは持っていこう！.wav"></audio></div></div><div class="with-avatar t"><div class="pc">你在发现这些泽地熊人的一瞬间便将头缩了回去，还好还好，没有人注意到你的出现。（豺狼）</div></div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">这玩意我也不会用啊……（骂骂咧咧地拿两把匕首）</span><audio src="vocals/robe/2/【21】これ、俺には使いこなせそうにないな….wav"></audio></div></div><div class="with-avatar t chara4"><div class="pc action chara4">（先往反方向跑回去）</div></div><div class="with-avatar t chara2"><div class="pc action chara2">（再拿一捆绳）</div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">怎么啦？突然跑回来……有吓人的东西？</span><audio src="vocals/baileys/2/【13】どうした？急に戻ってきて……何かおそろしいものを見たのか？.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">他们怎么都往那边去了……跟上去吧。</span><audio src="vocals/baileys/2/【14】みんな、どうしてあっちへ…？ ついていこう.wav"></audio></div></div><div class="pc chara1">能不能用锤子钉子把手铐砸开</div><div class="pc dm">你可以试试，直接过力量</div><div class="with-avatar t chara4 var2"><div class="pc chara4"><span class="play" onclick="simple_audio_play(this)">（扭曲而难听的精灵语）...那里有熊人...</span><audio src="vocals/placeholder/2/【1】あそこに…クアゴスが….wav"></audio></div></div><div class="pc chara2">第一次发言☆</div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">欸？这样啊……</span><audio src="vocals/baileys/2/【15】えっ？そういうことか….wav"></audio></div></div><div class="pc chara1">好，那我先试着砸罗少的</div><div class="pc dice"><span class="check-type">力量（安特纳尔）：</span><span class="dice" name="D20">12</span><span class="bonus up">2</span><span class="result">14</span><span class="ranking">成功</span></div><div class="with-avatar t chara3"><div class="pc chara3 action">（发现桥太窄了好像挤不过去，于是跟着豺狼跟在众人后面）</div></div><div class="with-avatar t"><div class="pc">手铐和颈环间的铁链被尽数砸断，现在它们除了彰显身份之外再不会限制动作了。（安特纳尔）</div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">好，我也来！</span><audio src="vocals/robe/2/【22】よし、俺もやるぜ！.wav"></audio></div></div><div class="pc dice"><span class="check-type">：</span><span class="dice" name="D20">12</span><span class="bonus up">1</span><span class="result">13</span><span class="ranking">成功</span></div><div class="with-avatar t chara1"><div class="pc chara1 action">我穿一个镶钉皮甲，拿一把手弩和一匣弩矢，一把短剑。</div></div><div class="with-avatar t"><div class="pc">普皮多给自己拿上了一把短剑、一把手弩与一匣子弩矢。</div></div><div class="pc chara3">我就后面过去捡漏看看还剩啥吗</div><div class="with-avatar t"><div class="pc">两个未成年地底侏儒上来一人拿走一把匕首。</div></div><div class="with-avatar t"><div class="pc">安特纳尔身上的铁链也被砸开了。（罗）</div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">（在门口探头）欸，你们都在这里干什么……</span><audio src="vocals/baileys/2/【16】え？みんな何してるの…？.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3 action">（注意到现在的状况之后回去叫豺狼小姐过来）</div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">他们似乎找到了很多有用的道具呢，至少为了应付后面的各种麻烦，我们也去捡点东西吧？</span><audio src="vocals/baileys/2/【17】彼ら、結構使えそうな道具を見つけたみたいですね。今後起こりうるトラブルに備えて、私たちも何か拾っておきませんか？.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">喂，那边的哑巴……小姐？叫啥名字？</span><audio src="vocals/robe/2/【23】おい、そこの無口な……お嬢さん？名前は何だ？.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">啊……比划比划就行，你听得懂通用语吧？</span><audio src="vocals/robe/2/【24】ああ…身振りで十分だ、共通語は理解できるよな？.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc action chara1">我拿完就下楼了，继续往第二座塔冲刺</div></div><div class="with-avatar t chara3"><div class="pc action chara3">（总之先拿把匕首揣腿环上再切50尺绳子系腰上）</div></div><div class="with-avatar t"><div class="pc">其它囚徒见你们相互砸开了锁链，也纷纷效仿。随后盾矮人上前穿上一件链甲衫，拿起一面盾牌和一把短剑，吉米佳拿走了一把短剑、一把手弩与一匣子弩矢。</div></div><div class="with-avatar t chara4"><div class="pc action chara4">拿上一把短剑和3匣弩矢，然后跟着走</div></div><div class="pc dm">啊卧槽我还要给npc配装</div><div class="pc chara1">那很痛苦了</div><div class="pc chara2">草</div><div class="pc chara2">当p社游戏玩了说是(`ヮ´ )</div><div class="pc chara1">甚至要看NPC有没有军用武器熟练项</div><div class="pc chara1">这里是不是只有沙里士有</div><div class="pc dm">你们都拿了几把短剑了</div><div class="pc chara1">安特纳尔1<br>豺狼1</div><div class="pc chara1">好像没了</div><div class="pc chara4">一人一把？</div><div class="pc chara1">罗少和男娘拿的匕首</div><div class="pc dm">那还好还有一把给沙里士</div><div class="pc chara1">沙里士抢不过说是･ﾟ( ﾉヮ´ )</div><div class="pc chara1">害细胳膊细腿</div><div class="pc dm">那伦特就只能抡匕首了啊</div><div class="pc chara1">他直接用大脚踢不行吗</div><div class="pc chara2">这拳脚</div><div class="pc chara1">匕首对他有什么用</div><div class="pc chara2">他拆个门板吧</div><div class="pc chara3">一脚四点为什么不用</div><div class="pc chara2">我要申请雁过拔毛，把绳子全拿走( `д´)</div><div class="pc dm">那最后伦特穿上一件链甲衫，拿走了1把匕首</div><div class="pc dm">现在你们带了绳子的，想想怎么带</div><div class="pc dm">50尺约等于15米</div><div class="pc chara3">那系腰上有点不现实了</div><div class="pc chara3">等我想想</div><div class="pc chara2">学武僧立绘1.0绑成木乃伊……<div class="pc chara2">(´∀((☆ミつ</div><div class="pc chara1">继续往第二座塔冲刺冲刺( `д´)</div><div class="pc dm">桥豆麻袋安特纳尔你先别跑到哪儿</div><div class="pc chara3">像这样卷起来挂身上</div><div class="pc dm">你先就站现在这座塔的门口</div><div class="pc chara1">好好好</div><div class="pc chara2">像野外求生那样，扯出两个线头做成背带</div><div class="pc chara1">害怕的丝袜</div><div class="pc chara2">剩下的绑在背后</div></div><div class="with-avatar chara3 t"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">好麻烦，要是可以把背包找回来就好了……</span><audio src="vocals/baileys/2/【18】面倒ですよね…もしリュックさえ見つかればいいんですけど.wav"></audio></div></div><div class="with-avatar t"><div class="pc">当安特纳尔推开另一侧的房门，他看到绳桥对面的平台上，有一群卓尔在与数个恶魔混战！看起来最好是不要引起任意一方的注意。</div></div><div class="pc chara2">(((　ﾟдﾟ)))</div><div class="pc chara1">(((　ﾟдﾟ)))</div><div class="with-avatar t chara2 var7"><div class="pc chara2 action">罗少开始紧张地颤抖起来</div></div><div class="with-avatar t chara1"><div class="pc action chara1">那、我小心翼翼地冲过去</div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">袭击者是恶魔……在那边打起来了……你们小心一点……！</span><audio src="vocals/antnar/2/【11】襲撃者はデモンだ！あちらで交戦中だ！皆、気をつけろ！.wav"></audio></div></div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">野犬……野犬冲过去了！</span><audio src="vocals/robe/2/【25】野良犬…野良犬が突進してきた！.wav"></audio></div></div><div class="pc chara1">我要舔图</div><div class="pc dm">喔喔喔，冒着恶魔与卓尔的双重风险也要舔图吗，哈基犬你这家伙</div><div class="pc chara1">我、我小心翼翼地……</div><div class="pc chara1">又不是往那里冲，我去塔里不行吗( ﾟ∀。)</div><div class="pc chara2">爱狗tv吗</div><div class="pc chara2">喔哦，苟……</div><div class="pc chara1">我以为应该不会被注意到、大概</div><div class="pc chara1">我是要进塔里面，不、不可以吗(；　ﾟ 3ﾟ)</div><div class="pc dm">我看看嗷</div><div class="pc dm">你骰一个智力检定</div><div class="pc chara1">为什么是智力啊</div><div class="pc dice"><span class="check-type">智力：</span><span class="dice" name="D20">5</span><span class="bonus down">1</span><span class="result">4</span><span class="ranking">失败</span></div><div class="pc chara1">这🖐🏻还要减一呢</div><div class="pc chara3">･ﾟ( ﾉヮ´ )</div><div class="with-avatar t var2"><div class="pc">这座倒吊塔是前哨站中最大的倒吊塔。你打开其没有上锁的大门，内部是一个圆形的房间，放满了绣着白蜘蛛图案的黑丝绸坐垫，所有的坐垫都用银线穿着，形成了一个铺满房间的蜘蛛网，房间中央（也正是网的中央）安放着一个木制台座，上面有一只十尺高的巨蜘蛛！（安特纳尔）</div></div><div class="pc chara3">开怪来了</div><div class="pc chara2">罗丝卓敢杀吗(`ゥ´ )</div><div class="pc chara1">迷思，我应该说罗斯在上，还是罗斯在下</div><div class="pc dm">什么话</div><div class="pc dm">罗丝应该在心里</div><div class="pc chara2">⊂彡☆))∀`)</div><div class="pc chara3">好家伙这么大的蜘蛛</div><div class="pc dm">你这大不敬的家伙！</div><div class="pc chara1">･ﾟ( ﾟ∀。) ﾟ。唉不是</div><div class="pc chara4">･ﾟ( ﾟ∀。) ﾟ。</div><div class="pc chara2">还有嬤自己主神的</div><div class="with-avatar t chara1 var5"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">罗、罗斯啊……！</span><audio src="vocals/antnar/2/【12】ロ、ローズ様……！.wav"></audio></div></div><div class="pc chara1">我有惊动那只蜘蛛吗</div><div class="pc dm">bro，你一打开门，这只巨蜘蛛就正面面对着你</div><div class="pc chara1">西八，那只能跑了啊！</div><div class="pc chara2">检测友善度的时候到了</div><div class="pc chara1">我有一计，我们把泽地熊人放出来吧</div><div class="pc chara2">(´∀((☆ミつ宝可梦呢</div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">你们不要过来！这里有一只巨蜘蛛！</span><audio src="vocals/antnar/2/【13】来るな！ここに巨大な蜘蛛がいる！.wav"></audio></div></div><div class="with-avatar t var6"><div class="pc">但那巨蜘蛛并未追出来……</div></div><div class="pc chara1">是因为我是卓尔吗( ﾟ∀。)7"</div><div class="pc chara3">（失望）</div><div class="pc chara1">它有攻击我的意思吗？</div><div class="pc dm">那你要回去看看才知道</div><div class="with-avatar t chara1 var6"><div class="pc chara1 action">我……我肯定是不能攻击蜘蛛的。攻击蜘蛛，就是对罗斯女神的大不敬。于是我对那蜘蛛拜了一下，然后关上了门。</div></div><div class="pc dm">欸不是跑掉了吗</div><div class="pc chara1">我还没跑啊，只是心里想想(；　ﾟ 3ﾟ)</div><div class="pc dm">啊我还以为跑掉了</div><div class="with-avatar t var6"><div class="pc">这只巨蜘蛛没有攻击你的真正原因是……这仅仅是一个工艺精湛的雕塑。</div></div><div class="pc chara1">气消了</div><div class="pc chara1">若至</div><div class="pc chara2">(`ヮ´ )σ`∀´) ﾟ∀ﾟ)σ</div><div class="pc chara3">草</div><div class="pc chara2">难怪过智力･ﾟ( ﾉヮ´ )</div><div class="pc chara3">笑死我了</div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">嗯，没有攻击我，说明罗斯女神也许没有生气……（这么想着，我又重新打开了门。）</span><audio src="vocals/antnar/2/【14】ふむ…攻撃してこないということは、もしかするとローズ女神はお怒りになっていないのかもしれませんね….wav"></audio></div></div><div class="with-avatar t chara1 var5"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">不好意思，刚刚看错了。（对着大伙喊）</span><audio src="vocals/antnar/2/【15】失礼、見間違いでした。.wav"></audio></div></div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">只是雕塑喔！</span><audio src="vocals/antnar/2/【16】ただの彫刻に過ぎないよ！.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">喔哦，原来是笨犬……</span><audio src="vocals/robe/2/【26】へえ、どうやらただのバカ犬だったな.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">哇，这人怕不是傻子……</span><audio src="vocals/baileys/2/【19】わあ…この人、大丈夫かな….wav"></audio></div></div><div class="with-avatar t"><div class="pc">显然，这里是用于祈祷的圣坛，在这圣坛两边装饰着一对沉甸甸的银烛台，上面立着只会在仪式时点亮的黑色厚蜡烛。蜘蛛雕塑的八只”眼“是8枚抛光的黑玉。</div></div><div class="with-avatar t var2 chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">谁是傻子了！我当教官的时间比你活的时间都长吧！</span><audio src="vocals/antnar/2/【17】誰が馬鹿だ！僕が教官をやっていた年数は、君が生きてきた年数より長いんだぞ！.wav"></audio></div></div><div class="pc chara3">你都要喊才能让队友听见的，我这种语气的吐槽怎么想都不可能被你听到吧</div><div class="with-avatar t chara1 var6"><div class="pc chara1 action">感觉有人在骂我白痴……</div></div><div class="pc chara1">这里有二楼吗<div class="pc dm">这座圣坛用一条绳梯与下面的房间相连</div></div><div class="pc chara1">我一个人下去看看？还是你们也要跟过来</div><div class="pc chara4">我跟上来吧</div><div class="pc chara3">＃跟随</div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">地表精灵？这种地方还是算了吧！</span><audio src="vocals/antnar/2/【18】地表エルフか？こんな場所はやめとけ！.wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">暂时结盟就算了，我可不想让你们触怒罗斯！</span><audio src="vocals/antnar/2/【19】仮同盟はともかく、これ以上ローズ様の機嫌を損ねる真似はさせない！.wav"></audio></div></div><div class="pc chara1">突然想起来罗斯作为神还蛮小心眼的( ﾟ∀。)</div><div class="pc chara1">要不罗少来</div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">好吧，那我该说什么……感谢您的好意？（停下脚步并保持距离）</span><audio src="vocals/baileys/2/【20】まあ、とりあえず『ご親切にありがとう』って言っておけばいいんじゃない？.wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">好意？！</span><audio src="vocals/antnar/2/【20】親切心だと？.wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">这可不是好意！</span><audio src="vocals/antnar/2/【21】とんでもない！.wav"></audio></div></div><div class="pc chara2">小安过个游说看罗少下不下(`ヮ´ )</div><div class="pc chara1">好哦ᕕ( ᐛ )ᕗ</div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">呃！卷心菜奴隶！就你，陪我下去！</span><audio src="vocals/antnar/2/【22】キャベツ奴隷！お前だ、一緒に来い！.wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">哎呀，看来是说错话了，麻烦……但是出于大局考虑，我们还是不要在这里吵架可以吗？</span><audio src="vocals/baileys/2/【21】すみません、言葉が足りませんでした…今はチームワークが大切な時期ですものね。ここで争うのはやめて、協力しませんか？.wav"></audio></div></div><div class="pc dice"><span class="check-type">游说（安特纳尔）：</span><span class="dice" name="D20">6</span><span class="bonus down">1</span><span class="result">5</span><span class="ranking">失败</span></div><div class="with-avatar t chara3 var1"><div class="pc"><span class="play" onclick="simple_audio_play(this)">那我就在这里等着你们咯。</span><audio src="vocals/baileys/2/【22】それでは、ここで待っていますね.wav"></audio></div></div><div class="pc chara1">･ﾟ( ﾉヮ´ )唉不是</div><div class="pc chara2">･ﾟ( ﾟ∀。) ﾟ。</div><div class="with-avatar t chara4"><div class="pc chara4 action">（跟着白蕾丝停下）</div></div><div class="pc chara3">一天两个大成功</div><div class="pc chara3">冒青烟了</div><div class="pc chara2">第二个自然二十☆</div><div class="pc dm">这下只能一个人探图了</div><div class="pc chara1">现在罗少说什么小安都会信了</div><div class="pc dm">10个npc大汉在后面看着你们rp</div><div class="pc dm">好悠闲的逃亡</div><div class="pc chara1">只是拦着精灵不下去,我也没拦其他人(`v´ )</div><div class="pc chara2">哎时停解说</div><div class="pc dm">操作十个npc还是太吃性能了</div><div class="pc chara3">沙里士就这样看着自己的老师四处冲刺……</div><div class="pc chara3">并且把雕像当真了……</div><div class="pc chara1">啊,蒂纶朵的话，当做发癫的熊人⭐</div><div class="pc chara1">沙里士就是因为冲刺太慢差点抢不到武器的</div><div class="with-avatar t chara2 var4"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哼！你个罗丝的丧家犬！怯手怯脚的！我说这就没什么！你个健壮成这样的家伙，还要找我？一件射穿我小腿的气势呢，嗯？</span><audio src="vocals/robe/2/【27】ふん！このロースに見放された喪家の犬め！おどおどしやがって！何も問題ないって言ってるだろ？こんないかつい体格してながら、俺を頼るのか？俺の脛を射抜いた時の気概はどこへやら？.wav"></audio></div></div><div class="pc dm">结论是冲刺其实是卓尔的必备技能，沙里士学艺不精</div><div class="pc chara1">话说蒂纶朵啥都没拿？</div><div class="pc chara2">卓尔都是otto是吧</div><div class="pc dm">蒂纶朵想拿也拿不了</div><div class="pc dm">泽地熊人纯肉体的</div><div class="pc chara1">喔哦，野性的力量</div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">当然，也不是不行……那你就跪下来舔我的脚，我就勉强答应你……</span><audio src="vocals/robe/2/【28】もちろん、できなくもないな…だったら跪いて俺の足を舐めろよ、そうすれば仕方なく引き受けてやる….wav"></audio></div></div><div class="pc chara3">怎么还在脚啊</div><div class="pc dm">就要脚就要脚</div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">这种时候还在说这种东西？！你的脑子是不是有问题啊！</span><audio src="vocals/antnar/2/【23】今はそんなことを言っている場合か？！お前、頭は大丈夫なのか？！.wav"></audio></div></div><div class="pc chara3">又是男娘又是脚控又是sm的，真是太后现代了</div><div class="with-avatar t chara1"><div class="pc chara1 action">我实际异常愤怒，但还是俯下身去……</div></div><div class="pc dm">哇塞</div><div class="pc chara3">哇塞</div><div class="with-avatar t chara2 var7"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哎不是，你要干什么……</span><audio src="vocals/robe/2/【29】お、おい…何をする気だ….wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1 action">……然后用手摸了摸他的鞋尖。</div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">这样可以吗！卷心菜！</span><audio src="vocals/antnar/2/【24】これで満足か、キャベツ！.wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">快点跟上！</span><audio src="vocals/antnar/2/【25】早くついて来い！.wav"></audio></div></div><div class="pc chara3">（失望）</div><div class="pc chara2">😨→😧</div><div class="pc dm">(´∀((☆ミつ</div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">呃……我为什么要下去……</span><audio src="vocals/robe/2/【30】げ…なんで俺が降りなきゃなんねぇんだよ….wav"></audio></div></div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">呃……我身上被那个该死兽人踹的伤还在痛……</span><audio src="vocals/antnar/2/【26】ちくしょう……あの忌々しいオークに蹴られた傷がまだ疼く…….wav"></audio></div></div><div class="with-avatar t chara3"><div class="pc chara3 action">（坐在原地摆弄自己的蝴蝶结）</div></div><div class="with-avatar t chara4"><div class="pc action chara4">（朝空气挥舞几下短剑试试手感，顺便远远的看看混战的情况）</div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">叫你跟就……（我压低声音）该死的，一定要我解释吗？这里一个能信任的家伙都没有！……那群憎恨我的侏儒？敌视我的矮人？还是忍不住打我的兽人？还是发了疯的熊人与鱼人？我受了伤，可不想一个人冒这种风险！</span><audio src="vocals/antnar/2/【27】ついて来いって言ったら……くそ、わざわざ説明する必要あるか？ここには信頼できる奴は一人もいない！……俺を憎んでるあのスヴィルフネブリンどもか？敵意むき出しのドワーフか？それとも手が出ずにいられないオークか？正気を失ったクアゴスや魚人か？俺は傷ついてる、一人でこんな危険を冒すつもりはない！.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">虽然你没什么用，但多少还是有点用的……比方说当人肉盾牌！</span><audio src="vocals/antnar/2/【28】お前は役立たずだが、多少は使い道がある……例えば人間の盾としてな！.wav"></audio></div></div><div class="with-avatar t chara2 var2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">嘁……这家伙还想利用我……</span><audio src="vocals/robe/2/【31】ちっ…こいつ、俺を利用しようってのか….wav"></audio></div></div><div class="with-avatar t chara1 var3"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">而且……（我的声音越来越低）你有时候看起来还挺像我一个老朋友的……</span><audio src="vocals/antnar/2/【29】それに……お前は時々、俺の古い友人によく似ているんだ…….wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">我的？我哪里来的人类朋友！一定是那个矮人的朋友！</span><audio src="vocals/antnar/2/【30】僕の？僕がどこに人間の友達がいるっていうんだ！きっとあのドワーフの友達に違いない！.wav"></audio></div></div><div class="with-avatar t var2 chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">那你那个卓尔小“朋友”呢？我看你们相见恨晚啊……</span><audio src="vocals/robe/2/【32】じゃあ、あのドロウの“お友達”はどうした？お前たち、出会いが遅すぎたってくらい意気投合してたじゃねぇか….wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">看来你确实不是很了解卓尔……如果你也是个卓尔，你不会想和同族共处一室的。</span><audio src="vocals/antnar/2/【31】どうやら君はドロウのことを本当にあまり知らないようだな……もし君もドロウだったら、同族と一室を共にしたいとは思わないだろう。.wav"></audio></div></div><div class="with-avatar t chara1 var3"><div class="pc chara1 action">（更何况还是受了伤的情况……）</div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">说来我救了你，要不你就变成兽人手作肉酱……总得有点，表•示•吧？</span><audio src="vocals/robe/2/【33】ついでに言うと、俺がお前を助けたんだ。さもなきゃお前はオークの手作りミンチになってたわけだ……ちょっとは'感謝'を示した方がいいんじゃねぇか？.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">表示？什么表示？你还想要什么？</span><audio src="vocals/antnar/2/【32】表示？何の表示だ？まだ何が欲しいんだ？.wav"></audio></div></div><div class="pc dm">答案是嗦脚</div><div class="pc chara3">我真服了</div><div class="pc chara1">直接改成嗦脚大陆吧</div><div class="pc chara3">今晚做梦都是嗦脚的程度</div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">跪下来，然后磕两个头，喊两声“卡文迪许大人我错了，不该对您不敬”，我就……勉强放过你这回？</span><audio src="vocals/robe/2/【34】まずは跪いて、それから二回头を地面に叩きつけて、『キャベンディッシュ様、不敬を働いて申し訳ございません』と二回唱えなさい。そうすれば……今回は見逃してやってもいいぞ？.wav"></audio></div></div><div class="with-avatar t chara2 var4"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">……看我心情吧(`ᝫ´ )</span><audio src="vocals/robe/2/【35】…その時の気分で決めるさ.wav"></audio></div></div><div class="pc chara4">所以远处那群卓尔和恶魔打的怎么样了</div><div class="pc chara2">砸瓦路多没解除呢</div><div class="pc dm">虽然恶魔还没减员，但看样子卓尔们已经占了上风</div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">现在没时间做那种事情。后面再说。</span><audio src="vocals/antnar/2/【33】今はそんなことをしている場合じゃない。後で話そう。.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">是谁～没时间呢～不好说哦～</span><audio src="vocals/robe/2/【36】誰が～時間がないんだ～？それは言えないな～.wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">你真以为现在就算是保下条命了……？该死，我说为什么人类奴隶那么少见……</span><audio src="vocals/antnar/2/【34】まさかこれで命が助かったと思っているのか？……ちっ、なぜ人間の奴隷がこんなに少ないのか、ようやく合点が行ったぞ…….wav"></audio></div></div><div class="with-avatar t chara1 var3"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">卡……卡文迪许大人……</span><audio src="vocals/antnar/2/【35】か……カベンディッシュ様…….wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">这样可以了吧……！</span><audio src="vocals/antnar/2/【36】これで……満足でしょう……！.wav"></audio></div></div><div class="with-avatar t chara2 var1"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哎？你说什么？我听力不好……(`ᝫ´ )</span><audio src="vocals/robe/2/【37】え？何て？ちょっと耳が遠くて聞こえなくて~.wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">啊，话说在前头，这可不是我说的！是那个矮人说的！</span><audio src="vocals/antnar/2/【37】あ、あらかじめ言っておくけど、これは僕の意見じゃない！あのドワーフが言ったんだ！.wav"></audio></div></div><div class="with-avatar t chara1 var9"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">你说是吧！</span><audio src="vocals/antnar/2/【38】そうですよね！！.wav"></audio></div></div><div class="with-avatar t chara1"><div class="pc chara1 action">（陷入沉默……）</div></div><div class="pc chara3">（我能看见他们俩在干嘛吗）</div><div class="pc chara3">（真忍不住想吐槽一句啊）</div><div class="with-avatar t chara2 var4"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">没听见呢，再来一遍试试(`ᝫ´ )</span><audio src="vocals/robe/2/【38】聞こえないなあ、もう一度言ってみな~.wav"></audio></div></div><div class="with-avatar t chara2"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">刚刚才吃了饭呢(`ᝫ´ )</span><audio src="vocals/robe/2/【39】さっき飯を食ったばかりなんだよ～.wav"></audio></div></div><div class="pc dm">站门口就能看见</div><div class="pc dm">这边10个npc+柏里斯轮流站门口看，看不到的人还能听解说</div><div class="with-avatar t chara3 var8"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">哇，那二位居然玩这么大……</span><audio src="vocals/baileys/2/【23】わあ、あの二人、そんな大胆なことするとは….wav"></audio></div></div><div class="with-avatar t chara3 var8"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">看来我还是见识少了……</span><audio src="vocals/baileys/2/【24】どうやら私の見識がまだ足りなかったようです….wav"></audio></div></div><div class="pc dm">豺狼不满足于远观，凑脸上来看了</div><div class="pc dm">喔没凑上来吗</div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">罗·弥斯敦·卡文迪许大人。（飞速地说了一遍）</span><audio src="vocals/antnar/2/【39】ローブ・ミストン・キャベンディッシュ様.wav"></audio></div></div><div class="with-avatar t chara1 var6"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">可以了吗？</span><audio src="vocals/antnar/2/【40】これでよろしいでしょうか？.wav"></audio></div></div><div class="with-avatar t chara2 var1"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">哎，真乖！我就说咱家的小黑狗是个听话的家伙！狗狗刚才闻到什么了？没事！主人陪你去！</span><audio src="vocals/robe/2/【40】おや、いい子だね！やっぱりウチの黒ちゃんは素直な奴だって言っただろう！ワンちゃん何か匂いを嗅ぎつけたの？大丈夫！ご主人様がついてるからね！.wav"></audio></div></div><div class="with-avatar t chara1 var2"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">你不要得寸进尺了！</span><audio src="vocals/antnar/2/【41】いい気になるな！！.wav"></audio></div></div><div class="with-avatar t chara2 var8"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">喔哦，狗狗又叫了，是不是要咬人了，那我要躲远点……</span><audio src="vocals/robe/2/【41】おやまあ、ワンちゃんがまた吠えてる、噛みつこうとしてるのかしら、じゃあちょっと離れてないとね….wav"></audio></div></div><div class="pc chara1">唉不是</div><div class="pc chara1">就玩起来了</div><div class="pc chara1">卓尔还在杀恶魔呢</div><div class="pc dm">那边在玩doom</div><div class="pc dm">这边在玩主仆play</div><div class="pc dm">这边在玩gal！</div><div class="pc chara1">太糟糕了</div><div class="pc chara2">这边在玩dom是吧⊂彡☆))∀`)</div><div class="pc chara1">并非gal</div><div class="pc chara1">木毛不是gal😨</div><div class="with-avatar t chara2 var4"><div class="pc chara2"><span class="play" onclick="simple_audio_play(this)">狗狗还要钻洞吗？（指了指那个坑）要走就快点去！</span><audio src="vocals/robe/2/【42】ワンちゃん、まだ穴に潜るの？行くならさっさと行っちゃいなよ！.wav"></audio></div></div><div class="with-avatar t chara1 var3"><div class="pc chara1"><span class="play" onclick="simple_audio_play(this)">请卡文迪许大人务必陪我下去……</span><audio src="vocals/antnar/2/【42】キャベンディッシュ様、どうか僕と一緒に下まで…….wav"></audio></div></div><div class="pc chara2">走咯！丁丁历险记！</div><div class="pc chara1">要分裂出第三个人了……</div><div class="pc chara3">安特纳尔还没出狱，脸先丢完了</div><div class="with-avatar t chara3 var9"><div class="pc chara3"><span class="play" onclick="simple_audio_play(this)">呜哇简直是……看不下去……</span><audio src="vocals/baileys/2/【25】うわっ…マジで…見てられない….wav"></audio></div></div><div class="pc dm">欲知后事如何</div><div class="pc dm">请看下周</div><div class="pc chara2">･ﾟ( ﾉヮ´ )我RP不下去了</div><div class="pc dm">回头真得研究一下怎么处理这茫茫多npc</div><div class="pc chara3">这就是sm吗，和说好的不一样啊</div><div class="pc chara1">😨卧槽，有木毛啊</div><hr><q style="text-align: center;">神秘的群内聊天……</q><div class="pc chara1">哎</div><div class="pc chara1">我怎么就没把小安捏成高傲巨乳卓尔妹呢</div><div class="pc chara1">我缺的雌大鬼破防谁给我补啊</div><div class="pc chara3">？</div><div class="pc chara1">我觉得比起奔四大叔被调♂教雌大鬼被调♂教应该更喜闻乐见一点</div><div class="pc chara1">虽然后者就真的要被罗少骗上床了</div><div class="pc chara1">不觉得很本子展开吗</div><div class="pc chara2">😨</div><div class="pc chara1">虽然那样就太糟糕了</div><div class="pc chara1">野○→母○……😨</div><div class="pc chara1">嗯❤️人家是卡文迪许大人的🐶喔❤️<div class="pc chara1">(´∀((☆ミつ</div></div><div class="pc chara2">😨</div><div class="pc chara1">哎</div><div class="pc chara1">因为小安老师实际不是雌大鬼而是四娃爹三娃爷……</div><div class="pc chara1">所以我决定真的让他这么说</div><div class="pc chara1">🤓</div><div class="pc chara3">我觉得还是大叔被迫害更喜感</div><div class="pc chara3">要是换成大姐姐的话白蕾丝都吐槽不出来了</div><div class="pc chara1">太糟糕了desuwa</div><div class="pc chara1">决定了，以后我都要称呼罗少为“卡文迪许大人❤️”</div><div class="pc chara1">我不中了</div><div class="pc chara1">･ﾟ( ﾉヮ´ )</div><div class="pc chara3">（用奇怪的眼神看着……）</div><div class="pc chara1">no homo啊 no homo</div><div class="pc chara3">太混沌了这也</div><div class="pc chara3">如果我不是乐子人而是纯良的话我都不知道该怎么rp的程度</div><div class="pc chara3">虽然现在也不知道</div><div class="pc chara1">喔哦，看到了能记一辈子的珍贵场景啊</div><div class="pc chara1">只要在句尾加爱心，什么话听起来都很像变态❤️</div><div class="pc chara1">也很像西索，不过西索就是变态❤️</div><div class="pc dm">就当是为了我，一般路过大法师</div><div class="pc dm">对着大叔卓尔使用转生术吧！</div><div class="pc chara1">(´∀((☆ミつ咿呀！</div><div class="pc chara3">一想到本该是紧张刺激的越狱过程中两个人玩起了主仆play就绷不住</div><div class="pc chara1">一开始就在玩主仆play😋</div><div class="pc chara3">甚至完全忘记了自己在越狱</div></div><footer>Copyright © 2025 幻岛缘游图书馆 All rights reserved.</footer><script id="insfan-script">
+        function simple_audio_play(click_elem){
+            var aud = click_elem.parentElement.getElementsByTagName('audio')[0];
+            aud.load();
+            aud.play();
+        }
+    </script></body></html>
