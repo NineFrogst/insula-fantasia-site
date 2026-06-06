@@ -1,0 +1,226 @@
+* {
+    transition: all 0.2s;
+}
+
+@font-face {
+    font-family: "Harding Text Web";
+    src: url("fonts/Harding\ Text\ Web\ Regular\ Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Harding Text Web";
+    src: url("fonts/Harding\ Text\ Web\ Bold\ Regular.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Harding Text Web";
+    src: url("fonts/Harding\ Text\ Web\ Regular\ Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Harding Text Web";
+    src: url("fonts/Harding\ Text\ Web\ Bold\ Italic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "方正粗雅宋";
+    src: url("fonts/FZCYSK.TTF");
+}
+
+body {
+    background-color: rgb(35, 27, 82);
+    margin: 0;
+    padding: 0;
+}
+
+div#navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    min-height: 10px;
+    padding: 0px 20px;
+    z-index: 648;
+    background-color: rgb(247, 237, 247);
+    border-bottom: 1px solid blueviolet;
+    color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: none;
+    font-family: "Harding Text Web", "方正粗雅宋", serif;
+}
+
+div#navbar-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+img#navbar-logo {
+    width: 60px;
+    float: left;
+}
+
+div#navbar-title > div#navbar-text {
+    font-size: 28px;
+}
+
+ul#navbar-list {
+    display: flex;
+    padding: 0;
+    height: 100%;
+    gap: 10px;
+}
+
+ul#navbar-list > li {
+    display: block;
+}
+
+ul#navbar-list > li > a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 8px;
+    width: 100px;
+    padding: 12px 0;
+    text-align: center;
+    align-self: center;
+}
+
+ul#navbar-list > li > a:hover {
+    background-color: blueviolet;
+    color: rgb(247, 237, 247);
+}
+
+div#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer {
+    margin: 0;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding: 4px;
+    background-color: black;
+    color: white;
+    font-family: "Consolas", "微软雅黑", monospace;
+}
+
+div#hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 700px;
+}
+
+div#hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Insula 在底层，斜体，青色 */
+#titleLine1 {
+    --landing: -100px; 
+    position: relative; 
+    z-index: 1; 
+    font-style: italic; 
+    color: mediumpurple; 
+}
+/* Fantasia 在顶层，加粗，金色 */
+#titleLine2 { 
+    --landing: 180px; 
+    position: relative; 
+    z-index: 3; 
+    color: skyblue; 
+}
+
+/* 中文标题 — 中间层，白色静态，不参与动画 */
+.hero-title-cn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: clamp(3rem, 8vw, 5rem);
+  z-index: 2;
+  font-family: '方正粗雅宋', serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: clamp(0.5rem, 1.5vw, 1rem);
+  font-weight: normal;
+  color: white;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  /* pointer-events: none; */
+  white-space: nowrap;
+}
+
+/* 逐字飞入→漂移→飞出 */
+.hero-title-line .char {
+  display: inline-block;
+  font-family: 'Harding Text Web', serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: bold;
+  letter-spacing: -0.1em;
+  opacity: 0;
+  animation: flyAcross 4s infinite;
+  animation-delay: calc(var(--i) * 0.08s);
+  text-shadow: 
+     1px  1px  30px rgba(0, 0, 0, 0.25),
+     1px -1px  30px rgba(0, 0, 0, 0.25),
+    -1px  1px  30px rgba(0, 0, 0, 0.25),
+    -1px -1px  30px rgba(0, 0, 0, 0.25);
+}
+
+/* Fantasia 延迟 50%（2s），漂移结束 → 另一行开始飞入，两段过渡对称 */
+#titleLine2 .char {
+  animation-delay: calc(var(--i) * 0.08s + 2s);
+}
+
+@keyframes flyAcross {
+  /* 飞入 (0.4s) */
+  0% {
+    opacity: 0;
+    transform: translateX(calc(80vw + var(--landing)));
+    /* filter: blur(8px); */
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(var(--landing));
+    /* filter: blur(0); */
+    animation-timing-function: linear;
+  }
+  /* 缓慢向左漂移 (1.6s) */
+  50% {
+    opacity: 1;
+    transform: translateX(calc(var(--landing) - 160px));
+    /* filter: blur(0); */
+    animation-timing-function: ease-in;
+  }
+  /* 飞出 (0.4s) */
+  60% {
+    opacity: 0;
+    transform: translateX(calc(-80vw + var(--landing)));
+    /* filter: blur(8px); */
+  }
+  /* 隐藏等待另一行 (1.6s = 40%) */
+  100% {
+    opacity: 0;
+    transform: translateX(calc(-80vw + var(--landing)));
+    /* filter: blur(8px); */
+  }
+}
