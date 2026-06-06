@@ -225,7 +225,7 @@ div#hero-title {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .hero-title-cn {
         writing-mode: vertical-rl;
         margin-top: 54px;
