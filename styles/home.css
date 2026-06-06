@@ -224,3 +224,10 @@ div#hero-title {
     /* filter: blur(8px); */
   }
 }
+
+@media (max-width: 768px) {
+    .hero-title-cn {
+        writing-mode: vertical-rl;
+        margin-top: 54px;
+    }
+}
