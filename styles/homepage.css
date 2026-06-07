@@ -175,3 +175,9 @@ div#hero-title {
         margin-top: 54px;
     }
 }
+
+@media (max-width: 768px) {
+    #hero-download {
+        flex-direction: column;
+    }
+}
