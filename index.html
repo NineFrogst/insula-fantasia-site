@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/home.css">
+    <title>昏迷程序已结束，欢迎回来，船长。</title>
 </head>
 <body>
     <div id="navbar">
         <div id="navbar-title">
-            <img src="home-res/Logo.png" alt="" id="navbar-logo">
+            <img src="/home-res/Logo.png" alt="insula fantasia" id="navbar-logo">
             <div id="navbar-text">幻岛缘游</div>
         </div>
+        <button id="nav-toggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
         <ul id="navbar-list">
             <li><a href="/DnD/">DnD团报</a></li>
+            <li><a href="https://huandaogame.fandom.com/zh/wiki/%E5%B9%BB%E5%B2%9B%E7%BC%98%E6%B8%B8_Wiki">Fandom</a></li>
+            <li><a href="http://insulafantasia-cn.wikidot.com/">Wikidot<div class="navbar-mark">施工中！</div></a></li>
+            <li><a href="/chujih-transit/">广告位招租</a></li>
         </ul>
     </div>
     <div id="hero">
@@ -24,10 +30,28 @@
             <span class="hero-title-line" id="titleLine2"></span>
         </div>
         </div>
+        <div id="hero-download">
+            <div class="download-button" id="app-store">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 32 32">
+                    <path fill="currentColor" d="M27 2H5C3.344 2 2 3.344 2 5v22c0 1.656 1.344 3 3 3h22c1.656 0 3-1.344 3-3V5c0-1.656-1.344-3-3-3zM9.938 24.031a1.248 1.248 0 1 1-2.162-1.25l.894-1.544c1.006-.306 1.831-.069 2.475.712zm8.681-3.368H7.25c-.688 0-1.25-.563-1.25-1.25s.563-1.25 1.25-1.25h3.188l4.087-7.075l-1.281-2.212A1.252 1.252 0 0 1 13.7 7.17a1.252 1.252 0 0 1 1.706.456l.556.962l.556-.962a1.248 1.248 0 1 1 2.162 1.25l-5.362 9.288h3.881c1.262 0 1.969 1.481 1.419 2.5zm6.131 0h-1.813l1.225 2.119c.344.6.137 1.363-.456 1.706c-.6.344-1.363.137-1.706-.456c-2.056-3.556-3.594-6.231-4.625-8.006c-1.044-1.813-.3-3.625.444-4.237c.819 1.419 2.044 3.544 3.681 6.375h3.25a1.25 1.25 0 1 1 0 2.5z"/>
+                </svg>
+                <span>App Store 下载</span>
+            </div>
+            <div class="download-button" id="google-play">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24">
+                    <g fill="none">
+                        <path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"/>
+                        <path fill="currentColor" d="m12 13.414l2.947 2.947l-9.697 5.598a1.488 1.488 0 0 1-1.568-.041l-.108-.078L12 13.414Zm-9-9L10.586 12L3 19.586V4.414Zm13.74 4.26l3.51 2.027c1 .577 1 2.02 0 2.598l-3.51 2.027L13.414 12l3.326-3.326ZM5.25 2.041l9.697 5.598L12 10.586L3.574 2.159a1.492 1.492 0 0 1 1.676-.118Z"/>
+                    </g>
+                </svg>
+                <span>Google Play 下载</span>
+            </div>
+        </div>
     </div>
     <footer>
         <div>Insula Fantasia © 2026 Created by 幻岛缘游图书馆</div>
     </footer>
-    <script src="scripts/home.js"></script>
+    <script src="/scripts/home.js"></script>
+    <script src="/scripts/navbar.js"></script>
 </body>
 </html>

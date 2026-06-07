@@ -1,0 +1,80 @@
+@import url("./fonts.css");
+@import url("./navbar.css");
+* {
+    transition: all 0.2s;
+}
+
+:root {
+    --bg-color: blanchedalmond;
+    --fg-color: brown;
+    --bg-faded: rgba(255, 235, 205, 0.5);
+}
+
+body {
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+    font-family: 'Harding Text Web' ,'方正粗雅宋', serif;
+}
+
+div#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+div.hero-bg-text {
+    position: absolute;
+    font-size: 600px;
+    line-height: 400px;
+    font-family: "方正粗雅宋", serif;
+}
+
+div.hero-bg-text#bgText1 {
+    top: 12vh;
+    left: 4vw;
+    color: white;
+}
+
+div.hero-bg-text#bgText2 {
+    bottom: -6vh;
+    left: 12vw;
+    color: firebrick;
+}
+
+div#hero-intro {
+    z-index: 2;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    line-height: clamp(1.5rem, 4.5vw, 2.2rem);
+}
+
+div#hero-intro span {
+    font-size: small;
+}
+
+div#hero-intro a {
+    color: inherit;
+}
+
+div#hero-disclamer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-style: italic;
+    font-size: small;
+}
+
+footer {
+    margin: 0;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding: 4px;
+    background-color: black;
+    color: white;
+    font-family: "Consolas", "微软雅黑", monospace;
+}

@@ -1,0 +1,131 @@
+@import url("./fonts.css");
+
+:root {
+    --bg-color: rgb(247, 237, 247);
+    --fg-color: blueviolet;
+    --bg-faded: rgba(247, 237, 247, 0.5);
+}
+
+div#navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    min-height: 10px;
+    padding: 0px 20px;
+    z-index: 648;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--fg-color);
+    color: var(--fg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: none;
+    font-family: "Harding Text Web", "方正粗雅宋", serif;
+}
+
+div#navbar-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+img#navbar-logo {
+    width: 60px;
+    float: left;
+}
+
+div#navbar-title > div#navbar-text {
+    font-size: 28px;
+}
+
+ul#navbar-list {
+    display: flex;
+    padding: 0;
+    gap: 10px;
+}
+
+ul#navbar-list > li {
+    display: block;
+}
+
+ul#navbar-list > li > a {
+    display: block;
+    position: relative;
+    color: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 8px;
+    width: 100px;
+    padding: 12px 0;
+    text-align: center;
+    align-self: center;
+}
+
+ul#navbar-list > li > a:hover {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+
+.navbar-mark {
+    color: red;
+    font-size: 11px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(15deg) translateY(5px);
+}
+
+/* 汉堡菜单按钮 */
+#nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 26px 0;
+}
+
+#nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--fg-color);
+  border-radius: 2px;
+}
+
+#nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+#nav-toggle.active span:nth-child(2) { opacity: 0; }
+#nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 800px) {
+    #nav-toggle {
+        display: flex;
+    }
+
+    ul#navbar-list {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-faded);
+        backdrop-filter: blur(20px);
+        padding: 20px 0;
+        margin: 16px 0 0 0;
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+
+    #navbar-list.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    ul#navbar-list > li > a {
+        width: auto;
+        margin: 0 20px;
+    }
+}

@@ -1,101 +1,15 @@
+@import url("./fonts.css");
+@import url("./navbar.css");
+
 * {
     transition: all 0.2s;
-}
-
-@font-face {
-    font-family: "Harding Text Web";
-    src: url("fonts/Harding\ Text\ Web\ Regular\ Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Harding Text Web";
-    src: url("fonts/Harding\ Text\ Web\ Bold\ Regular.ttf");
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Harding Text Web";
-    src: url("fonts/Harding\ Text\ Web\ Regular\ Italic.ttf");
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Harding Text Web";
-    src: url("fonts/Harding\ Text\ Web\ Bold\ Italic.ttf");
-    font-weight: bold;
-    font-style: italic;
-}
-@font-face {
-    font-family: "方正粗雅宋";
-    src: url("fonts/FZCYSK.TTF");
 }
 
 body {
     background-color: rgb(35, 27, 82);
     margin: 0;
     padding: 0;
-}
-
-div#navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    min-height: 10px;
-    padding: 0px 20px;
-    z-index: 648;
-    background-color: rgb(247, 237, 247);
-    border-bottom: 1px solid blueviolet;
-    color: blueviolet;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: none;
-    font-family: "Harding Text Web", "方正粗雅宋", serif;
-}
-
-div#navbar-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-img#navbar-logo {
-    width: 60px;
-    float: left;
-}
-
-div#navbar-title > div#navbar-text {
-    font-size: 28px;
-}
-
-ul#navbar-list {
-    display: flex;
-    padding: 0;
-    height: 100%;
-    gap: 10px;
-}
-
-ul#navbar-list > li {
-    display: block;
-}
-
-ul#navbar-list > li > a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    background-color: transparent;
-    border-radius: 8px;
-    width: 100px;
-    padding: 12px 0;
-    text-align: center;
-    align-self: center;
-}
-
-ul#navbar-list > li > a:hover {
-    background-color: blueviolet;
-    color: rgb(247, 237, 247);
+    font-family: 'Harding Text Web' ,'方正粗雅宋', serif;
 }
 
 div#hero {
@@ -119,6 +33,38 @@ footer {
     font-family: "Consolas", "微软雅黑", monospace;
 }
 
+div#hero-download {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    padding: 8px;
+    gap: 8px;
+    font-family: "Consolas", "微软雅黑", monospace;
+}
+
+div.download-button {
+    display: flex;
+    color: white;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 8px;
+    width: 240px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px;
+    cursor: pointer;
+}
+
+div.download-button svg {
+    height: 40px;
+    width: 40px;
+}
+
+div.download-button span {
+    display: inline-block;
+}
+
 div#hero-content {
     position: relative;
     z-index: 2;
@@ -130,7 +76,6 @@ div#hero-title {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 1.5rem;
     position: relative;
 }
 
@@ -164,7 +109,6 @@ div#hero-title {
   font-weight: normal;
   color: white;
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
-  /* pointer-events: none; */
   white-space: nowrap;
 }
 
