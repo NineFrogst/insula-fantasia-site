@@ -32,7 +32,6 @@ div#hero-bg {
     height: 900px;
     width: clamp(1px, 100vw, 800px);
     overflow: visible;
-    border: 1px solid black;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
