@@ -27,21 +27,32 @@ div#hero {
     overflow: hidden;
 }
 
+div#hero-bg {
+    position: absolute;
+    height: 900px;
+    width: clamp(1px, 100vw, 800px);
+    overflow: visible;
+    border: 1px solid black;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 div.hero-bg-text {
     position: absolute;
     font-size: 600px;
-    line-height: 400px;
+    line-height: 600px;
     font-family: "方正粗雅宋", serif;
 }
 
 div.hero-bg-text#bgText1 {
-    top: 12vh;
-    left: 4vw;
+    top: clamp(1px, 1vh, 10px);
+    left: calc(8vw - 100px);
     color: white;
 }
 
 div.hero-bg-text#bgText2 {
-    bottom: -6vh;
+    bottom: clamp(-150px, -15vh, -1px);
     left: 12vw;
     color: firebrick;
 }
@@ -66,6 +77,7 @@ div#hero-disclamer {
     right: 0;
     font-style: italic;
     font-size: small;
+    text-align: right;
 }
 
 footer {
